@@ -99,7 +99,13 @@
         const brief = escapeHtml(p.brief || "");
         const rawSlug = p.slug || "";
         const readerHref = rawSlug ? `./blog.html#${encodeURIComponent(rawSlug)}` : `https://${blogHost}/`;
-        const hashnodeHref = `https://${blogHost}/${p.slug || ""}`;
+        const slugPath = String(rawSlug)
+          .replace(/^\/+/, "")
+          .split("/")
+          .filter(Boolean)
+          .map((seg) => encodeURIComponent(seg))
+          .join("/");
+        const hashnodeHref = slugPath ? `https://${blogHost}/${slugPath}` : `https://${blogHost}/`;
         const date = fmtDate(p.publishedAt);
         return `
           <article class="blog-card" role="listitem">
@@ -253,8 +259,10 @@
       clearFieldErrors();
       const errors = payload?.errors;
       if (!errors || typeof errors !== "object") return;
+      const fieldNodes = $$("[data-field-error]", hireForm);
       for (const [key, val] of Object.entries(errors)) {
-        const el = $(`[data-field-error="${key}"]`, hireForm);
+        if (!/^[a-z0-9_-]{1,64}$/i.test(key)) continue;
+        const el = fieldNodes.find((n) => n.getAttribute("data-field-error") === key);
         if (!el) continue;
         const msg = Array.isArray(val) ? val.join(" ") : String(val);
         el.textContent = msg;

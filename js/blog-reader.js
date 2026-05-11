@@ -37,6 +37,16 @@
     return json.data;
   };
 
+  const postUrlOnHost = (slug) => {
+    const path = String(slug || "")
+      .replace(/^\/+/, "")
+      .split("/")
+      .filter(Boolean)
+      .map((seg) => encodeURIComponent(seg))
+      .join("/");
+    return path ? `https://${BLOG_HOST}/${path}` : `https://${BLOG_HOST}/`;
+  };
+
   const slugFromHash = () => {
     const raw = (location.hash || "").replace(/^#/, "").trim();
     if (!raw) return "";
@@ -274,7 +284,7 @@
       const post = data?.publication?.post;
       if (!post) throw new Error("Post not found.");
 
-      const url = `https://${BLOG_HOST}/${post.slug || slug}`;
+      const url = postUrlOnHost(post.slug || slug);
       if (hashnodeLink) {
         hashnodeLink.href = url;
         hashnodeLink.textContent = "View on Hashnode";

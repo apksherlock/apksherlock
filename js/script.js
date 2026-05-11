@@ -1,4 +1,4 @@
-/* Minimal vanilla JS: smooth anchor scroll, reveal on scroll, parallax, skill bar animation, glitch bursts */
+/* Minimal vanilla JS: smooth anchor scroll, reveal on scroll, parallax, glitch bursts */
 
 (() => {
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -43,24 +43,6 @@
     { threshold: 0.12 }
   );
   revealEls.forEach((el) => io.observe(el));
-
-  // Skills: animate fill to data-skill percent when visible
-  const skillEls = $$(".skill");
-  const skillIo = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        const el = entry.target;
-        const raw = el.getAttribute("data-skill") || "0";
-        const pct = Math.max(0, Math.min(100, Number(raw) || 0));
-        el.style.setProperty("--pct", String(pct));
-        el.classList.add("is-animated");
-        skillIo.unobserve(el);
-      }
-    },
-    { threshold: 0.25 }
-  );
-  skillEls.forEach((el) => skillIo.observe(el));
 
   // Blog: load latest posts from Hashnode (GraphQL)
   const blogHost = "dispatchersdotplayground.hashnode.dev";

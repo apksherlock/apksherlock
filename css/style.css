@@ -503,11 +503,29 @@ a{color:inherit;text-decoration:none}
 .mono{font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;color:rgba(233,230,255,.86)}
 
 .about{
-  display:grid;
-  grid-template-columns:1.35fr .9fr;
+  display:flex;
+  flex-direction:column;
   gap:16px;
 }
+.about__offer-wrap{
+  margin-top:clamp(32px,5vw,56px);
+  padding-top:clamp(20px,3vw,36px);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.about__offer-heading{
+  margin:0 0 16px;
+  font-family:Orbitron,system-ui,sans-serif;
+  font-weight:700;
+  letter-spacing:.06em;
+  font-size:clamp(20px,3vw,28px);
+  color:rgba(233,230,255,.96);
+  text-shadow:0 0 28px rgba(0,255,255,.12);
+}
+.about__intro .mono + .mono{margin-top:12px}
 .about__facts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (min-width:720px){
+  .modules--offer{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
 .fact{
   display:flex;gap:10px;align-items:flex-start;
   padding:10px 12px;
@@ -534,6 +552,30 @@ a{color:inherit;text-decoration:none}
   text-transform:uppercase;
 }
 .module__value{display:block;margin-top:4px;color:rgba(233,230,255,.88)}
+
+/* What I offer: larger, clearer type on small / laptop screens */
+.about__offer .modules--offer{
+  gap:12px;
+}
+.about__offer .module{
+  padding:14px 16px;
+}
+.about__offer .module__label{
+  font-size:12px;
+  letter-spacing:.08em;
+  opacity:.92;
+}
+.about__offer .module__value{
+  margin-top:6px;
+  font-size:clamp(15px,1rem + 0.35vw,17px);
+  line-height:1.5;
+  font-weight:500;
+  color:rgba(237,234,255,.94);
+}
+@media (min-width:640px){
+  .about__offer .module__label{font-size:13px;letter-spacing:.07em}
+  .about__offer .module__value{font-size:clamp(16px,0.35rem + 1.1vw,18px)}
+}
 
 /* WORK grid */
 .work-grid{
@@ -706,37 +748,6 @@ a{color:inherit;text-decoration:none}
   opacity:.92;
 }
 
-/* SKILLS */
-.skills{display:grid;gap:14px}
-.skill{
-  padding:14px 14px;
-  border-radius:var(--radius);
-  border:1px solid rgba(0,255,255,.14);
-  background:linear-gradient(180deg,rgba(0,255,255,.03),rgba(157,0,255,.02));
-  box-shadow:0 0 26px rgba(0,0,0,.22);
-}
-.skill__row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
-.skill__name{font-weight:600;letter-spacing:.01em}
-.skill__val{opacity:.8}
-.bar{
-  position:relative;
-  margin-top:10px;
-  height:12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.06);
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
-}
-.bar__fill{
-  position:absolute;inset:0;
-  width:0%;
-  border-radius:999px;
-  background:linear-gradient(90deg,var(--cyan),var(--pink),var(--purple));
-  box-shadow:0 0 18px rgba(0,255,255,.18);
-  transition:width 1.05s cubic-bezier(.2,.85,.2,1);
-}
-.skill.is-animated .bar__fill{width:calc(var(--pct,0) * 1%)}
-
 /* CONTACT */
 .contact{
   display:grid;
@@ -877,12 +888,10 @@ a{color:inherit;text-decoration:none}
   html{scroll-behavior:auto}
   .glitch,.kicker__dot,.scroll-hint__line,.avatar-wrap--about{animation:none}
   .reveal{transition:none;opacity:1;transform:none}
-  .bar__fill{transition:none}
 }
 
 /* Responsive */
 @media (max-width:900px){
-  .about{grid-template-columns:1fr}
   .contact{grid-template-columns:1fr}
   .work-grid{gap:12px}
   .card{grid-column:span 12}

@@ -1,23 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="apksherlock">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="apksherlock — Android">
   <defs>
-    <linearGradient id="n" x1="0" y1="0" x2="32" y2="32">
+    <linearGradient id="g" x1="4" y1="4" x2="28" y2="28">
       <stop offset="0" stop-color="#00ffff" />
-      <stop offset="0.5" stop-color="#9d00ff" />
+      <stop offset="0.45" stop-color="#9d00ff" />
       <stop offset="1" stop-color="#ff2ced" />
     </linearGradient>
   </defs>
+  <!-- Tab background -->
   <rect width="32" height="32" rx="8" fill="#0d0221" />
-  <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="url(#n)" stroke-width="1.25" opacity="0.9" />
-  <!-- A + hint of bug antennas (Android / apksherlock vibe) -->
-  <circle cx="13" cy="7.5" r="1.15" fill="#00ffff" />
-  <circle cx="19" cy="7.5" r="1.15" fill="#ff2ced" />
-  <path
-    d="M10 24 L16 10 L22 24"
-    fill="none"
-    stroke="url(#n)"
-    stroke-width="2.2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <path d="M12 18.5 h8" stroke="url(#n)" stroke-width="2" stroke-linecap="round" />
+  <!-- Android-style robot (simplified silhouette, brand-like colors — not an official asset) -->
+  <g fill="url(#g)">
+    <!-- Antennae -->
+    <path d="M12 9.5 L10 4.5" stroke="url(#g)" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    <path d="M20 9.5 L22 4.5" stroke="url(#g)" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    <!-- Head (dome) -->
+    <path
+      d="M10.5 12.5
+         C10.5 8.8 12.8 6 16 6
+         C19.2 6 21.5 8.8 21.5 12.5
+         L21.5 14.5 L10.5 14.5 Z"
+    />
+    <!-- Body -->
+    <rect x="11" y="14.5" width="10" height="10" rx="2.2" />
+    <!-- Arms -->
+    <rect x="6.5" y="16" width="3.2" height="6" rx="1.4" />
+    <rect x="22.3" y="16" width="3.2" height="6" rx="1.4" />
+    <!-- Legs -->
+    <rect x="12" y="23.5" width="3" height="5" rx="1.2" />
+    <rect x="17" y="23.5" width="3" height="5" rx="1.2" />
+  </g>
+  <!-- Eyes (cutout for readability at 16px) -->
+  <circle cx="13.2" cy="11.2" r="1.35" fill="#0d0221" />
+  <circle cx="18.8" cy="11.2" r="1.35" fill="#0d0221" />
 </svg>

@@ -6,30 +6,33 @@
       <stop offset="1" stop-color="#ff2ced" />
     </linearGradient>
   </defs>
-  <!-- Tab background -->
   <rect width="32" height="32" rx="8" fill="#0d0221" />
-  <!-- Android-style robot (simplified silhouette, brand-like colors — not an official asset) -->
+  <!-- Simple robot mark (site colors; not an official Android trademark asset) -->
   <g fill="url(#g)">
-    <!-- Antennae -->
     <path d="M12 9.5 L10 4.5" stroke="url(#g)" stroke-width="2.2" stroke-linecap="round" fill="none" />
     <path d="M20 9.5 L22 4.5" stroke="url(#g)" stroke-width="2.2" stroke-linecap="round" fill="none" />
-    <!-- Head (dome) -->
     <path
       d="M10.5 12.5
          C10.5 8.8 12.8 6 16 6
          C19.2 6 21.5 8.8 21.5 12.5
-         L21.5 14.5 L10.5 14.5 Z"
+         L21.5 13.25 L10.5 13.25 Z"
     />
-    <!-- Body -->
-    <rect x="11" y="14.5" width="10" height="10" rx="2.2" />
-    <!-- Arms -->
-    <rect x="6.5" y="16" width="3.2" height="6" rx="1.4" />
-    <rect x="22.3" y="16" width="3.2" height="6" rx="1.4" />
-    <!-- Legs -->
-    <rect x="12" y="23.5" width="3" height="5" rx="1.2" />
-    <rect x="17" y="23.5" width="3" height="5" rx="1.2" />
+    <!-- Neck gap (background) then torso: square top, rounded bottom corners only -->
+    <path
+      d="M11 14.55
+         H21
+         V22.1
+         A2.2 2.2 0 0 1 18.8 24.3
+         H13.2
+         A2.2 2.2 0 0 1 11 22.1
+         V14.55
+         Z"
+    />
+    <rect x="6.5" y="15.4" width="3.2" height="6" rx="1.4" />
+    <rect x="22.3" y="15.4" width="3.2" height="6" rx="1.4" />
+    <rect x="12" y="23.85" width="3" height="5" rx="1.2" />
+    <rect x="17" y="23.85" width="3" height="5" rx="1.2" />
   </g>
-  <!-- Eyes (cutout for readability at 16px) -->
   <circle cx="13.2" cy="11.2" r="1.35" fill="#0d0221" />
   <circle cx="18.8" cy="11.2" r="1.35" fill="#0d0221" />
 </svg>

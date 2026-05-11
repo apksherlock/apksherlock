@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="apksherlock — Android engineering by Stavro Xhardha. Blog, work, and contact."
+    />
+    <title>apksherlock — Android · Stavro Xhardha</title>
+    <link rel="canonical" href="https://apksherlock.github.io/apksherlock/" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="author" content="Stavro Xhardha" />
+    <meta name="theme-color" content="#0d0221" />
+
+    <meta property="og:site_name" content="apksherlock" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="apksherlock — Android · Stavro Xhardha" />
+    <meta
+      property="og:description"
+      content="Android engineering by Stavro Xhardha — apps, security, blog (Dispatcher's Playground), and hire me."
+    />
+    <meta property="og:url" content="https://apksherlock.github.io/apksherlock/" />
+    <meta property="og:image" content="https://apksherlock.github.io/apksherlock/assets/images/hero.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="apksherlock — Android · Stavro Xhardha" />
+    <meta
+      name="twitter:description"
+      content="Android engineering by Stavro Xhardha — apps, security, blog, and contact."
+    />
+    <meta name="twitter:image" content="https://apksherlock.github.io/apksherlock/assets/images/hero.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "apksherlock",
+        "url": "https://apksherlock.github.io/apksherlock/",
+        "description": "Android engineering by Stavro Xhardha — portfolio, blog reader, and contact.",
+        "inLanguage": "en",
+        "author": {
+          "@type": "Person",
+          "name": "Stavro Xhardha",
+          "url": "https://apksherlock.github.io/apksherlock/",
+          "sameAs": [
+            "https://github.com/apksherlock",
+            "https://www.linkedin.com/in/stavro-xhardha-64b98a153/",
+            "https://dispatchersdotplayground.hashnode.dev"
+          ]
+        }
+      }
+    </script>
+
+    <!-- Perf: preconnect to font origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Perf: preload font stylesheet then apply (non-blocking) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#about">Skip to content</a>
+
+    <header id="top" class="hero" aria-label="Hero">
+      <!-- REPLACE WITH CYBERPUNK GIF -->
+      <div id="hero-bg" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__brand">
+          <span class="nav__sigil" aria-hidden="true">◆</span>
+          <span class="nav__name nav__name--site">apksherlock</span>
+        </div>
+        <div class="nav__links">
+          <a href="#about" data-scroll>About</a>
+          <a href="#blog" data-scroll>Blog</a>
+          <a href="#work" data-scroll>Work</a>
+          <a href="#skills" data-scroll>Skills</a>
+          <a href="#contact" data-scroll>Hire</a>
+        </div>
+      </nav>
+
+      <div class="hero__content">
+        <p class="kicker">
+          <span class="kicker__dot" aria-hidden="true"></span>
+          ADB CONNECTED
+        </p>
+
+        <h1 class="glitch" data-text="Stavro Xhardha">
+          Stavro <span class="accent">Xhardha</span>
+        </h1>
+        <p class="subheading">Android Engineer</p>
+
+        <div class="hero__actions">
+          <a class="neon-btn" href="#about" data-scroll>
+            <span class="neon-btn__label">Enter</span>
+            <span class="neon-btn__glow" aria-hidden="true"></span>
+          </a>
+          <a class="ghost-btn" href="#blog" data-scroll>Read Blog</a>
+        </div>
+
+        <div class="hero__meta" aria-label="Quick stats">
+          <div class="chip">
+            <span class="chip__k">Mode</span>
+            <span class="chip__v">Android</span>
+          </div>
+          <div class="chip">
+            <span class="chip__k">Stack</span>
+            <span class="chip__v">Mobile</span>
+          </div>
+          <div class="chip">
+            <span class="chip__k">Status</span>
+            <span class="chip__v">Open to Hire</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-hint__line"></span>
+        <span class="scroll-hint__text">SCROLL</span>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section reveal">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title">
+              <span class="section__tag">01</span> About Me
+            </h2>
+            <p class="section__subtitle">
+              Android-focused engineering, from everyday UX to deep platform work.
+            </p>
+          </header>
+
+          <div class="about">
+            <div class="panel panel--accent">
+              <div class="avatar-wrap avatar-wrap--about">
+                <img
+                  class="avatar avatar--about"
+                  src="./assets/images/profile.png"
+                  alt="Portrait of Stavro Xhardha"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p class="mono">
+                Android has been my foundation, but my work has always been about pushing boundaries at the intersection of technology and human experience.
+I’ve spent my career mastering the Android ecosystem—building robust apps and platform integrations. But my journey took a sharp turn when I dove into Android Automotive, where I now design and ship UX-heavy experiences for one of the world’s leading automotive giants.
+Lately, I’ve been exploring the frontiers of Android security, uncovering vulnerabilities and sharing insights through my blog. Because for me, it’s not just about writing code—it’s about shaping how people interact with technology, whether that’s in the palm of their hand or the dashboard of their car.
+              </p>
+
+              <div class="divider" aria-hidden="true"></div>
+
+              <ul class="about__facts">
+                <li class="fact">
+                  <span class="fact__icon" aria-hidden="true">⌁</span>
+                  <span class="fact__text">Jetpack Compose + modern UI architecture</span>
+                </li>
+                <li class="fact">
+                  <span class="fact__icon" aria-hidden="true">⟡</span>
+                  <span class="fact__text">Automotive UX engineering & theming at scale</span>
+                </li>
+                <li class="fact">
+                  <span class="fact__icon" aria-hidden="true">⎔</span>
+                  <span class="fact__text">Android security</span>
+                </li>
+              </ul>
+            </div>
+
+            <aside class="panel">
+              <h3 class="panel__title">What I Offer</h3>
+              <div class="modules">
+                <div class="module">
+                  <span class="module__label">Mobile Apps</span>
+                  <span class="module__value">Native Android or Multiplatform mobile solutions (Android + iOS)</span>
+                </div>
+                <div class="module">
+                  <span class="module__label">Security Audit</span>
+                  <span class="module__value">Android app security review, risk notes, and practical fixes</span>
+                </div>
+                <div class="module">
+                  <span class="module__label">Coaching</span>
+                  <span class="module__value">Upskill developers and teams transitioning to Android</span>
+                </div>
+                <div class="module">
+                  <span class="module__label">Play Store shipping</span>
+                  <span class="module__value">Shiping your app to production might be a challenge, I can help you with that</span>
+                </div>
+                <div class="module">
+                  <span class="module__label">AI Integration</span>
+                  <span class="module__value">Ship AI features safely: integration, UX, and developer workflow automation</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="section section--alt reveal">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title">
+              <span class="section__tag">02</span> Blog
+            </h2>
+            <p class="section__subtitle">
+              Dispatchers, deep dives, and Android notes—from beginner-friendly to very nerdy.
+            </p>
+          </header>
+
+          <div class="blog">
+            <div class="panel panel--accent">
+              <div class="blog__actions">
+                <a class="neon-btn" href="https://dispatchersdotplayground.hashnode.dev" target="_blank" rel="noreferrer">
+                  <span class="neon-btn__label">Open Blog</span>
+                  <span class="neon-btn__glow" aria-hidden="true"></span>
+                </a>
+                <a class="ghost-btn" href="https://dispatchersdotplayground.hashnode.dev/rss.xml" target="_blank" rel="noreferrer">
+                  RSS
+                </a>
+                <a class="ghost-btn" href="./blog.html">Browse Blog Section</a>
+              </div>
+
+              <div class="divider" aria-hidden="true"></div>
+
+              <p class="mono blog__hint" id="blog-status">
+                Loading latest posts…
+              </p>
+
+              <div class="blog-grid" id="blog-posts" role="list" aria-label="Latest blog posts"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="section reveal">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title">
+              <span class="section__tag">03</span> Selected Work
+            </h2>
+            <p class="section__subtitle">
+              Much of my recent work is under NDA. Here are a few public-facing highlights.
+            </p>
+          </header>
+      
+          <div class="work-grid" role="list">
+            <!-- Health: MySugr -->
+            <article class="card" role="listitem">
+              <div class="card__top">
+                <div class="card__badge">HEALTH</div>
+                <div class="card__lines" aria-hidden="true"></div>
+              </div>
+              <h3 class="card__title">MySugr Diabetes Logbook</h3>
+              <p class="card__desc">
+                Integrated Bluetooth-enabled insulin pumps into the app, enabling seamless synchronization of bolus doses with the digital logbook.
+              </p>
+              <div class="card__meta">
+                <a class="pill" href="https://www.mysugr.com/en" target="_blank" rel="noreferrer">Product</a>
+                <span class="pill">Android</span>
+                <span class="pill">Bluetooth</span>
+              </div>
+            </article>
+      
+            <!-- SDK: Mallya Insulin Pen -->
+            <article class="card" role="listitem">
+              <div class="card__top">
+                <div class="card__badge">SDK</div>
+                <div class="card__lines" aria-hidden="true"></div>
+              </div>
+              <h3 class="card__title">Mallya Insulin Pen SDK</h3>
+              <p class="card__desc">
+                Developed a BLE SDK for insulin pen integration, implementing cryptographic protocols to securely transmit dose data to Android apps.
+              </p>
+              <div class="card__meta">
+                <a class="pill" href="https://my-mallya.com/en/" target="_blank" rel="noreferrer">Product</a>
+                <span class="pill">BLE</span>
+                <span class="pill">Kotlin</span>
+                <span class="pill">Cryptography</span>
+              </div>
+            </article>
+      
+            <!-- Open Source: Belt -->
+            <article class="card" role="listitem">
+              <div class="card__top">
+                <div class="card__badge">OPEN SOURCE</div>
+                <div class="card__lines" aria-hidden="true"></div>
+              </div>
+              <h3 class="card__title">Belt</h3>
+              <p class="card__desc">
+                A Kotlin Multiplatform (KMP) app built as a modern alternative to Mozilla's Pocket, enabling cross-platform bookmarking and article saving.
+              </p>
+              <div class="card__meta">
+                <a class="pill" href="https://github.com/apksherlock/belt" target="_blank" rel="noreferrer">GitHub</a>
+                <span class="pill">KMP</span>
+                <span class="pill">Kotlin</span>
+                <span class="pill">Multiplatform</span>
+              </div>
+            </article>
+      
+            <!-- Automotive -->
+            <article class="card" role="listitem">
+              <div class="card__top">
+                <div class="card__badge">AUTO</div>
+                <div class="card__lines" aria-hidden="true"></div>
+              </div>
+              <h3 class="card__title">Automotive UX Engineering</h3>
+              <p class="card__desc">
+                Tech lead for next-generation infotainment systems, focusing on UX design collaboration, theming tokenization, and UI tooling for premium vehicle brands.
+              </p>
+              <div class="card__meta">
+                <span class="pill">Compose</span>
+                <span class="pill">Theming</span>
+                <span class="pill">Architecture</span>
+              </div>
+            </article>
+      
+            <!-- Security -->
+            <article class="card" role="listitem">
+              <div class="card__top">
+                <div class="card__badge">SECURITY</div>
+                <div class="card__lines" aria-hidden="true"></div>
+              </div>
+              <h3 class="card__title">Android Security Audits</h3>
+              <p class="card__desc">
+                Identified and helped patch vulnerabilities in production APKs, including insecure IPC, cryptographic flaws, and improper permission handling.
+              </p>
+              <div class="card__meta">
+                <span class="pill">APK Analysis</span>
+                <span class="pill">Penetration Testing</span>
+                <span class="pill">Kotlin</span>
+              </div>
+            </article>
+      
+            <!-- Blog -->
+            <article class="card" role="listitem">
+              <div class="card__top">
+                <div class="card__badge">BLOG</div>
+                <div class="card__lines" aria-hidden="true"></div>
+              </div>
+              <h3 class="card__title">Dispatcher’s Playground</h3>
+              <p class="card__desc">
+                Technical deep dives: Android patterns, tricky bugs, security curiosities, and lessons from the field.
+              </p>
+              <div class="card__meta">
+                <a class="pill" href="https://dispatchersdotplayground.hashnode.dev" target="_blank" rel="noreferrer">Read</a>
+                <span class="pill">Writing</span>
+                <span class="pill">Research</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section reveal">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title">
+              <span class="section__tag">04</span> Skills
+            </h2>
+            <p class="section__subtitle">
+              A practical Android stack: UI, architecture, data, testing, and tooling.
+            </p>
+          </header>
+
+          <div class="skills">
+            <div class="skill" data-skill="94">
+              <div class="skill__row">
+                <span class="skill__name">Kotlin + Android Platform</span>
+                <span class="skill__val mono">94%</span>
+              </div>
+              <div class="bar" aria-hidden="true">
+                <span class="bar__fill"></span>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="92">
+              <div class="skill__row">
+                <span class="skill__name">Jetpack Compose</span>
+                <span class="skill__val mono">92%</span>
+              </div>
+              <div class="bar" aria-hidden="true">
+                <span class="bar__fill"></span>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="90">
+              <div class="skill__row">
+                <span class="skill__name">Architecture (MVVM / Clean / MVI)</span>
+                <span class="skill__val mono">90%</span>
+              </div>
+              <div class="bar" aria-hidden="true">
+                <span class="bar__fill"></span>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="88">
+              <div class="skill__row">
+                <span class="skill__name">Coroutines + Flow</span>
+                <span class="skill__val mono">88%</span>
+              </div>
+              <div class="bar" aria-hidden="true">
+                <span class="bar__fill"></span>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="86">
+              <div class="skill__row">
+                <span class="skill__name">Dependency Injection (Hilt / Dagger / Koin)</span>
+                <span class="skill__val mono">86%</span>
+              </div>
+              <div class="bar" aria-hidden="true">
+                <span class="bar__fill"></span>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="84">
+              <div class="skill__row">
+                <span class="skill__name">Data (Room / SQLite / Retrofit / JSON)</span>
+                <span class="skill__val mono">84%</span>
+              </div>
+              <div class="bar" aria-hidden="true">
+                <span class="bar__fill"></span>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="78">
+              <div class="skill__row">
+                <span class="skill__name">Testing (JUnit / Mockito)</span>
+                <span class="skill__val mono">78%</span>
+              </div>
+              <div class="bar" aria-hidden="true">
+                <span class="bar__fill"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--alt reveal">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title">
+              <span class="section__tag">05</span> Hire Me
+            </h2>
+            <p class="section__subtitle">
+              For anything Android related. Literally!
+            </p>
+          </header>
+
+          <div class="contact">
+            <form
+              id="my-form"
+              class="form panel"
+              method="POST"
+              action="https://formspree.io/f/mrejrlkr"
+              data-formspree="https://formspree.io/f/mrejrlkr"
+            >
+              <div class="form-message form-message--success" id="form-msg-success" role="status" aria-live="polite" hidden>
+                <p>Thanks! Your message has been sent.</p>
+              </div>
+              <div class="form-message form-message--error" id="form-msg-error" role="alert" aria-live="assertive" hidden>
+                <p id="form-msg-error-text">Oops! Something went wrong. Please try again.</p>
+              </div>
+
+              <div class="form__grid">
+                <label class="field">
+                  <span class="field__label">Name</span>
+                  <input class="field__input" name="name" autocomplete="name" placeholder="Your name" required />
+                  <span class="field__error" data-field-error="name" hidden></span>
+                </label>
+                <label class="field">
+                  <span class="field__label">Email</span>
+                  <input class="field__input" type="email" name="email" autocomplete="email" placeholder="you@domain.com" required />
+                  <span class="field__error" data-field-error="email" hidden></span>
+                </label>
+                <label class="field field--full">
+                  <span class="field__label">Message</span>
+                  <textarea class="field__input field__input--area" name="message" rows="5" placeholder="Write your message..." required></textarea>
+                  <span class="field__error" data-field-error="message" hidden></span>
+                </label>
+              </div>
+              <button class="neon-btn neon-btn--submit" type="submit" id="form-submit-btn">
+                <span class="neon-btn__label">Send</span>
+                <span class="neon-btn__glow" aria-hidden="true"></span>
+              </button>
+            </form>
+          
+            <!-- Your existing links (unchanged) -->
+            <aside class="panel panel--accent">
+              <h3 class="panel__title">Links</h3>
+              <div class="social">
+                <a class="social__link" href="https://github.com/apksherlock" target="_blank" rel="noreferrer" aria-label="GitHub">
+                  <span class="social__icon" aria-hidden="true">⌂</span>
+                  <span class="social__text mono">github.com/apksherlock</span>
+                </a>
+                <a class="social__link" href="https://www.linkedin.com/in/stavro-xhardha-64b98a153/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                  <span class="social__icon" aria-hidden="true">⟐</span>
+                  <span class="social__text mono">linkedin.com/in/stavro-xhardha</span>
+                </a>
+              </div>
+              <div class="divider" aria-hidden="true"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span class="mono">© <span id="year"></span> apksherlock · Stavro Xhardha</span>
+        <a class="mono footer__top" href="#top" data-scroll>Back to top</a>
+      </div>
+    </footer>
+
+    <script src="./js/script.js" defer></script>
+  </body>
+</html>

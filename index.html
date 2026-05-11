@@ -81,7 +81,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#about">Skip to content</a>
+    <a id="skip-link" class="skip-link" href="#about">Skip to content</a>
 
     <header id="top" class="hero" aria-label="Hero">
       <!-- REPLACE WITH CYBERPUNK GIF -->
@@ -94,10 +94,19 @@
           <span class="nav__name nav__name--site">apksherlock</span>
         </div>
         <div class="nav__links">
-          <a href="#about" data-scroll>About</a>
-          <a href="#blog" data-scroll>Blog</a>
-          <a href="#work" data-scroll>Work</a>
-          <a href="#contact" data-scroll>Hire</a>
+          <a id="nav-about" href="#about" data-scroll>About</a>
+          <a id="nav-blog" href="#blog" data-scroll>Blog</a>
+          <a id="nav-work" href="#work" data-scroll>Work</a>
+          <a id="nav-hire" href="#contact" data-scroll>Hire</a>
+        </div>
+        <div class="nav__lang" aria-label="Language switch">
+          <button type="button" class="nav__lang-btn is-active" data-lang-switch="en" aria-pressed="true">
+            EN
+          </button>
+          <span class="nav__lang-sep">/</span>
+          <button type="button" class="nav__lang-btn" data-lang-switch="de" aria-pressed="false">
+            DE
+          </button>
         </div>
       </nav>
 
@@ -110,35 +119,35 @@
         <h1 class="glitch" data-text="Stavro Xhardha">
           Stavro <span class="accent">Xhardha</span>
         </h1>
-        <p class="subheading">Android Engineer</p>
+        <p id="hero-subheading" class="subheading">Android Engineer</p>
 
         <div class="hero__actions">
           <a class="neon-btn" href="#about" data-scroll>
-            <span class="neon-btn__label">Enter</span>
+            <span id="hero-enter" class="neon-btn__label">Enter</span>
             <span class="neon-btn__glow" aria-hidden="true"></span>
           </a>
-          <a class="ghost-btn" href="#blog" data-scroll>Read Blog</a>
+          <a class="ghost-btn" href="#blog" data-scroll id="hero-read-blog">Read Blog</a>
         </div>
 
         <div class="hero__meta" aria-label="Quick stats">
           <div class="chip">
-            <span class="chip__k">Mode</span>
-            <span class="chip__v">Android</span>
+            <span id="chip-mode-label" class="chip__k">Mode</span>
+            <span id="chip-mode-value" class="chip__v">Android</span>
           </div>
           <div class="chip">
-            <span class="chip__k">Stack</span>
-            <span class="chip__v">Mobile</span>
+            <span id="chip-stack-label" class="chip__k">Stack</span>
+            <span id="chip-stack-value" class="chip__v">Mobile / Web</span>
           </div>
           <div class="chip">
-            <span class="chip__k">Status</span>
-            <span class="chip__v">Open to Hire</span>
+            <span id="chip-status-label" class="chip__k">Status</span>
+            <span id="chip-status-value" class="chip__v">Open to Hire</span>
           </div>
         </div>
       </div>
 
       <div class="scroll-hint" aria-hidden="true">
         <span class="scroll-hint__line"></span>
-        <span class="scroll-hint__text">SCROLL</span>
+        <span id="hero-scroll-hint" class="scroll-hint__text">SCROLL</span>
       </div>
     </header>
 
@@ -147,9 +156,9 @@
         <div class="container">
           <header class="section__header">
             <h2 class="section__title">
-              <span class="section__tag">01</span> About Me
+              <span class="section__tag">01</span> <span id="about-title">About Me</span>
             </h2>
-            <p class="section__subtitle">
+            <p id="about-subtitle" class="section__subtitle">
               Android engineering, integrations, and security—with a straight list of what I can take on below.
             </p>
           </header>
@@ -165,13 +174,13 @@
                   decoding="async"
                 />
               </div>
-              <p class="mono">
+              <p id="about-p1" class="mono">
                 I’m an Android engineer. Most of my work has been shipping production apps and integrations: phones, smart accessories, in-vehicle systems, and third-party services: where complex UI has to hold up in real daily use.
               </p>
-              <p class="mono">
+              <p id="about-p2" class="mono">
                 Today a large share of my time is Android Automotive: infotainment UX, theming, and tooling for a major global OEM. I also run Android app security reviews and document what I learn on my blog.
               </p>
-              <p class="mono">
+              <p id="about-p3" class="mono">
                 Check below what I concretely offer for you.
               </p>
 
@@ -181,7 +190,7 @@
             </div>
 
             <div class="about__offer-wrap" id="offer">
-              <h2 class="about__offer-heading">What I offer</h2>
+              <h2 id="offer-title" class="about__offer-heading">What I offer</h2>
               <div class="about__offer panel">
                 <div class="modules modules--offer">
                 <div class="module">
@@ -192,8 +201,8 @@
                     </svg>
                   </span>
                   <div class="module__body">
-                    <span class="module__label">Mobile Apps</span>
-                    <span class="module__value">Native Android or Multiplatform mobile solutions (Android + iOS)</span>
+                    <span id="offer-mobile-label" class="module__label">Mobile Apps</span>
+                    <span id="offer-mobile-value" class="module__value">Native Android or Multiplatform mobile solutions (Android + iOS)</span>
                   </div>
                 </div>
                 <div class="module">
@@ -204,8 +213,8 @@
                     </svg>
                   </span>
                   <div class="module__body">
-                    <span class="module__label">Security Audit</span>
-                    <span class="module__value">Android app security review, risk notes, and practical fixes</span>
+                    <span id="offer-security-label" class="module__label">Security Audit</span>
+                    <span id="offer-security-value" class="module__value">Android app security review, risk notes, and practical fixes</span>
                   </div>
                 </div>
                 <div class="module">
@@ -217,8 +226,8 @@
                     </svg>
                   </span>
                   <div class="module__body">
-                    <span class="module__label">Coaching</span>
-                    <span class="module__value">Upskill developers and teams transitioning to Android</span>
+                    <span id="offer-coaching-label" class="module__label">Coaching</span>
+                    <span id="offer-coaching-value" class="module__value">Upskill developers and teams transitioning to Android</span>
                   </div>
                 </div>
                 <div class="module">
@@ -230,8 +239,8 @@
                     </svg>
                   </span>
                   <div class="module__body">
-                    <span class="module__label">Play Store shipping</span>
-                    <span class="module__value">Shipping your app to production can be a challenge; I can help you get it live</span>
+                    <span id="offer-play-label" class="module__label">Play Store shipping</span>
+                    <span id="offer-play-value" class="module__value">Shipping your app to production can be a challenge; I can help you get it live</span>
                   </div>
                 </div>
                 <div class="module">
@@ -245,8 +254,8 @@
                     </svg>
                   </span>
                   <div class="module__body">
-                    <span class="module__label">Business websites</span>
-                    <span class="module__value">Clear, fast sites that explain what you sell and make it easy to get in touch</span>
+                    <span id="offer-web-label" class="module__label">Business websites</span>
+                    <span id="offer-web-value" class="module__value">Clear, fast sites that explain what you sell and make it easy to get in touch</span>
                   </div>
                 </div>
                 <div class="module">
@@ -259,8 +268,8 @@
                     </svg>
                   </span>
                   <div class="module__body">
-                    <span class="module__label">Telegram bots</span>
-                    <span class="module__value">Lightweight customer channel when a full site isn’t in the budget: bookings, FAQs, menus, and alerts—right inside Telegram</span>
+                    <span id="offer-telegram-label" class="module__label">Telegram bots</span>
+                    <span id="offer-telegram-value" class="module__value">Lightweight customer channel when a full site isn’t in the budget: bookings, FAQs, menus, and alerts—right inside Telegram</span>
                   </div>
                 </div>
                 <div class="module">
@@ -271,8 +280,8 @@
                     </svg>
                   </span>
                   <div class="module__body">
-                    <span class="module__label">NFC for marketing</span>
-                    <span class="module__value">Tap-to-open campaigns: tags that launch your site, app, or offer—great for events, menus, and retail</span>
+                    <span id="offer-nfc-label" class="module__label">NFC for marketing</span>
+                    <span id="offer-nfc-value" class="module__value">Tap-to-open campaigns: tags that launch your site, app, or offer—great for events, menus, and retail</span>
                   </div>
                 </div>
                 <div class="module module--ai">
@@ -284,8 +293,8 @@
                     </svg>
                   </span>
                   <div class="module__body">
-                    <span class="module__label">AI Integration</span>
-                    <span class="module__value">Ship AI features safely: integration, UX, and developer workflow automation</span>
+                    <span id="offer-ai-label" class="module__label">AI Integration</span>
+                    <span id="offer-ai-value" class="module__value">Ship AI features safely: integration, UX, and developer workflow automation</span>
                   </div>
                 </div>
                 </div>
@@ -299,9 +308,9 @@
         <div class="container">
           <header class="section__header">
             <h2 class="section__title">
-              <span class="section__tag">02</span> Blog
+              <span class="section__tag">02</span> <span id="blog-title">Blog</span>
             </h2>
-            <p class="section__subtitle">
+            <p id="blog-subtitle" class="section__subtitle">
               Dispatchers, deep dives, and Android notes—from beginner-friendly to very nerdy.
             </p>
           </header>
@@ -309,7 +318,7 @@
           <div class="blog">
             <div class="panel panel--accent">
               <div class="blog__actions">
-                <a class="ghost-btn" href="./blog.html">Browse Blog Section</a>
+                <a id="blog-browse-btn" class="ghost-btn" href="./blog.html">Browse Blog Section</a>
                 <a class="ghost-btn" href="https://dispatchersdotplayground.hashnode.dev/rss.xml" target="_blank" rel="noreferrer">
                   RSS
                 </a>
@@ -331,10 +340,10 @@
         <div class="container">
           <header class="section__header">
             <h2 class="section__title">
-              <span class="section__tag">03</span> Selected Work
+              <span class="section__tag">03</span> <span id="work-title">Selected Work</span>
             </h2>
-            <p class="section__subtitle">
-              Much of my recent work is under NDA. Here are a few public-facing highlights.
+            <p id="work-subtitle" class="section__subtitle">
+            Much of my recent work is under NDA. Here are a few public-facing highlights.
             </p>
           </header>
       
@@ -346,7 +355,7 @@
                 <div class="card__lines" aria-hidden="true"></div>
               </div>
               <h3 class="card__title">MySugr Diabetes Logbook</h3>
-              <p class="card__desc">
+              <p id="work-mysugr-desc" class="card__desc">
                 Integrated Bluetooth-enabled insulin pumps into the app, enabling seamless synchronization of bolus doses with the digital logbook.
               </p>
               <div class="card__meta">
@@ -363,7 +372,7 @@
                 <div class="card__lines" aria-hidden="true"></div>
               </div>
               <h3 class="card__title">Mallya Insulin Pen SDK</h3>
-              <p class="card__desc">
+              <p id="work-mallya-desc" class="card__desc">
                 Developed a BLE SDK for insulin pen integration, implementing cryptographic protocols to securely transmit dose data to Android apps.
               </p>
               <div class="card__meta">
@@ -381,7 +390,7 @@
                 <div class="card__lines" aria-hidden="true"></div>
               </div>
               <h3 class="card__title">Belt</h3>
-              <p class="card__desc">
+              <p id="work-belt-desc" class="card__desc">
                 A Kotlin Multiplatform (KMP) app built as a modern alternative to Mozilla's Pocket, enabling cross-platform bookmarking and article saving.
               </p>
               <div class="card__meta">
@@ -399,7 +408,7 @@
                 <div class="card__lines" aria-hidden="true"></div>
               </div>
               <h3 class="card__title">Automotive UX Engineering</h3>
-              <p class="card__desc">
+              <p id="work-auto-desc" class="card__desc">
                 Tech lead for next-generation infotainment systems, focusing on UX design collaboration, theming tokenization, and UI tooling for premium vehicle brands.
               </p>
               <div class="card__meta">
@@ -416,7 +425,7 @@
                 <div class="card__lines" aria-hidden="true"></div>
               </div>
               <h3 class="card__title">Android Security Audits</h3>
-              <p class="card__desc">
+              <p id="work-security-desc" class="card__desc">
                 Identified and helped patch vulnerabilities in production APKs, including insecure IPC, cryptographic flaws, and improper permission handling.
               </p>
               <div class="card__meta">
@@ -433,7 +442,7 @@
                 <div class="card__lines" aria-hidden="true"></div>
               </div>
               <h3 class="card__title">Dispatcher’s Playground</h3>
-              <p class="card__desc">
+              <p id="work-blog-desc" class="card__desc">
                 Technical deep dives: Android patterns, tricky bugs, security curiosities, and lessons from the field.
               </p>
               <div class="card__meta">
@@ -450,9 +459,9 @@
         <div class="container">
           <header class="section__header">
             <h2 class="section__title">
-              <span class="section__tag">04</span> Do you have a project in mind?
+              <span class="section__tag">04</span> <span id="contact-title">Do you have a project in mind?</span>
             </h2>
-            <p class="section__subtitle">
+            <p id="contact-subtitle" class="section__subtitle">
               Android apps, security reviews, coaching, business websites, Telegram bots, and NFC campaigns. I’ll answer honestly about fit and scope—no overselling.
             </p>
           </header>
@@ -466,7 +475,7 @@
               data-formspree="https://formspree.io/f/mrejrlkr"
             >
               <div class="form-message form-message--success" id="form-msg-success" role="status" aria-live="polite" hidden>
-                <p>Thanks! Your message has been sent.</p>
+                <p id="form-msg-success-text">Thanks! Your message has been sent.</p>
               </div>
               <div class="form-message form-message--error" id="form-msg-error" role="alert" aria-live="assertive" hidden>
                 <p id="form-msg-error-text">Oops! Something went wrong. Please try again.</p>
@@ -474,23 +483,45 @@
 
               <div class="form__grid">
                 <label class="field">
-                  <span class="field__label">Name</span>
-                  <input class="field__input" name="name" autocomplete="name" placeholder="Your name" required />
+                  <span id="contact-name-label" class="field__label">Name</span>
+                  <input
+                    id="contact-name-input"
+                    class="field__input"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="Your name"
+                    required
+                  />
                   <span class="field__error" data-field-error="name" hidden></span>
                 </label>
                 <label class="field">
-                  <span class="field__label">Email</span>
-                  <input class="field__input" type="email" name="email" autocomplete="email" placeholder="you@domain.com" required />
+                  <span id="contact-email-label" class="field__label">Email</span>
+                  <input
+                    id="contact-email-input"
+                    class="field__input"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="you@domain.com"
+                    required
+                  />
                   <span class="field__error" data-field-error="email" hidden></span>
                 </label>
                 <label class="field field--full">
-                  <span class="field__label">Message</span>
-                  <textarea class="field__input field__input--area" name="message" rows="5" placeholder="Write your message..." required></textarea>
+                  <span id="contact-message-label" class="field__label">Message</span>
+                  <textarea
+                    id="contact-message-input"
+                    class="field__input field__input--area"
+                    name="message"
+                    rows="5"
+                    placeholder="Write your message..."
+                    required
+                  ></textarea>
                   <span class="field__error" data-field-error="message" hidden></span>
                 </label>
               </div>
               <button class="neon-btn neon-btn--submit" type="submit" id="form-submit-btn">
-                <span class="neon-btn__label">Send</span>
+                <span id="contact-send-btn-label" class="neon-btn__label">Send</span>
                 <span class="neon-btn__glow" aria-hidden="true"></span>
               </button>
             </form>
@@ -526,7 +557,7 @@
     <footer class="footer">
       <div class="container footer__inner">
         <span class="mono">© <span id="year"></span> apksherlock · Stavro Xhardha</span>
-        <a class="mono footer__top" href="#top" data-scroll>Back to top</a>
+        <a id="footer-back-to-top" class="mono footer__top" href="#top" data-scroll>Back to top</a>
       </div>
     </footer>
 

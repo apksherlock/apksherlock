@@ -1,8 +1,331 @@
-/* Minimal vanilla JS: smooth anchor scroll, reveal on scroll, parallax, glitch bursts */
+/* Minimal vanilla JS: i18n, smooth anchor scroll, reveal on scroll, parallax, glitch bursts */
 
 (() => {
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+  // --- Simple i18n: EN / DE (landing page only, blog stays EN) ---
+  const translations = {
+    en: {
+      skip_to_content: "Skip to content",
+      nav_about: "About",
+      nav_blog: "Blog",
+      nav_work: "Work",
+      nav_hire: "Hire",
+      hero_subheading: "Android Engineer",
+      hero_enter: "Enter",
+      hero_read_blog: "Read Blog",
+      hero_chip_mode_label: "Mode",
+      hero_chip_mode_value: "Android",
+      hero_chip_stack_label: "Stack",
+      hero_chip_stack_value: "Mobile",
+      hero_chip_status_label: "Status",
+      hero_chip_status_value: "Open to Hire",
+      hero_scroll_hint: "SCROLL",
+
+      about_title: "About Me",
+      about_subtitle:
+        "Android engineering, integrations, and security—with a straight list of what I can take on below.",
+      about_p1:
+        "I’m an Android engineer. Most of my work has been shipping production apps and integrations: phones, smart accessories, in-vehicle systems, and third-party services: where complex UI has to hold up in real daily use.",
+      about_p2:
+        "Today a large share of my time is Android Automotive: infotainment UX, theming, and tooling for a major global OEM. I also run Android app security reviews and document what I learn on my blog.",
+      about_p3: "Check below what I concretely offer for you.",
+      offer_title: "What I offer",
+
+      offer_mobile_label: "Mobile Apps",
+      offer_mobile_value: "Native Android or Multiplatform mobile solutions (Android + iOS)",
+      offer_security_label: "Security Audit",
+      offer_security_value: "Android app security review, risk notes, and practical fixes",
+      offer_coaching_label: "Coaching",
+      offer_coaching_value: "Upskill developers and teams transitioning to Android",
+      offer_play_label: "Play Store shipping",
+      offer_play_value: "Shipping your app to production can be a challenge; I can help you get it live",
+      offer_web_label: "Business websites",
+      offer_web_value: "Clear, fast sites that explain what you sell and make it easy to get in touch",
+      offer_telegram_label: "Telegram bots",
+      offer_telegram_value:
+        "Lightweight customer channel when a full site isn’t in the budget: bookings, FAQs, menus, and alerts—right inside Telegram",
+      offer_nfc_label: "NFC for marketing",
+      offer_nfc_value:
+        "Tap-to-open campaigns: tags that launch your site, app, or offer—great for events, menus, and retail",
+      offer_ai_label: "AI Integration",
+      offer_ai_value: "Ship AI features safely: integration, UX, and developer workflow automation",
+
+      blog_title: "Blog",
+      blog_subtitle: "Dispatchers, deep dives, and Android notes—from beginner-friendly to very nerdy.",
+      blog_browse_btn: "Browse Blog Section",
+
+      work_title: "Selected Work",
+      work_subtitle: "Much of my recent work is under NDA. Here are a few public-facing highlights.",
+      work_card_mysugr_desc:
+        "Integrated Bluetooth-enabled insulin pumps into the app, enabling seamless synchronization of bolus doses with the digital logbook.",
+      work_card_mallya_desc:
+        "Developed a BLE SDK for insulin pen integration, implementing cryptographic protocols to securely transmit dose data to Android apps.",
+      work_card_belt_desc:
+        "A Kotlin Multiplatform (KMP) app built as a modern alternative to Mozilla's Pocket, enabling cross-platform bookmarking and article saving.",
+      work_card_auto_desc:
+        "Tech lead for next-generation infotainment systems, focusing on UX design collaboration, theming tokenization, and UI tooling for premium vehicle brands.",
+      work_card_security_desc:
+        "Identified and helped patch vulnerabilities in production APKs, including insecure IPC, cryptographic flaws, and improper permission handling.",
+      work_card_blog_desc:
+        "Technical deep dives: Android patterns, tricky bugs, security curiosities, and lessons from the field.",
+
+      contact_title: "Do you have a project in mind?",
+      contact_subtitle:
+        "Android apps, security reviews, coaching, business websites, Telegram bots, and NFC campaigns. I’ll answer honestly about fit and scope—no overselling.",
+      contact_name_label: "Name",
+      contact_name_placeholder: "Your name",
+      contact_email_label: "Email",
+      contact_email_placeholder: "you@domain.com",
+      contact_message_label: "Message",
+      contact_message_placeholder: "Write your message...",
+      contact_send_button: "Send",
+      contact_form_success: "Thanks! Your message has been sent.",
+      contact_form_error_generic: "Oops! Something went wrong. Please try again.",
+      contact_form_error_network: "Network error. Check your connection and try again.",
+      contact_form_error_fallback:
+        "Could not send your message. Check the fields and try again.",
+      footer_back_to_top: "Back to top"
+    },
+    de: {
+      skip_to_content: "Zum Inhalt springen",
+      nav_about: "Über mich",
+      nav_blog: "Blog",
+      nav_work: "Arbeit",
+      nav_hire: "Anfragen",
+      hero_subheading: "Android-Entwickler",
+      hero_enter: "Eintreten",
+      hero_read_blog: "Blog lesen",
+      hero_chip_mode_label: "Modus",
+      hero_chip_mode_value: "Android",
+      hero_chip_stack_label: "Stack",
+      hero_chip_stack_value: "Mobile",
+      hero_chip_status_label: "Status",
+      hero_chip_status_value: "Verfügbar für Projekte",
+      hero_scroll_hint: "SCROLLEN",
+
+      about_title: "Über mich",
+      about_subtitle:
+        "Android-Entwicklung, Integrationen und Sicherheit – mit einer klaren Liste, was ich konkret für Sie übernehmen kann.",
+      about_p1:
+        "Ich bin Android-Entwickler. Ein Großteil meiner Arbeit liegt in produktiven Apps und Integrationen: Smartphones, smarte Accessoires, In‑Vehicle‑Systeme und Drittanbieter‑Dienste – überall dort, wo komplexe Oberflächen im Alltag zuverlässig funktionieren müssen.",
+      about_p2:
+        "Aktuell arbeite ich viel an Android Automotive: Infotainment‑UX, Themes und Tooling für einen großen internationalen Automobilhersteller. Zusätzlich führe ich Sicherheitsreviews für Android‑Apps durch und dokumentiere meine Erkenntnisse im Blog.",
+      about_p3: "Unten sehen Sie, was ich Ihnen ganz konkret anbiete.",
+      offer_title: "Was ich anbiete",
+
+      offer_mobile_label: "Mobile Apps",
+      offer_mobile_value:
+        "Native Android‑Apps oder Multiplattform‑Lösungen (Android + iOS)",
+      offer_security_label: "Security Audit",
+      offer_security_value:
+        "Sicherheitsprüfung Ihrer Android‑App, Risikobewertung und praxisnahe Empfehlungen",
+      offer_coaching_label: "Coaching",
+      offer_coaching_value:
+        "Weiterbildung für Entwickler:innen und Teams, die in Android einsteigen oder umsteigen",
+      offer_play_label: "Play-Store-Launch",
+      offer_play_value:
+        "Der Weg in den Play Store ist oft holprig – ich begleite Ihre App zuverlässig bis zur Veröffentlichung",
+      offer_web_label: "Business-Websites",
+      offer_web_value:
+        "Schnelle, klare Websites, die Ihr Angebot verständlich machen und Kontaktaufnahmen einfach machen",
+      offer_telegram_label: "Telegram-Bots",
+      offer_telegram_value:
+        "Leichter Kundenkanal, wenn ein kompletter Webauftritt noch zu groß ist: Buchungen, FAQs, Speisekarten und Benachrichtigungen direkt in Telegram",
+      offer_nfc_label: "NFC für Marketing",
+      offer_nfc_value:
+        "Tap‑to‑Open‑Kampagnen: Tags, die Ihre Website, App oder ein Angebot starten – ideal für Events, Speisekarten und den Handel",
+      offer_ai_label: "KI-Integration",
+      offer_ai_value:
+        "Sichere Einführung von KI‑Features: Integration, UX‑Konzept und Automatisierung für Entwickler‑Workflows",
+
+      blog_title: "Blog",
+      blog_subtitle:
+        "Dispatchers, Deep Dives und Android‑Notizen – von einsteigerfreundlich bis sehr nerdig (auf Englisch).",
+      blog_browse_btn: "Blog‑Bereich öffnen",
+
+      work_title: "Ausgewählte Arbeiten",
+      work_subtitle:
+        "Viele aktuelle Projekte unterliegen einer NDA. Hier einige öffentlich sichtbare Highlights.",
+      work_card_mysugr_desc:
+        "Bluetooth‑fähige Insulinpumpen in die App integriert, damit Bolus‑Daten nahtlos im digitalen Tagebuch landen.",
+      work_card_mallya_desc:
+        "Ein BLE‑SDK für Insulinpens entwickelt, inklusive kryptografischer Protokolle zur sicheren Übertragung der Dosen an Android‑Apps.",
+      work_card_belt_desc:
+        "Eine Kotlin‑Multiplattform‑App als moderne Alternative zu Mozillas Pocket – für plattformübergreifendes Speichern von Artikeln und Links.",
+      work_card_auto_desc:
+        "Tech Lead für die nächste Generation von Infotainment‑Systemen – mit Fokus auf UX‑Zusammenarbeit, Theme‑Token und UI‑Tooling für Premiummarken.",
+      work_card_security_desc:
+        "Schwachstellen in produktiven APKs identifiziert und deren Behebung begleitet, u. a. bei unsicherem IPC, Kryptofehlern und fehlerhaften Berechtigungen.",
+      work_card_blog_desc:
+        "Technische Deep Dives: Android‑Patterns, knifflige Bugs, Security‑Kuriositäten und Erfahrungsberichte aus Projekten.",
+
+      contact_title: "Haben Sie ein Projekt im Kopf?",
+      contact_subtitle:
+        "Android‑Apps, Sicherheitsreviews, Coaching, Business‑Websites, Telegram‑Bots und NFC‑Kampagnen. Ich gebe Ihnen eine ehrliche Einschätzung zu Passung und Umfang – ohne Verkaufsdruck.",
+      contact_name_label: "Name",
+      contact_name_placeholder: "Ihr Name",
+      contact_email_label: "E‑Mail",
+      contact_email_placeholder: "sie@unternehmen.de",
+      contact_message_label: "Nachricht",
+      contact_message_placeholder: "Ihre Nachricht …",
+      contact_send_button: "Senden",
+      contact_form_success: "Danke! Ihre Nachricht wurde verschickt.",
+      contact_form_error_generic: "Ups! Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+      contact_form_error_network:
+        "Netzwerkfehler. Bitte Verbindung prüfen und erneut versuchen.",
+      contact_form_error_fallback:
+        "Ihre Nachricht konnte nicht gesendet werden. Prüfen Sie die Felder und versuchen Sie es erneut.",
+      footer_back_to_top: "Zurück nach oben"
+    }
+  };
+
+  const getInitialLang = () => {
+    const stored = window.localStorage?.getItem("apksherlock-lang");
+    if (stored === "de" || stored === "en") return stored;
+    const navLang = navigator.language || navigator.userLanguage || "";
+    return navLang.toLowerCase().startsWith("de") ? "de" : "en";
+  };
+
+  let currentLang = getInitialLang();
+
+  const t = (key) => {
+    const langSet = translations[currentLang] || translations.en;
+    return langSet[key] ?? translations.en[key] ?? key;
+  };
+
+  const setDocumentLang = (lang) => {
+    const code = lang === "de" ? "de" : "en";
+    document.documentElement.lang = code;
+  };
+
+  const updateLangToggles = () => {
+    $$("[data-lang-switch]").forEach((btn) => {
+      const val = btn.getAttribute("data-lang-switch");
+      btn.classList.toggle("is-active", val === currentLang);
+      btn.setAttribute("aria-pressed", val === currentLang ? "true" : "false");
+    });
+  };
+
+  const applyTranslations = () => {
+    setDocumentLang(currentLang);
+    updateLangToggles();
+
+    const setText = (sel, key, root) => {
+      const el = typeof sel === "string" ? $(sel, root) : sel;
+      if (!el) return;
+      el.textContent = t(key);
+    };
+
+    const setAttr = (sel, attr, key, root) => {
+      const el = typeof sel === "string" ? $(sel, root) : sel;
+      if (!el) return;
+      el.setAttribute(attr, t(key));
+    };
+
+    // Top-level / hero
+    setText("#skip-link", "skip_to_content");
+    setText("#nav-about", "nav_about");
+    setText("#nav-blog", "nav_blog");
+    setText("#nav-work", "nav_work");
+    setText("#nav-hire", "nav_hire");
+
+    setText("#hero-subheading", "hero_subheading");
+    setText("#hero-enter", "hero_enter");
+    setText("#hero-read-blog", "hero_read_blog");
+
+    setText("#chip-mode-label", "hero_chip_mode_label");
+    setText("#chip-mode-value", "hero_chip_mode_value");
+    setText("#chip-stack-label", "hero_chip_stack_label");
+    setText("#chip-stack-value", "hero_chip_stack_value");
+    setText("#chip-status-label", "hero_chip_status_label");
+    setText("#chip-status-value", "hero_chip_status_value");
+
+    setText("#hero-scroll-hint", "hero_scroll_hint");
+
+    // About / offer
+    setText("#about-title", "about_title");
+    setText("#about-subtitle", "about_subtitle");
+    setText("#about-p1", "about_p1");
+    setText("#about-p2", "about_p2");
+    setText("#about-p3", "about_p3");
+    setText("#offer-title", "offer_title");
+
+    setText("#offer-mobile-label", "offer_mobile_label");
+    setText("#offer-mobile-value", "offer_mobile_value");
+    setText("#offer-security-label", "offer_security_label");
+    setText("#offer-security-value", "offer_security_value");
+    setText("#offer-coaching-label", "offer_coaching_label");
+    setText("#offer-coaching-value", "offer_coaching_value");
+    setText("#offer-play-label", "offer_play_label");
+    setText("#offer-play-value", "offer_play_value");
+    setText("#offer-web-label", "offer_web_label");
+    setText("#offer-web-value", "offer_web_value");
+    setText("#offer-telegram-label", "offer_telegram_label");
+    setText("#offer-telegram-value", "offer_telegram_value");
+    setText("#offer-nfc-label", "offer_nfc_label");
+    setText("#offer-nfc-value", "offer_nfc_value");
+    setText("#offer-ai-label", "offer_ai_label");
+    setText("#offer-ai-value", "offer_ai_value");
+
+    // Blog (only static shell; actual posts stay EN from Hashnode)
+    setText("#blog-title", "blog_title");
+    setText("#blog-subtitle", "blog_subtitle");
+    setText("#blog-browse-btn", "blog_browse_btn");
+
+    // Work
+    setText("#work-title", "work_title");
+    setText("#work-subtitle", "work_subtitle");
+    setText("#work-mysugr-desc", "work_card_mysugr_desc");
+    setText("#work-mallya-desc", "work_card_mallya_desc");
+    setText("#work-belt-desc", "work_card_belt_desc");
+    setText("#work-auto-desc", "work_card_auto_desc");
+    setText("#work-security-desc", "work_card_security_desc");
+    setText("#work-blog-desc", "work_card_blog_desc");
+
+    // Contact
+    setText("#contact-title", "contact_title");
+    setText("#contact-subtitle", "contact_subtitle");
+
+    setText("#contact-name-label", "contact_name_label");
+    setAttr("#contact-name-input", "placeholder", "contact_name_placeholder");
+    setText("#contact-email-label", "contact_email_label");
+    setAttr("#contact-email-input", "placeholder", "contact_email_placeholder");
+    setText("#contact-message-label", "contact_message_label");
+    setAttr("#contact-message-input", "placeholder", "contact_message_placeholder");
+    setText("#contact-send-btn-label", "contact_send_button");
+
+    setText("#form-msg-success-text", "contact_form_success");
+    setText("#form-msg-error-text", "contact_form_error_generic");
+
+    // Footer
+    setText("#footer-back-to-top", "footer_back_to_top");
+  };
+
+  const setLanguage = (lang) => {
+    const next = lang === "de" ? "de" : "en";
+    if (next === currentLang) return;
+    currentLang = next;
+    try {
+      window.localStorage?.setItem("apksherlock-lang", currentLang);
+    } catch {
+      // ignore
+    }
+    applyTranslations();
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    $$("[data-lang-switch]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const val = btn.getAttribute("data-lang-switch");
+        if (!val) return;
+        setLanguage(val);
+      });
+    });
+
+    applyTranslations();
+  });
 
   // Footer year
   const yearEl = $("#year");
@@ -44,7 +367,7 @@
   );
   revealEls.forEach((el) => io.observe(el));
 
-  // Blog: load latest posts from Hashnode (GraphQL)
+  // Blog: load latest posts from Hashnode (GraphQL). Always English per blog settings.
   const blogHost = "dispatchersdotplayground.hashnode.dev";
   const blogStatus = $("#blog-status");
   const blogPosts = $("#blog-posts");
@@ -291,7 +614,8 @@
           showSuccess();
         }
       } catch {
-        showError("Network error. Check your connection and try again.");
+        // Use i18n-aware message if available
+        showError(t("contact_form_error_network"));
       } finally {
         if (submitBtn) submitBtn.disabled = false;
       }

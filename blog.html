@@ -70,7 +70,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="blog-page">
-    <a class="skip-link" href="#article-root">Skip to article</a>
+    <a id="skip-link" class="skip-link" href="#article-root">Skip to article</a>
 
     <header class="site-header site-header--reader">
       <button
@@ -89,10 +89,19 @@
           <span class="nav__name nav__name--site">apksherlock</span>
         </a>
         <div class="nav__links">
-          <a href="./index.html#about">About</a>
-          <a href="./index.html#blog">Blog</a>
-          <a href="./index.html#work">Work</a>
-          <a href="./index.html#contact">Hire</a>
+          <a id="nav-about" href="./index.html#about">About</a>
+          <a id="nav-blog" href="./index.html#blog">Blog</a>
+          <a id="nav-work" href="./index.html#work">Work</a>
+          <a id="nav-hire" href="./index.html#contact">Hire</a>
+        </div>
+        <div class="nav__lang" aria-label="Language switch">
+          <button type="button" class="nav__lang-btn is-active" data-lang-switch="en" aria-pressed="true">
+            EN
+          </button>
+          <span class="nav__lang-sep">/</span>
+          <button type="button" class="nav__lang-btn" data-lang-switch="de" aria-pressed="false">
+            DE
+          </button>
         </div>
       </nav>
     </header>

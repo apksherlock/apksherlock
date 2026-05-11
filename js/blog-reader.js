@@ -20,6 +20,9 @@
   const hashnodeLink = $("#reader-hashnode-link");
   const searchInput = $("#reader-search");
   const searchClear = $("#reader-search-clear");
+  const drawerBackdrop = $("#reader-drawer-backdrop");
+  const menuToggle = $("#reader-menu-toggle");
+  const mqDrawer = window.matchMedia("(max-width: 900px)");
 
   let listCursor = null;
   let listHasNext = false;
@@ -354,12 +357,71 @@
     }
   };
 
+  const setDrawerOpen = (open) => {
+    if (!mqDrawer.matches) {
+      document.body.classList.remove("is-drawer-open");
+      if (drawerBackdrop) {
+        drawerBackdrop.setAttribute("aria-hidden", "true");
+      }
+      if (menuToggle) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open post list");
+      }
+      return;
+    }
+    document.body.classList.toggle("is-drawer-open", open);
+    if (drawerBackdrop) {
+      drawerBackdrop.setAttribute("aria-hidden", open ? "false" : "true");
+    }
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      menuToggle.setAttribute("aria-label", open ? "Close post list" : "Open post list");
+    }
+  };
+
   const onRoute = () => {
     const slug = slugFromHash();
+    setDrawerOpen(false);
     loadArticle(slug);
   };
 
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      const next = !document.body.classList.contains("is-drawer-open");
+      setDrawerOpen(next);
+    });
+  }
+  if (drawerBackdrop) {
+    drawerBackdrop.addEventListener("click", () => setDrawerOpen(false));
+  }
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setDrawerOpen(false);
+  });
+  const onMqDrawerChange = () => setDrawerOpen(false);
+  if (mqDrawer.addEventListener) mqDrawer.addEventListener("change", onMqDrawerChange);
+  else if (mqDrawer.addListener) mqDrawer.addListener(onMqDrawerChange);
+  if (listEl) {
+    listEl.addEventListener("click", (e) => {
+      if (!mqDrawer.matches) return;
+      const a = e.target.closest("a");
+      if (a && listEl.contains(a)) setDrawerOpen(false);
+    });
+  }
+
   window.addEventListener("hashchange", onRoute);
+
+  const readerHeader = document.querySelector(".site-header--reader");
+  const syncReaderHeaderHeight = () => {
+    if (!readerHeader) return;
+    const h = readerHeader.offsetHeight;
+    document.body.style.setProperty("--reader-header-h", `${h}px`);
+  };
+  syncReaderHeaderHeight();
+  window.addEventListener("resize", syncReaderHeaderHeight);
+  if (window.ResizeObserver && readerHeader) {
+    const ro = new ResizeObserver(syncReaderHeaderHeight);
+    ro.observe(readerHeader);
+  }
 
   onRoute();
   loadInitialList();

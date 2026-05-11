@@ -73,6 +73,16 @@
     <a class="skip-link" href="#article-root">Skip to article</a>
 
     <header class="site-header site-header--reader">
+      <button
+        type="button"
+        class="blog-reader__drawerToggle"
+        id="reader-menu-toggle"
+        aria-controls="reader-drawer"
+        aria-expanded="false"
+        aria-label="Open post list"
+      >
+        <span class="blog-reader__drawerToggleBars" aria-hidden="true"></span>
+      </button>
       <nav class="nav nav--site" aria-label="Primary">
         <a class="nav__brand" href="./index.html">
           <span class="nav__sigil" aria-hidden="true">◆</span>
@@ -89,7 +99,7 @@
     </header>
 
     <div class="blog-reader container">
-      <aside class="blog-reader__sidebar panel" aria-label="Post list">
+      <aside class="blog-reader__sidebar panel" id="reader-drawer" aria-label="Post list">
         <header class="blog-reader__intro">
           <h1 class="blog-reader__title">Reader</h1>
           <p class="blog-reader__byline mono">Stavro Xhardha</p>
@@ -144,7 +154,7 @@
             <p class="blog-reader__emptyLead">Use <strong>Search</strong> in the list, then click a title.</p>
             <p class="blog-reader__emptyHint blog-reader__emptyHint--wide">
               <span class="blog-reader__emptyDesktop">The list is in the column on the left.</span>
-              <span class="blog-reader__emptyMobile">The list is above this panel on smaller screens.</span>
+              <span class="blog-reader__emptyMobile">Tap the menu button in the header to open the post list.</span>
             </p>
           </div>
           <p class="blog-reader__loading mono" id="reader-loading" hidden>Loading article…</p>
@@ -152,6 +162,7 @@
           <article class="blog-prose" id="article-root" hidden></article>
         </div>
       </main>
+      <div class="blog-reader__backdrop" id="reader-drawer-backdrop" aria-hidden="true"></div>
     </div>
 
     <footer class="footer">

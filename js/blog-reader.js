@@ -216,6 +216,17 @@
     });
   }
 
+  const wrapProseTables = (root) => {
+    if (!root?.querySelectorAll) return;
+    root.querySelectorAll("table").forEach((table) => {
+      if (table.closest(".blog-prose__tableWrap")) return;
+      const tw = document.createElement("div");
+      tw.className = "blog-prose__tableWrap";
+      table.parentNode.insertBefore(tw, table);
+      tw.appendChild(table);
+    });
+  };
+
   const renderMarkdown = (markdown) => {
     const md = typeof markdown === "string" ? markdown : "";
     if (typeof marked === "undefined" || typeof DOMPurify === "undefined") {
@@ -332,6 +343,7 @@
       meta.textContent = bits.join(" · ");
       if (bits.length) header.append(meta);
 
+      wrapProseTables(bodyNode);
       articleRoot.append(header, bodyNode);
       document.title = `${post.title || "Post"} — Reader · apksherlock`;
       showArticleShell("article");

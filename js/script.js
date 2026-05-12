@@ -10,8 +10,10 @@
       skip_to_content: "Skip to content",
       nav_about: "About",
       nav_blog: "Blog",
+      nav_publications: "Read publications",
       nav_work: "Work",
       nav_hire: "Hire",
+      links_publications_aria: "Publications — Dispatcher’s Playground on Hashnode",
       hero_subheading: "Android Engineer",
       hero_enter: "Enter",
       hero_read_blog: "Read Blog",
@@ -54,7 +56,9 @@
 
       blog_title: "Blog",
       blog_subtitle: "Dispatchers, deep dives, and Android notes—from beginner-friendly to very nerdy.",
-      blog_browse_btn: "Browse Blog Section",
+      blog_cta_lead:
+        "Articles are published on Dispatcher’s Playground (Hashnode). Open the site to read the latest posts.",
+      blog_open_btn: "Open blog on Hashnode",
 
       work_title: "Selected Work",
       work_subtitle: "Much of my recent work is under NDA. Here are a few public-facing highlights.",
@@ -92,8 +96,10 @@
       skip_to_content: "Zum Inhalt springen",
       nav_about: "Über mich",
       nav_blog: "Blog",
+      nav_publications: "Publikationen lesen",
       nav_work: "Arbeit",
       nav_hire: "Anfragen",
+      links_publications_aria: "Publikationen — Dispatcher’s Playground auf Hashnode",
       hero_subheading: "Android-Entwickler",
       hero_enter: "Eintreten",
       hero_read_blog: "Blog lesen",
@@ -143,7 +149,9 @@
       blog_title: "Blog",
       blog_subtitle:
         "Dispatchers, Deep Dives und Android‑Notizen – von einsteigerfreundlich bis sehr nerdig (auf Englisch).",
-      blog_browse_btn: "Blog‑Bereich öffnen",
+      blog_cta_lead:
+        "Die Artikel erscheinen auf Dispatcher’s Playground (Hashnode). Dort finden Sie die aktuellen Beiträge.",
+      blog_open_btn: "Blog auf Hashnode öffnen",
 
       work_title: "Ausgewählte Arbeiten",
       work_subtitle:
@@ -228,8 +236,10 @@
     setText("#skip-link", "skip_to_content");
     setText("#nav-about", "nav_about");
     setText("#nav-blog", "nav_blog");
+    setText("#nav-publications", "nav_publications");
     setText("#nav-work", "nav_work");
     setText("#nav-hire", "nav_hire");
+    setAttr("#links-publications", "aria-label", "links_publications_aria");
 
     setText("#hero-subheading", "hero_subheading");
     setText("#hero-enter", "hero_enter");
@@ -269,10 +279,11 @@
     setText("#offer-ai-label", "offer_ai_label");
     setText("#offer-ai-value", "offer_ai_value");
 
-    // Blog (only static shell; actual posts stay EN from Hashnode)
+    // Blog (links out to Hashnode; posts are English on the publication)
     setText("#blog-title", "blog_title");
     setText("#blog-subtitle", "blog_subtitle");
-    setText("#blog-browse-btn", "blog_browse_btn");
+    setText("#blog-cta-lead", "blog_cta_lead");
+    setText("#blog-open-label", "blog_open_btn");
 
     // Work
     setText("#work-title", "work_title");
@@ -366,111 +377,6 @@
     { threshold: 0.12 }
   );
   revealEls.forEach((el) => io.observe(el));
-
-  // Blog: load latest posts from Hashnode (GraphQL). Always English per blog settings.
-  const blogHost = "dispatchersdotplayground.hashnode.dev";
-  const blogStatus = $("#blog-status");
-  const blogPosts = $("#blog-posts");
-
-  const setBlogStatus = (text) => {
-    if (!blogStatus) return;
-    blogStatus.textContent = text;
-  };
-
-  const escapeHtml = (str) =>
-    String(str)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-
-  const fmtDate = (iso) => {
-    const d = new Date(iso);
-    if (Number.isNaN(d.getTime())) return "";
-    return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
-  };
-
-  const renderPosts = (posts) => {
-    if (!blogPosts) return;
-    if (!posts.length) {
-      setBlogStatus("No posts found yet.");
-      return;
-    }
-
-    blogPosts.innerHTML = posts
-      .map((p) => {
-        const title = escapeHtml(p.title || "Untitled");
-        const brief = escapeHtml(p.brief || "");
-        const rawSlug = p.slug || "";
-        const readerHref = rawSlug ? `./blog.html#${encodeURIComponent(rawSlug)}` : `https://${blogHost}/`;
-        const slugPath = String(rawSlug)
-          .replace(/^\/+/, "")
-          .split("/")
-          .filter(Boolean)
-          .map((seg) => encodeURIComponent(seg))
-          .join("/");
-        const hashnodeHref = slugPath ? `https://${blogHost}/${slugPath}` : `https://${blogHost}/`;
-        const date = fmtDate(p.publishedAt);
-        return `
-          <article class="blog-card" role="listitem">
-            <div class="blog-card__top">
-              <span class="blog-card__date mono">${escapeHtml(date)}</span>
-              <span class="blog-card__badge">ANDROID</span>
-            </div>
-            <h3 class="blog-card__title">${title}</h3>
-            <p class="blog-card__desc">${brief}</p>
-            <div class="blog-card__links">
-              <a class="blog-card__link mono" href="${readerHref}">Read here →</a>
-              <a class="blog-card__link blog-card__link--ghost mono" href="${hashnodeHref}" target="_blank" rel="noreferrer">Hashnode</a>
-            </div>
-          </article>
-        `;
-      })
-      .join("");
-
-    setBlogStatus("Latest posts");
-  };
-
-  const loadBlogPosts = async () => {
-    if (!blogPosts) return;
-    try {
-      const res = await fetch("https://gql.hashnode.com", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          query: `
-            query PublicationPosts($host: String!) {
-              publication(host: $host) {
-                posts(first: 6) {
-                  edges {
-                    node {
-                      title
-                      brief
-                      slug
-                      publishedAt
-                    }
-                  }
-                }
-              }
-            }
-          `,
-          variables: { host: blogHost }
-        })
-      });
-
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const json = await res.json();
-      const edges = json?.data?.publication?.posts?.edges ?? [];
-      const posts = edges.map((e) => e?.node).filter(Boolean);
-      renderPosts(posts);
-    } catch (err) {
-      setBlogStatus("Couldn’t load posts here. Use “Open Blog” above.");
-      if (blogPosts) blogPosts.innerHTML = "";
-    }
-  };
-
-  loadBlogPosts();
 
   // Hero parallax (very subtle)
   const heroBg = $("#hero-bg");

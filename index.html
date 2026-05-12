@@ -40,7 +40,7 @@
         "@type": "WebSite",
         "name": "apksherlock",
         "url": "https://apksherlock.github.io/apksherlock/",
-        "description": "Android engineering by Stavro Xhardha — portfolio, blog reader, and contact.",
+        "description": "Android engineering by Stavro Xhardha — portfolio, blog on Hashnode, and contact.",
         "inLanguage": "en",
         "author": {
           "@type": "Person",
@@ -96,6 +96,12 @@
         <div class="nav__links">
           <a id="nav-about" href="#about" data-scroll>About</a>
           <a id="nav-blog" href="#blog" data-scroll>Blog</a>
+          <a
+            id="nav-publications"
+            href="https://dispatchersdotplayground.hashnode.dev/"
+            target="_blank"
+            rel="noreferrer"
+            >Read publications</a>
           <a id="nav-work" href="#work" data-scroll>Work</a>
           <a id="nav-hire" href="#contact" data-scroll>Hire</a>
         </div>
@@ -317,20 +323,30 @@
 
           <div class="blog">
             <div class="panel panel--accent">
+              <p class="blog__lead" id="blog-cta-lead">
+                Articles are published on Dispatcher’s Playground (Hashnode). Open the site to read the latest posts.
+              </p>
               <div class="blog__actions">
-                <a id="blog-browse-btn" class="ghost-btn" href="./blog.html">Browse Blog Section</a>
-                <a class="ghost-btn" href="https://dispatchersdotplayground.hashnode.dev/rss.xml" target="_blank" rel="noreferrer">
+                <a
+                  id="blog-open-btn"
+                  class="neon-btn"
+                  href="https://dispatchersdotplayground.hashnode.dev/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span id="blog-open-label" class="neon-btn__label">Open blog on Hashnode</span>
+                  <span class="neon-btn__glow" aria-hidden="true"></span>
+                </a>
+                <a
+                  class="ghost-btn"
+                  href="https://dispatchersdotplayground.hashnode.dev/rss.xml"
+                  target="_blank"
+                  rel="noreferrer"
+                  id="blog-rss-btn"
+                >
                   RSS
                 </a>
               </div>
-
-              <div class="divider" aria-hidden="true"></div>
-
-              <p class="mono blog__hint" id="blog-status">
-                Loading latest posts…
-              </p>
-
-              <div class="blog-grid" id="blog-posts" role="list" aria-label="Latest blog posts"></div>
             </div>
           </div>
         </div>
@@ -530,6 +546,17 @@
             <aside class="panel panel--accent">
               <h3 class="panel__title">Links</h3>
               <div class="social">
+                <a
+                  id="links-publications"
+                  class="social__link"
+                  href="https://dispatchersdotplayground.hashnode.dev/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Publications — Dispatcher’s Playground on Hashnode"
+                >
+                  <span class="social__icon" aria-hidden="true">◇</span>
+                  <span class="social__text mono">dispatchersdotplayground.hashnode.dev</span>
+                </a>
                 <a class="social__link" href="https://github.com/apksherlock" target="_blank" rel="noreferrer" aria-label="GitHub">
                   <span class="social__icon" aria-hidden="true">⌂</span>
                   <span class="social__text mono">github.com/apksherlock</span>

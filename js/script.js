@@ -33,6 +33,13 @@
       about_p2:
         "Today a large share of my time is Android Automotive: infotainment UX, theming, and tooling for a major global OEM. I also run Android app security reviews and document what I learn on my blog.",
       about_p3: "Check below what I concretely offer for you.",
+      featured_title: "Featured in",
+      featured_a2_text:
+        "Invited by A2 News (Albanian) for GDPR commentary on data privacy and Meta Threads.",
+      featured_quickbird_text:
+        "Article for QuickBird Studios while I worked there: Android MVI with Kotlin Coroutines & Flow.",
+      featured_youtube_text:
+        "Guest in a morning show (casual segment, not professional work).",
       offer_title: "What I offer",
 
       offer_mobile_label: "Mobile Apps",
@@ -119,6 +126,13 @@
       about_p2:
         "Aktuell arbeite ich viel an Android Automotive: Infotainment‑UX, Themes und Tooling für einen großen internationalen Automobilhersteller. Zusätzlich führe ich Sicherheitsreviews für Android‑Apps durch und dokumentiere meine Erkenntnisse im Blog.",
       about_p3: "Unten sehen Sie, was ich Ihnen ganz konkret anbiete.",
+      featured_title: "Erwähnungen & Medien",
+      featured_a2_text:
+        "Einladung von A2 News (Beitrag auf Albanisch) mit Kommentar zu DSGVO, Datenschutz und Meta Threads.",
+      featured_quickbird_text:
+        "Artikel für QuickBird Studios aus meiner Zeit dort: Android MVI mit Kotlin Coroutines & Flow.",
+      featured_youtube_text:
+        "Gast in einer Morgensendung (lockerer Beitrag, kein berufliches Projekt).",
       offer_title: "Was ich anbiete",
 
       offer_mobile_label: "Mobile Apps",
@@ -260,6 +274,10 @@
     setText("#about-p1", "about_p1");
     setText("#about-p2", "about_p2");
     setText("#about-p3", "about_p3");
+    setText("#featured-title", "featured_title");
+    setText("#featured-a2-text", "featured_a2_text");
+    setText("#featured-quickbird-text", "featured_quickbird_text");
+    setText("#featured-youtube-text", "featured_youtube_text");
     setText("#offer-title", "offer_title");
 
     setText("#offer-mobile-label", "offer_mobile_label");

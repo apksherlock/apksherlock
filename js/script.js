@@ -35,11 +35,11 @@
       about_p3: "Check below what I concretely offer for you.",
       featured_title: "Featured in",
       featured_a2_text:
-        "Invited by A2 News (Albanian) for GDPR commentary on data privacy and Meta Threads.",
+        "Invited by A2 CNN News (Albanian) for GDPR commentary on data privacy and Meta Threads.",
       featured_quickbird_text:
         "Article for QuickBird Studios while I worked there: Android MVI with Kotlin Coroutines & Flow.",
       featured_youtube_text:
-        "Guest in a morning show (casual segment, not professional work).",
+        "Guest in a morning show (Albanian only).",
       offer_title: "What I offer",
 
       offer_mobile_label: "Mobile Apps",
@@ -128,11 +128,11 @@
       about_p3: "Unten sehen Sie, was ich Ihnen ganz konkret anbiete.",
       featured_title: "Erwähnungen & Medien",
       featured_a2_text:
-        "Einladung von A2 News (Beitrag auf Albanisch) mit Kommentar zu DSGVO, Datenschutz und Meta Threads.",
+        "Einladung von A2 CNN News (Beitrag auf Albanisch) mit Kommentar zu DSGVO, Datenschutz und Meta Threads.",
       featured_quickbird_text:
         "Artikel für QuickBird Studios aus meiner Zeit dort: Android MVI mit Kotlin Coroutines & Flow.",
       featured_youtube_text:
-        "Gast in einer Morgensendung (lockerer Beitrag, kein berufliches Projekt).",
+        "Gast in einer Morgensendung (nur auf Albanisch).",
       offer_title: "Was ich anbiete",
 
       offer_mobile_label: "Mobile Apps",

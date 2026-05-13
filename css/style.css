@@ -6,6 +6,17 @@
   --bg2:#060103;
   --ink:#f7eef2;
   --muted:rgba(247,238,242,.74);
+  /* Type scale — clear steps so headlines read above body copy */
+  --type-section:clamp(1.5rem,1.05rem + 1.85vw,2.125rem);
+  --type-section-sub:clamp(1rem,0.9rem + 0.35vw,1.125rem);
+  --type-subhead:clamp(1.0625rem,0.98rem + 0.45vw,1.25rem);
+  --type-body:clamp(1rem,0.94rem + 0.22vw,1.0625rem);
+  --type-body-soft:rgba(240,232,236,.92);
+  /* Secondary copy: readable on dark bg without competing with headlines */
+  --type-caption:rgba(228,222,232,.88);
+  /* UI chrome / labels — avoid going under ~12px for legibility */
+  --type-ui:13px;
+  --type-ui-sm:12px;
   --cyan:#00f2ff;
   --pink:#ff3dc8;
   --purple:#c4125a;
@@ -38,9 +49,9 @@ body{
              linear-gradient(180deg,var(--bg2),var(--bg));
   color:var(--ink);
   font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  font-size:17px;
+  font-size:var(--type-body);
   font-weight:400;
-  line-height:1.6;
+  line-height:1.65;
   letter-spacing:.01em;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
@@ -179,16 +190,16 @@ a{color:inherit;text-decoration:none}
 }
 .nav__name{
   font-family:Orbitron,system-ui,sans-serif;
-  letter-spacing:.18em;
+  letter-spacing:.14em;
   font-weight:700;
-  font-size:12px;
-  opacity:.92;
+  font-size:var(--type-ui);
+  opacity:.94;
 }
 .nav__name--site{
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
   letter-spacing:.1em;
   font-weight:600;
-  font-size:14px;
+  font-size:15px;
   text-transform:lowercase;
   opacity:1;
 }
@@ -201,9 +212,9 @@ a{color:inherit;text-decoration:none}
 }
 .nav__links a{
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:12px;
-  letter-spacing:.08em;
-  opacity:.78;
+  font-size:var(--type-ui);
+  letter-spacing:.06em;
+  opacity:.9;
   padding:10px 10px;
   border-radius:12px;
   border:1px solid transparent;
@@ -225,22 +236,22 @@ a{color:inherit;text-decoration:none}
   margin-left:16px;
 }
 .nav__lang-sep{
-  opacity:.6;
+  opacity:.75;
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:11px;
+  font-size:var(--type-ui-sm);
 }
 .nav__lang-btn{
   padding:6px 10px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.14);
   background:rgba(0,0,0,.22);
-  color:rgba(233,230,255,.86);
+  color:rgba(240,236,248,.92);
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:11px;
-  letter-spacing:.14em;
+  font-size:var(--type-ui-sm);
+  letter-spacing:.1em;
   text-transform:uppercase;
   cursor:pointer;
-  opacity:.78;
+  opacity:.88;
   transition:opacity .16s ease,box-shadow .16s ease,border-color .16s ease,background .16s ease,transform .16s ease;
 }
 .nav__lang-btn.is-active{
@@ -358,9 +369,9 @@ a{color:inherit;text-decoration:none}
   align-items:center;
   gap:10px;
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:12px;
-  letter-spacing:.14em;
-  color:rgba(233,230,255,.78);
+  font-size:var(--type-ui);
+  letter-spacing:.1em;
+  color:rgba(238,234,246,.9);
   margin:0 0 18px;
   text-transform:uppercase;
 }
@@ -416,10 +427,11 @@ a{color:inherit;text-decoration:none}
 .subheading{
   margin:0 0 26px;
   max-width:52ch;
-  color:var(--muted);
-  font-size:clamp(17px,2.1vw,22px);
-  font-weight:400;
+  color:var(--type-caption);
+  font-size:clamp(1rem,0.92rem + 0.45vw,1.1875rem);
+  font-weight:500;
   line-height:1.55;
+  letter-spacing:.02em;
 }
 
 .hero__actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
@@ -441,9 +453,9 @@ a{color:inherit;text-decoration:none}
 }
 .neon-btn__label{
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  letter-spacing:.12em;
+  letter-spacing:.1em;
   text-transform:uppercase;
-  font-size:12px;
+  font-size:var(--type-ui-sm);
 }
 .neon-btn__glow{
   position:absolute;inset:-60% -30%;
@@ -475,8 +487,8 @@ a{color:inherit;text-decoration:none}
   color:rgba(255,228,232,.9);
   background:linear-gradient(180deg,rgba(90,8,22,.35),rgba(24,4,10,.5));
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:12px;
-  letter-spacing:.1em;
+  font-size:var(--type-ui-sm);
+  letter-spacing:.08em;
   text-transform:uppercase;
   transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
 }
@@ -504,16 +516,17 @@ a{color:inherit;text-decoration:none}
 }
 .chip__k{
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:11px;
-  opacity:.7;
-  letter-spacing:.12em;
+  font-size:var(--type-ui-sm);
+  opacity:.82;
+  letter-spacing:.1em;
   text-transform:uppercase;
+  color:rgba(216,220,230,.95);
 }
 .chip__v{
   font-family:Orbitron,system-ui,sans-serif;
-  font-size:12px;
-  letter-spacing:.08em;
-  color:rgba(233,230,255,.92);
+  font-size:var(--type-ui);
+  letter-spacing:.06em;
+  color:rgba(244,240,248,.96);
 }
 
 .scroll-hint{
@@ -535,8 +548,9 @@ a{color:inherit;text-decoration:none}
 }
 .scroll-hint__text{
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:10px;
-  letter-spacing:.22em;
+  font-size:var(--type-ui-sm);
+  letter-spacing:.12em;
+  color:rgba(236,232,242,.88);
 }
 
 /* SECTIONS */
@@ -548,21 +562,26 @@ a{color:inherit;text-decoration:none}
     radial-gradient(700px 320px at 50% 80%,rgba(0,242,255,.05),transparent 58%),
     linear-gradient(180deg,rgba(255,240,245,.025),rgba(255,255,255,0));
 }
-.section__header{margin-bottom:22px}
+.section__header{margin-bottom:clamp(28px,4vw,40px)}
 .section__title{
-  margin:0 0 8px;
+  margin:0 0 14px;
   font-family:Orbitron,system-ui,sans-serif;
-  font-weight:700;
-  letter-spacing:.06em;
-  font-size:clamp(20px,3.2vw,30px);
+  font-weight:800;
+  letter-spacing:.05em;
+  font-size:var(--type-section);
+  line-height:1.15;
+  color:rgba(255,248,250,.99);
+  text-shadow:0 0 40px rgba(233,28,60,.12);
 }
 .section__tag{
   display:inline-block;
   margin-right:10px;
+  vertical-align:middle;
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:12px;
-  letter-spacing:.14em;
-  padding:6px 10px;
+  font-size:var(--type-ui-sm);
+  font-weight:600;
+  letter-spacing:.12em;
+  padding:7px 11px;
   border-radius:12px;
   border:1px solid rgba(255,80,110,.35);
   color:rgba(255,200,210,.92);
@@ -570,10 +589,12 @@ a{color:inherit;text-decoration:none}
 }
 .section__subtitle{
   margin:0;
-  color:var(--muted);
+  color:var(--type-caption);
   max-width:62ch;
-  line-height:1.65;
-  font-size:clamp(16px,1.05rem + 0.35vw,18px);
+  line-height:1.7;
+  font-size:var(--type-section-sub);
+  font-weight:400;
+  letter-spacing:.01em;
 }
 
 .panel{
@@ -589,12 +610,13 @@ a{color:inherit;text-decoration:none}
   box-shadow:var(--shadow);
 }
 .panel__title{
-  margin:0 0 12px;
+  margin:0 0 14px;
   font-family:Orbitron,system-ui,sans-serif;
-  letter-spacing:.08em;
-  font-size:14px;
-  font-weight:700;
-  color:rgba(233,230,255,.92);
+  letter-spacing:.07em;
+  font-size:var(--type-subhead);
+  font-weight:800;
+  line-height:1.2;
+  color:rgba(255,248,252,.98);
 }
 
 .divider{
@@ -606,11 +628,11 @@ a{color:inherit;text-decoration:none}
 /* Long-form copy: same family as body, comfortable measure (labels still use Share Tech Mono in their rules) */
 .mono{
   font-family:"Source Sans 3",system-ui,sans-serif;
-  font-size:clamp(16px,0.95rem + 0.4vw,18px);
+  font-size:var(--type-body);
   font-weight:400;
-  line-height:1.68;
-  letter-spacing:.015em;
-  color:rgba(245,236,240,.9);
+  line-height:1.72;
+  letter-spacing:.012em;
+  color:var(--type-body-soft);
 }
 
 .about{
@@ -624,22 +646,29 @@ a{color:inherit;text-decoration:none}
   border-top:1px solid rgba(233,28,60,.14);
 }
 .about__offer-heading{
-  margin:0 0 16px;
+  margin:0 0 18px;
   font-family:Orbitron,system-ui,sans-serif;
-  font-weight:700;
-  letter-spacing:.06em;
-  font-size:clamp(20px,3vw,28px);
-  color:rgba(255,236,240,.98);
+  font-weight:800;
+  letter-spacing:.055em;
+  font-size:clamp(1.35rem,1.05rem + 1.25vw,1.85rem);
+  line-height:1.18;
+  color:rgba(255,248,250,.99);
   text-shadow:0 0 28px rgba(233,28,60,.22),0 0 42px rgba(255,55,190,.1);
 }
-.about__intro .mono + .mono{margin-top:12px}
+.about__intro .mono + .mono{margin-top:1.25em}
+.about__intro .mono:first-of-type{
+  font-size:clamp(1.03rem,0.96rem + 0.35vw,1.125rem);
+  font-weight:500;
+  color:rgba(248,240,244,.94);
+}
 .about__featured-heading{
-  margin:4px 0 6px;
+  margin:clamp(8px,1.5vw,14px) 0 12px;
   font-family:Orbitron,system-ui,sans-serif;
-  font-weight:700;
-  letter-spacing:.06em;
-  font-size:clamp(14px,2vw,17px);
-  color:rgba(255,236,240,.95);
+  font-weight:800;
+  letter-spacing:.055em;
+  font-size:var(--type-subhead);
+  line-height:1.25;
+  color:rgba(255,248,250,.98);
 }
 .featured__timeline{
   list-style:none;
@@ -651,7 +680,7 @@ a{color:inherit;text-decoration:none}
   gap:8px 10px;
   align-items:stretch;
   margin:0;
-  padding:0 0 5px;
+  padding:0 0 14px;
 }
 .featured__step:last-child{padding-bottom:0}
 .featured__marker{
@@ -685,15 +714,16 @@ a{color:inherit;text-decoration:none}
   flex-wrap:wrap;
   align-items:baseline;
   gap:0.25em 0.55em;
-  line-height:1.42;
-  font-size:clamp(14px,0.88rem + 0.35vw,16px);
-  color:rgba(245,236,240,.9);
+  line-height:1.62;
+  font-size:clamp(0.9375rem,0.88rem + 0.22vw,1.0625rem);
+  font-weight:400;
+  color:var(--type-body-soft);
 }
 .featured__link{
   display:inline;
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:0.82em;
-  letter-spacing:.04em;
+  font-size:0.9em;
+  letter-spacing:.03em;
   color:var(--cyan);
   text-decoration:underline;
   text-decoration-color:rgba(0,242,255,.35);
@@ -729,12 +759,21 @@ a{color:inherit;text-decoration:none}
 .module__label{
   display:block;
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:11px;
-  letter-spacing:.12em;
-  opacity:.75;
+  font-size:var(--type-ui-sm);
+  letter-spacing:.1em;
+  opacity:.85;
+  font-weight:600;
   text-transform:uppercase;
+  color:rgba(214,220,232,.95);
 }
-.module__value{display:block;margin-top:4px;color:rgba(233,230,255,.88)}
+.module__value{
+  display:block;
+  margin-top:6px;
+  font-size:var(--type-body);
+  line-height:1.62;
+  font-weight:500;
+  color:rgba(245,240,248,.93);
+}
 
 /* What I offer: larger, clearer type on small / laptop screens */
 .about__offer .modules--offer{
@@ -774,20 +813,21 @@ a{color:inherit;text-decoration:none}
   box-shadow:0 0 18px rgba(255,55,190,.12);
 }
 .about__offer .module__label{
-  font-size:12px;
-  letter-spacing:.08em;
-  opacity:.92;
+  font-size:var(--type-ui);
+  letter-spacing:.1em;
+  opacity:.88;
+  color:rgba(208,216,228,.95);
 }
 .about__offer .module__value{
-  margin-top:6px;
-  font-size:clamp(16px,1rem + 0.35vw,18px);
-  line-height:1.62;
+  margin-top:8px;
+  font-size:clamp(1rem,0.94rem + 0.28vw,1.0625rem);
+  line-height:1.65;
   font-weight:500;
-  color:rgba(245,236,250,.94);
+  color:rgba(248,242,248,.95);
 }
 @media (min-width:640px){
-  .about__offer .module__label{font-size:13px;letter-spacing:.07em}
-  .about__offer .module__value{font-size:clamp(16px,0.35rem + 1.1vw,18px)}
+  .about__offer .module__label{font-size:var(--type-ui);letter-spacing:.09em}
+  .about__offer .module__value{font-size:clamp(1rem,0.9rem + 0.45vw,1.0625rem)}
 }
 
 /* WORK grid */
@@ -811,9 +851,10 @@ a{color:inherit;text-decoration:none}
 .blog__lead{
   margin:0 0 18px;
   max-width:52ch;
-  line-height:1.68;
-  color:rgba(245,236,240,.88);
-  font-size:clamp(16px,1.05vw,18px);
+  line-height:1.72;
+  color:var(--type-body-soft);
+  font-size:var(--type-body);
+  font-weight:400;
 }
 .blog__actions{
   display:flex;
@@ -853,11 +894,11 @@ a{color:inherit;text-decoration:none}
   box-shadow:0 0 22px rgba(233,28,60,.14),0 0 40px rgba(255,55,190,.1);
 }
 .blog-card__top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
-.blog-card__date{opacity:.72;font-size:11px}
+.blog-card__date{opacity:.85;font-size:var(--type-ui-sm);color:rgba(220,216,228,.9)}
 .blog-card__badge{
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:11px;
-  letter-spacing:.16em;
+  font-size:var(--type-ui-sm);
+  letter-spacing:.12em;
   padding:6px 10px;
   border-radius:12px;
   border:1px solid rgba(255,44,237,.22);
@@ -868,13 +909,15 @@ a{color:inherit;text-decoration:none}
   margin:0 0 6px;
   font-family:Orbitron,system-ui,sans-serif;
   letter-spacing:.04em;
-  font-size:15px;
-  line-height:1.25;
+  font-size:clamp(1rem,0.92rem + 0.35vw,1.125rem);
+  line-height:1.28;
   overflow-wrap:anywhere;
 }
 .blog-card__desc{
   margin:0 0 10px;
-  color:rgba(233,230,255,.78);
+  color:rgba(222,216,230,.9);
+  font-size:var(--type-ui-sm);
+  line-height:1.65;
   overflow-wrap:anywhere;
 }
 .blog-card__link{
@@ -884,6 +927,9 @@ a{color:inherit;text-decoration:none}
   border:1px solid rgba(255,70,100,.28);
   color:rgba(255,235,240,.95);
   background:linear-gradient(180deg,rgba(233,28,60,.12),rgba(20,4,10,.4));
+  font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
+  font-size:var(--type-ui-sm);
+  letter-spacing:.04em;
   transition:box-shadow .18s ease,transform .18s ease,border-color .18s ease;
 }
 .blog-card__link:hover{
@@ -934,9 +980,9 @@ a{color:inherit;text-decoration:none}
 .card__top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;position:relative;z-index:1}
 .card__badge{
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:11px;
-  letter-spacing:.16em;
-  padding:6px 10px;
+  font-size:var(--type-ui-sm);
+  letter-spacing:.12em;
+  padding:7px 11px;
   border-radius:12px;
   border:1px solid rgba(255,70,100,.28);
   color:rgba(255,220,228,.92);
@@ -950,22 +996,34 @@ a{color:inherit;text-decoration:none}
 }
 .card__title{
   position:relative;z-index:1;
-  margin:0 0 8px;
+  margin:0 0 10px;
   font-family:Orbitron,system-ui,sans-serif;
-  letter-spacing:.05em;
-  font-size:18px;
+  letter-spacing:.04em;
+  font-size:clamp(1.0625rem,0.95rem + 0.55vw,1.3125rem);
+  font-weight:800;
+  line-height:1.22;
+  color:rgba(255,248,250,.98);
 }
-.card__desc{position:relative;z-index:1;margin:0 0 12px;color:rgba(233,230,255,.78);line-height:1.62}
+.card__desc{
+  position:relative;
+  z-index:1;
+  margin:0 0 12px;
+  font-size:clamp(0.9375rem,0.86rem + 0.25vw,1.0625rem);
+  font-weight:400;
+  line-height:1.72;
+  color:rgba(224,218,230,.9);
+}
 .card__meta{position:relative;z-index:1;display:flex;gap:8px;flex-wrap:wrap}
 .pill{
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:11px;
-  letter-spacing:.08em;
-  padding:6px 10px;
+  font-size:var(--type-ui-sm);
+  letter-spacing:.06em;
+  padding:7px 11px;
   border-radius:999px;
   border:1px solid rgba(255,120,140,.14);
   background:rgba(20,4,10,.45);
-  opacity:.92;
+  opacity:1;
+  color:rgba(236,230,240,.94);
 }
 
 /* CONTACT */
@@ -982,9 +1040,10 @@ a{color:inherit;text-decoration:none}
 .field__label{
   display:block;
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:11px;
-  letter-spacing:.12em;
-  opacity:.78;
+  font-size:var(--type-ui-sm);
+  letter-spacing:.1em;
+  opacity:1;
+  color:rgba(210,214,224,.92);
   margin:0 0 6px;
   text-transform:uppercase;
 }
@@ -1003,7 +1062,7 @@ a{color:inherit;text-decoration:none}
   border-color:rgba(233,28,60,.45);
   box-shadow:0 0 0 3px rgba(233,28,60,.12),0 0 22px rgba(0,242,255,.12);
 }
-.form__hint{margin:12px 0 0;color:rgba(233,230,255,.68);font-size:12px}
+.form__hint{margin:12px 0 0;color:rgba(218,214,226,.88);font-size:var(--type-ui)}
 
 /* Form overlay messages (toggled with .is-visible in script.js) */
 .form-message{
@@ -1036,7 +1095,8 @@ a{color:inherit;text-decoration:none}
   background:linear-gradient(165deg,rgba(233,28,60,.14),rgba(0,242,255,.06));
   box-shadow:0 0 22px rgba(233,28,60,.22),0 0 28px rgba(0,242,255,.1);
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:14px;
+  font-size:15px;
+  line-height:1.55;
 }
 .form-message--error p{
   margin:0;
@@ -1044,17 +1104,18 @@ a{color:inherit;text-decoration:none}
   padding:14px 18px;
   border-radius:14px;
   border:1px solid rgba(255,0,64,.45);
-  color:#ff6b8a;
+  color:#ff8ba3;
   background:rgba(255,0,64,.08);
   box-shadow:0 0 22px rgba(255,0,64,.12);
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
-  font-size:14px;
+  font-size:15px;
+  line-height:1.55;
 }
 
 .field__error{
   display:block;
-  color:#ff6b8a;
-  font-size:12px;
+  color:#ff8ba3;
+  font-size:var(--type-ui-sm);
   margin-top:6px;
   min-height:0;
 }
@@ -1081,7 +1142,12 @@ a{color:inherit;text-decoration:none}
   box-shadow:0 0 18px rgba(233,28,60,.22);
   font-family:"Share Tech Mono",ui-monospace,Menlo,monospace;
 }
-.social__text{opacity:.9}
+.social__text{
+  font-size:var(--type-ui);
+  line-height:1.5;
+  opacity:.95;
+  color:rgba(232,226,236,.94);
+}
 .social__link:hover{
   transform:translateY(-1px);
   border-color:rgba(255,60,200,.32);
@@ -1089,9 +1155,9 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Footer */
-.footer{padding:30px 0;border-top:1px solid rgba(233,28,60,.12)}
+.footer{padding:30px 0;border-top:1px solid rgba(233,28,60,.12);font-size:var(--type-ui-sm);color:rgba(226,220,232,.9)}
 .footer__inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.footer__top{opacity:.8;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,90,110,.2);background:rgba(18,4,10,.35)}
+.footer__top{opacity:.88;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,90,110,.2);background:rgba(18,4,10,.35);font-size:var(--type-ui-sm)}
 .footer__top:hover{opacity:1;box-shadow:0 0 18px rgba(233,28,60,.15)}
 
 /* Reveal animation */

@@ -303,10 +303,10 @@ a{color:inherit;text-decoration:none}
   object-fit:cover;
   border-radius:24px;
   margin:0 0 14px;
-  filter:grayscale(.08) contrast(1.06);
+  filter:grayscale(.06) contrast(1.05) saturate(1.04);
 }
 
-/* About photo: warm restrained frame (burgundy / charcoal, not neon rainbow) */
+/* About photo: cyber frame + crimson / magenta / purple wash (matches site palette) */
 .avatar-wrap--about{
   position:relative;
   display:block;
@@ -316,18 +316,21 @@ a{color:inherit;text-decoration:none}
   padding:2px;
   border-radius:26px;
   background:linear-gradient(
-    145deg,
-    rgba(90,32,38,.95) 0%,
-    rgba(42,12,16,.98) 38%,
-    rgba(28,8,10,1) 62%,
-    rgba(55,18,22,.92) 100%
+    135deg,
+    rgba(233,28,60,.88) 0%,
+    rgba(140,12,58,.95) 28%,
+    rgba(45,6,28,1) 52%,
+    rgba(110,14,72,.94) 78%,
+    rgba(0,242,255,.22) 100%
   );
   isolation:isolate;
   box-shadow:
-    0 0 0 1px rgba(0,0,0,.45),
-    0 0 0 2px rgba(180,52,58,.35),
-    0 12px 32px rgba(0,0,0,.4),
-    0 0 28px rgba(90,12,20,.2);
+    0 0 0 1px rgba(0,0,0,.5),
+    0 0 0 2px rgba(233,28,60,.4),
+    0 12px 36px rgba(0,0,0,.45),
+    0 0 32px rgba(233,28,60,.28),
+    0 0 48px rgba(255,55,190,.14),
+    0 0 36px rgba(0,242,255,.08);
 }
 .avatar-wrap--about .avatar--about{
   margin:0;
@@ -335,7 +338,7 @@ a{color:inherit;text-decoration:none}
   border:none;
   box-shadow:none;
   display:block;
-  filter:contrast(1.05) brightness(1.02);
+  filter:contrast(1.06) saturate(1.08) brightness(1.02);
 }
 .avatar-wrap--about::before{
   content:"";
@@ -344,13 +347,15 @@ a{color:inherit;text-decoration:none}
   border-radius:22px;
   pointer-events:none;
   z-index:1;
-  background:linear-gradient(
-    165deg,
-    rgba(255,255,255,.06) 0%,
-    transparent 42%,
-    rgba(0,0,0,.12) 100%
-  );
-  opacity:.55;
+  background:
+    linear-gradient(
+      165deg,
+      rgba(255,255,255,.07) 0%,
+      transparent 38%,
+      rgba(8,0,6,.28) 100%
+    ),
+    radial-gradient(ellipse 130% 90% at 50% 100%,rgba(60,4,28,.42),transparent 58%);
+  opacity:.62;
   mix-blend-mode:soft-light;
 }
 .avatar-wrap--about::after{
@@ -360,9 +365,23 @@ a{color:inherit;text-decoration:none}
   border-radius:22px;
   pointer-events:none;
   z-index:2;
-  background:radial-gradient(ellipse 90% 75% at 50% 0%,rgba(255,220,210,.08),transparent 55%);
-  mix-blend-mode:overlay;
-  opacity:.5;
+  background:
+    linear-gradient(
+      125deg,
+      rgba(233,28,60,.38) 0%,
+      rgba(255,61,200,.12) 42%,
+      transparent 62%
+    ),
+    linear-gradient(
+      305deg,
+      transparent 35%,
+      rgba(196,18,88,.28) 72%,
+      rgba(40,4,32,.45) 100%
+    ),
+    radial-gradient(ellipse 95% 80% at 50% 0%,rgba(255,210,228,.14),transparent 52%),
+    radial-gradient(ellipse 70% 55% at 85% 15%,rgba(0,242,255,.1),transparent 50%);
+  mix-blend-mode:soft-light;
+  opacity:.58;
 }
 .kicker{
   display:inline-flex;

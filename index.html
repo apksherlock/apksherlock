@@ -7,635 +7,461 @@
     <meta name="color-scheme" content="dark" />
     <meta
       name="description"
-      content="apksherlock — Android engineering by Stavro Xhardha. Blog, work, and contact."
+      content="Stavro Xhardha — mobile apps, Android security and automation for businesses. 9 years of Android, including in-car software for BMW and a health app used by millions."
     />
-    <title>apksherlock — Android · Stavro Xhardha</title>
+    <title>Stavro Xhardha — Mobile apps, app security &amp; automation</title>
     <link rel="canonical" href="https://apksherlock.github.io/apksherlock/" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="author" content="Stavro Xhardha" />
-    <meta name="theme-color" content="#100208" />
+    <meta name="theme-color" content="#0b0d0c" />
 
-    <meta property="og:site_name" content="apksherlock" />
+    <meta property="og:site_name" content="Stavro Xhardha" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="apksherlock — Android · Stavro Xhardha" />
+    <meta property="og:title" content="Stavro Xhardha — Mobile apps, app security & automation" />
     <meta
       property="og:description"
-      content="Android engineering by Stavro Xhardha — apps, security, blog (Dispatcher's Playground), and hire me."
+      content="I build and maintain apps, check Android apps and phones for security problems, and automate repetitive work for businesses."
     />
     <meta property="og:url" content="https://apksherlock.github.io/apksherlock/" />
     <meta property="og:image" content="https://apksherlock.github.io/apksherlock/assets/images/hero.png" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="sq_AL" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="apksherlock — Android · Stavro Xhardha" />
+    <meta name="twitter:title" content="Stavro Xhardha — Mobile apps, app security & automation" />
     <meta
       name="twitter:description"
-      content="Android engineering by Stavro Xhardha — apps, security, blog, and contact."
+      content="I build and maintain apps, check Android apps and phones for security problems, and automate repetitive work for businesses."
     />
     <meta name="twitter:image" content="https://apksherlock.github.io/apksherlock/assets/images/hero.png" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "apksherlock",
+        "@type": "Person",
+        "name": "Stavro Xhardha",
+        "jobTitle": "Software engineer — mobile apps, Android security, automation",
         "url": "https://apksherlock.github.io/apksherlock/",
-        "description": "Android engineering by Stavro Xhardha — portfolio, blog on Hashnode, and contact.",
-        "inLanguage": "en",
-        "author": {
-          "@type": "Person",
-          "name": "Stavro Xhardha",
-          "url": "https://apksherlock.github.io/apksherlock/",
-          "sameAs": [
-            "https://github.com/apksherlock",
-            "https://www.linkedin.com/in/stavro-xhardha-64b98a153/",
-            "https://dispatchersdotplayground.hashnode.dev"
-          ]
-        }
+        "knowsLanguage": ["en", "de", "sq"],
+        "sameAs": [
+          "https://www.linkedin.com/in/stavro-xhardha-64b98a153/",
+          "https://github.com/apksherlock",
+          "https://dispatchersdotplayground.hashnode.dev"
+        ]
       }
     </script>
 
-    <!-- Perf: preconnect to font origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Perf: preload font stylesheet then apply (non-blocking) -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&family=Source+Sans+3:wght@400;500;600&display=swap"
-    />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&family=Source+Sans+3:wght@400;500;600&display=swap"
-      media="print"
-      onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
     />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&family=Source+Sans+3:wght@400;500;600&display=swap"
-      />
-    </noscript>
 
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <a id="skip-link" class="skip-link" href="#about">Skip to content</a>
+    <a class="skip-link" href="#services" data-i18n="skip_to_content">Skip to content</a>
 
-    <header id="top" class="hero" aria-label="Hero">
-      <!-- REPLACE WITH CYBERPUNK GIF -->
-      <div id="hero-bg" aria-hidden="true">
-        <div class="hero-bg__photo"></div>
-      </div>
-      <div class="hero__overlay" aria-hidden="true"></div>
-
-      <nav class="nav" aria-label="Primary">
-        <div class="nav__brand">
-          <span class="nav__sigil" aria-hidden="true">◆</span>
-          <span class="nav__name nav__name--site">apksherlock</span>
-        </div>
-        <div class="nav__links">
-          <a id="nav-about" href="#about" data-scroll>About</a>
-          <a id="nav-blog" href="#blog" data-scroll>Blog</a>
-          <a
-            id="nav-publications"
-            href="https://dispatchersdotplayground.hashnode.dev/"
-            target="_blank"
-            rel="noreferrer"
-            >Read publications</a>
-          <a id="nav-work" href="#work" data-scroll>Work</a>
-          <a id="nav-hire" href="#contact" data-scroll>Hire</a>
-        </div>
-        <div class="nav__lang" aria-label="Language switch">
-          <button type="button" class="nav__lang-btn is-active" data-lang-switch="en" aria-pressed="true">
-            EN
-          </button>
-          <span class="nav__lang-sep">/</span>
-          <button type="button" class="nav__lang-btn" data-lang-switch="de" aria-pressed="false">
-            DE
-          </button>
-        </div>
-      </nav>
-
-      <div class="hero__content">
-        <p class="kicker">
-          <span class="kicker__dot" aria-hidden="true"></span>
-          ADB CONNECTED
-        </p>
-
-        <h1 class="glitch" data-text="Stavro Xhardha">
-          Stavro <span class="accent">Xhardha</span>
-        </h1>
-        <p id="hero-subheading" class="subheading">Android Engineer</p>
-
-        <div class="hero__actions">
-          <a class="neon-btn" href="#about" data-scroll>
-            <span id="hero-enter" class="neon-btn__label">Enter</span>
-            <span class="neon-btn__glow" aria-hidden="true"></span>
-          </a>
-          <a class="ghost-btn" href="#blog" data-scroll id="hero-read-blog">Read Blog</a>
-        </div>
-
-        <div class="hero__meta" aria-label="Quick stats">
-          <div class="chip">
-            <span id="chip-mode-label" class="chip__k">Mode</span>
-            <span id="chip-mode-value" class="chip__v">Android</span>
-          </div>
-          <div class="chip">
-            <span id="chip-stack-label" class="chip__k">Stack</span>
-            <span id="chip-stack-value" class="chip__v">Mobile / Web</span>
-          </div>
-          <div class="chip">
-            <span id="chip-status-label" class="chip__k">Status</span>
-            <span id="chip-status-value" class="chip__v">Open to Hire</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="scroll-hint" aria-hidden="true">
-        <span class="scroll-hint__line"></span>
-        <span id="hero-scroll-hint" class="scroll-hint__text">SCROLL</span>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="topbar__brand" href="#top" data-scroll>
+          <span class="accent">stavro</span><span class="dim">@xhardha:~$</span>
+        </a>
+        <nav class="topbar__nav" aria-label="Primary">
+          <a href="#services" data-scroll data-i18n="nav_services">Services</a>
+          <a href="#work" data-scroll data-i18n="nav_work">Work</a>
+          <a href="#about" data-scroll data-i18n="nav_about">About</a>
+          <a href="#contact" data-scroll data-i18n="nav_contact">Contact</a>
+          <span class="lang" role="group" aria-label="Language">
+            <button type="button" class="lang__btn is-active" data-lang-switch="en" aria-pressed="true">en</button>
+            <button type="button" class="lang__btn" data-lang-switch="de" aria-pressed="false">de</button>
+            <button type="button" class="lang__btn" data-lang-switch="sq" aria-pressed="false">sq</button>
+          </span>
+        </nav>
       </div>
     </header>
 
-    <main>
-      <section id="about" class="section reveal">
-        <div class="container">
-          <header class="section__header">
-            <h2 class="section__title">
-              <span class="section__tag">01</span> <span id="about-title">About Me</span>
-            </h2>
-            <p id="about-subtitle" class="section__subtitle">
-              Android engineering, integrations, and security—with a straight list of what I can take on below.
-            </p>
-          </header>
+    <main id="top">
+      <section class="hero container">
+        <p class="deco" aria-hidden="true"><span class="ps1">$</span> whoami</p>
+        <h1 class="hero__name">Stavro Xhardha<span class="cursor" aria-hidden="true"></span></h1>
+        <p class="hero__headline" data-i18n="hero_headline">
+          Mobile apps, app security and automation for businesses.
+        </p>
+        <p class="hero__sub" data-i18n="hero_sub">
+          9 years of building Android apps — including software on the screens inside BMW cars and a health app used by millions of people.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#contact" data-scroll data-i18n="hero_cta">Tell me about your project</a>
+          <a class="btn" href="#work" data-scroll data-i18n="hero_cta2">See my work</a>
+        </div>
+        <p class="hero__status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span data-i18n="hero_status">Taking new projects</span>
+        </p>
+      </section>
 
-          <div class="about">
-            <div class="about__intro panel panel--accent">
-              <div class="avatar-wrap avatar-wrap--about">
-                <img
-                  class="avatar avatar--about"
-                  src="./assets/images/profile.png"
-                  alt="Portrait of Stavro Xhardha"
-                  loading="lazy"
-                  decoding="async"
+      <div class="trust container">
+        <p class="trust__label" data-i18n="trust_label">I’ve worked on software for</p>
+        <ul class="trust__list">
+          <li>BMW</li>
+          <li>MINI</li>
+          <li>Rolls-Royce</li>
+          <li>Mercedes-Benz</li>
+          <li>mySugr</li>
+        </ul>
+      </div>
+
+      <section id="services" class="section container">
+        <p class="deco" aria-hidden="true"><span class="ps1">$</span> ls services/</p>
+        <h2 class="section__title" data-i18n="services_title">What I can do for you</h2>
+        <p class="section__intro" data-i18n="services_intro">
+          Not sure which one you need? Describe your problem and I’ll tell you honestly what makes sense — and what doesn’t.
+        </p>
+
+        <ul class="services">
+          <li>
+            <h3 data-i18n="svc_apps_t">Complete mobile apps</h3>
+            <p data-i18n="svc_apps_d">New apps for Android and iPhone, plus the server behind them — user accounts, data, payments, notifications and admin panels. One person responsible for the whole thing, from a simple customer app to large company software.</p>
+          </li>
+          <li>
+            <h3 data-i18n="svc_maintain_t">Fixing, maintaining and publishing apps</h3>
+            <p data-i18n="svc_maintain_d">Your app crashes, is slow, or the original developer is gone? I take over, fix the problems and keep it up to date. I also get apps into Google Play and the App Store — and sort out rejections, policy warnings and suspended listings.</p>
+          </li>
+          <li>
+            <h3 data-i18n="svc_security_t">App security check</h3>
+            <p data-i18n="svc_security_d">I look at your Android app the way an attacker would and find the weak spots before someone else does. Your developers get a detailed report: what’s at risk, how serious it is and exactly how to fix it.</p>
+          </li>
+          <li>
+            <h3 data-i18n="svc_malware_t">Is this phone or app infected?</h3>
+            <p data-i18n="svc_malware_d">You suspect an Android phone or app is spying on you or behaving strangely — company or personal? I check it for malware and tell you what I found and what to do. Android only.</p>
+          </li>
+          <li>
+            <h3 data-i18n="svc_automation_t">Automation and AI</h3>
+            <p data-i18n="svc_automation_d">Let software do the repetitive work: chat bots for Telegram or WhatsApp, AI assistants that answer customer questions, automatic reports and reminders, and links between the tools you already use.</p>
+          </li>
+          <li>
+            <h3 data-i18n="svc_web_t">Websites</h3>
+            <p data-i18n="svc_web_d">Clean, fast websites that explain what you offer and make it easy for customers to get in touch.</p>
+          </li>
+          <li>
+            <h3 data-i18n="svc_partner_t">Technical partner for founders</h3>
+            <p data-i18n="svc_partner_d">I help you plan the product, choose the right technology and avoid expensive mistakes — before a single line of code is written.</p>
+          </li>
+          <li>
+            <h3 data-i18n="svc_training_t">Training for developer teams</h3>
+            <p data-i18n="svc_training_d">Hands-on coaching for teams moving into Android or modern app development.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="work" class="section container">
+        <p class="deco" aria-hidden="true"><span class="ps1">$</span> ls work/</p>
+        <h2 class="section__title" data-i18n="work_title">Selected work</h2>
+        <p class="section__intro" data-i18n="work_intro">
+          Much of my client work is under NDA, so here are the parts I can show.
+        </p>
+
+        <ul class="work">
+          <li class="work__row">
+            <span class="work__tag" data-i18n="tag_cars">Cars · 2022–today</span>
+            <div>
+              <h3 class="work__name" data-i18n="work_bmw_t">In-car software for BMW, MINI, Rolls-Royce and Mercedes-Benz</h3>
+              <p data-i18n="work_bmw_d">
+                Through the agency Appsfactory, I’ve spent four years as a senior engineer and team lead on the software for the screens inside new cars — including the passenger entertainment display and the rear-seat Theatre Screen in 2026 BMW models, and the look and feel of BMW M, MINI and Rolls-Royce interfaces. Before that: a health-and-car app built with Mercedes-Benz.
+              </p>
+              <p class="work__links">
+                <a class="link" href="https://www.youtube.com/watch?v=YlBdHxKM9-o" target="_blank" rel="noreferrer" data-i18n="work_bmw_l1">BMW’s Theatre Screen video ↗</a>
+                <a class="link" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7508996478296690689/" target="_blank" rel="noreferrer" data-i18n="work_bmw_l2">Public thanks from BMW’s product team ↗</a>
+              </p>
+            </div>
+          </li>
+          <li class="work__row">
+            <span class="work__tag" data-i18n="tag_health">Health</span>
+            <div>
+              <h3 class="work__name" data-i18n="work_mysugr_t">mySugr diabetes app</h3>
+              <p data-i18n="work_mysugr_d">
+                An app used by millions of people with diabetes in 80+ countries. I connected insulin pumps to it over Bluetooth, so every dose is logged automatically instead of typed in by hand.
+              </p>
+              <p class="work__links">
+                <a class="link" href="https://www.mysugr.com/en" target="_blank" rel="noreferrer">mysugr.com ↗</a>
+              </p>
+            </div>
+          </li>
+          <li class="work__row">
+            <span class="work__tag" data-i18n="tag_health">Health</span>
+            <div>
+              <h3 class="work__name" data-i18n="work_mallya_t">Mallya smart insulin pen</h3>
+              <p data-i18n="work_mallya_d">
+                I built the secure connection that sends dose data from the pen to the phone — encrypted, because medical data has to stay private.
+              </p>
+              <p class="work__links">
+                <a class="link" href="https://my-mallya.com/en/" target="_blank" rel="noreferrer">my-mallya.com ↗</a>
+              </p>
+            </div>
+          </li>
+          <li class="work__row">
+            <span class="work__tag" data-i18n="tag_security">Security</span>
+            <div>
+              <h3 class="work__name" data-i18n="work_security_t">Android security reviews</h3>
+              <p data-i18n="work_security_d">
+                Checked real, published Android apps for weaknesses — leaking data, unsafe connections between apps, broken encryption — and helped the teams fix them.
+              </p>
+            </div>
+          </li>
+          <li class="work__row">
+            <span class="work__tag" data-i18n="tag_oss">Open source</span>
+            <div>
+              <h3 class="work__name">Belt</h3>
+              <p data-i18n="work_belt_d">
+                My own read-it-later app, written once and running on both Android and iPhone.
+              </p>
+              <p class="work__links">
+                <a class="link" href="https://github.com/apksherlock/belt" target="_blank" rel="noreferrer">GitHub ↗</a>
+              </p>
+            </div>
+          </li>
+          <li class="work__row">
+            <span class="work__tag" data-i18n="tag_albania">Albania · 2017–2019</span>
+            <div>
+              <h3 class="work__name" data-i18n="work_albania_t">Where I started</h3>
+              <p data-i18n="work_albania_d">
+                Apps for Albanian businesses: Shëndeti (finding local hospitals), WebFlex (connecting shops and restaurants with the brands they sell) and Baboon (food delivery).
+              </p>
+              <p class="work__links">
+                <a class="link" href="https://play.google.com/store/apps/details?id=al.logic.android.webflex" target="_blank" rel="noreferrer">WebFlex ↗</a>
+                <a class="link" href="https://play.google.com/store/apps/dev?id=8705581167267915700" target="_blank" rel="noreferrer">Baboon ↗</a>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="reviews" class="section container">
+        <p class="deco" aria-hidden="true"><span class="ps1">$</span> cat reviews.txt</p>
+        <h2 class="section__title" data-i18n="reviews_title">What people I’ve worked with say</h2>
+        <p class="section__intro" data-i18n="reviews_note">Recommendations from my LinkedIn profile.</p>
+
+        <div class="reviews">
+          <figure class="review" lang="en">
+            <blockquote>
+              “Stavro is an excellent Android Developer that worked in our company for two years. […] He was also a great help for all his coworkers and helped them to get better in their job as well.”
+            </blockquote>
+            <figcaption><strong>Stefan Kofler</strong><span>Co-founder &amp; Managing Director, QuickBird</span></figcaption>
+          </figure>
+          <figure class="review" lang="en">
+            <blockquote>
+              “Team players like Stavro are very hard to find. […] He is always passionate to help other colleagues, the first to learn new things […] I believe Stavro would be an asset to any company.”
+            </blockquote>
+            <figcaption><strong>Josif Gjani, PhD</strong><span>CEO, Ikons</span></figcaption>
+          </figure>
+          <figure class="review" lang="en">
+            <blockquote>
+              “‘Hard worker’ is the phrase that comes to mind when I think about Stavro. […] Any employee would be lucky to have Stavro as a developer.”
+            </blockquote>
+            <figcaption><strong>Arbër Thaçi</strong><span>Senior Android Developer</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="media" class="section container">
+        <p class="deco" aria-hidden="true"><span class="ps1">$</span> grep -ri "stavro" news/</p>
+        <h2 class="section__title" data-i18n="media_title">On TV and on stage</h2>
+
+        <ul class="media">
+          <li>
+            <span class="media__kind">TV</span>
+            <p>
+              <span data-i18n="media_a2">Interviewed by A2 CNN (Albania) about data privacy, GDPR and Meta’s Threads app.</span>
+              <a class="link" href="https://a2news.com/threads-po-vendos-rekorde-por-ekspertet-jane-te-shqetesuar-per-privatesine-e-te-dhenave" target="_blank" rel="noopener noreferrer">a2news.com ↗</a>
+            </p>
+          </li>
+          <li>
+            <span class="media__kind">TV</span>
+            <p>
+              <span data-i18n="media_premium">Guest on Premium Channel’s morning show (in Albanian).</span>
+              <a class="link" href="https://youtu.be/D8rP_ZZS8GU" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+            </p>
+          </li>
+          <li>
+            <span class="media__kind" data-i18n="kind_talk">Talk</span>
+            <p>
+              <span data-i18n="media_meetup">Speaker at the Android Meetup in Munich (June 2024) on Kotlin Multiplatform.</span>
+              <a class="link" href="https://www.linkedin.com/posts/developers-kotlin-multiplatform-share-7204796335210848256-dAGO/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            </p>
+          </li>
+          <li>
+            <span class="media__kind" data-i18n="kind_talk">Talk</span>
+            <p><span data-i18n="media_gdg">Speaker at Google Developer Group Tirana since 2019.</span></p>
+          </li>
+          <li>
+            <span class="media__kind" data-i18n="kind_article">Article</span>
+            <p>
+              <span data-i18n="media_qb">Article for QuickBird Studios on building Android apps with Kotlin.</span>
+              <a class="link" href="https://quickbirdstudios.com/blog/android-mvi-kotlin-coroutines-flow/" target="_blank" rel="noopener noreferrer">quickbirdstudios.com ↗</a>
+            </p>
+          </li>
+          <li>
+            <span class="media__kind">Blog</span>
+            <p>
+              <span data-i18n="media_blog">I write about Android and mobile security on my blog, Dispatcher’s Playground.</span>
+              <a class="link" href="https://dispatchersdotplayground.hashnode.dev/" target="_blank" rel="noreferrer">hashnode.dev ↗</a>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="about" class="section container">
+        <p class="deco" aria-hidden="true"><span class="ps1">$</span> cat about.txt</p>
+        <h2 class="section__title" data-i18n="about_title">About me</h2>
+
+        <div class="about">
+          <figure class="window">
+            <figcaption class="window__bar" aria-hidden="true">
+              <span class="window__dots"><i></i><i></i><i></i></span>
+              stavro.png
+            </figcaption>
+            <img
+              src="./assets/images/profile.png"
+              alt="Portrait of Stavro Xhardha"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <div class="about__text">
+            <p data-i18n="about_p1">
+              I’m Stavro, a software engineer who has spent the last 9 years building Android apps — from small Albanian startups to the screens inside BMW cars. Along the way I’ve led teams, worked side by side with designers and product owners, and seen what makes software projects succeed or fail.
+            </p>
+            <p data-i18n="about_p2">
+              My home turf is native Android, but I build the whole product — the app and the server behind it — and I’m not tied to one tool: I pick whatever fits your project, your budget and your plans. I also research mobile security in my spare time, which makes the apps I build safer from the start.
+            </p>
+            <p data-i18n="about_p3">I work remotely with clients worldwide, in English, German or Albanian.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="section container">
+        <p class="deco" aria-hidden="true"><span class="ps1">$</span> ./start-project</p>
+        <h2 class="section__title" data-i18n="process_title">How working with me looks</h2>
+
+        <ol class="steps">
+          <li>
+            <h3 data-i18n="step1_t">You tell me what you need</h3>
+            <p data-i18n="step1_d">A few sentences in the form below are enough. No technical knowledge needed.</p>
+          </li>
+          <li>
+            <h3 data-i18n="step2_t">We talk it through</h3>
+            <p data-i18n="step2_d">A short call where I ask questions, suggest options and tell you honestly if I’m the right fit.</p>
+          </li>
+          <li>
+            <h3 data-i18n="step3_t">You get a clear plan</h3>
+            <p data-i18n="step3_d">What I’ll build, how long it takes and what it costs — in writing, before any work starts.</p>
+          </li>
+          <li>
+            <h3 data-i18n="step4_t">I build, you follow along</h3>
+            <p data-i18n="step4_d">Regular updates and early versions you can try, so there are no surprises at the end.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="contact" class="section container">
+        <p class="deco" aria-hidden="true"><span class="ps1">$</span> ./contact --send</p>
+        <h2 class="section__title" data-i18n="contact_title">Tell me about your project</h2>
+        <p class="section__intro" data-i18n="contact_sub">
+          Describe what you need in a few sentences — no technical knowledge required. I’ll reply with honest feedback on whether and how I can help.
+        </p>
+
+        <div class="contact">
+          <form
+            id="my-form"
+            class="form"
+            method="POST"
+            action="https://contact-relay.apksherlock.workers.dev"
+            data-endpoint="https://contact-relay.apksherlock.workers.dev"
+            data-turnstile-sitekey="0x4AAAAAAFTtH7mfr1z4t726"
+          >
+            <!-- Honeypot: hidden from people, bots fill it in and get silently dropped -->
+            <label class="hp" aria-hidden="true">
+              Leave this empty
+              <input name="_gotcha" tabindex="-1" autocomplete="off" />
+            </label>
+
+            <div class="form__row">
+              <label class="field">
+                <span class="field__label" data-i18n="contact_name_label">Name</span>
+                <input
+                  class="field__input"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Your name"
+                  data-i18n-placeholder="contact_name_placeholder"
+                  required
                 />
-              </div>
-              <p id="about-p1" class="mono">
-                I’m an Android engineer. Most of my work has been shipping production apps and integrations: phones, smart accessories, in-vehicle systems, and third-party services: where complex UI has to hold up in real daily use.
-              </p>
-              <p id="about-p2" class="mono">
-                Today a large share of my time is Android Automotive: infotainment UX, theming, and tooling for a major global OEM. I also run Android app security reviews and document what I learn on my blog.
-              </p>
-              <p id="about-p3" class="mono">
-                Check below what I concretely offer for you.
-              </p>
-
-              <div class="divider" aria-hidden="true"></div>
-
-              <div class="featured" aria-labelledby="featured-title">
-                <h3 id="featured-title" class="about__featured-heading">Featured in</h3>
-                <ul class="featured__timeline" role="list">
-                  <li class="featured__step">
-                    <span class="featured__marker" aria-hidden="true">
-                      <span class="featured__dot"></span>
-                    </span>
-                    <p class="featured__line mono">
-                      <span id="featured-a2-text"
-                        >Invited by A2 CNN News (Albanian) for GDPR commentary on data privacy and Meta Threads.</span>
-                      <a
-                        class="featured__link"
-                        href="https://a2news.com/threads-po-vendos-rekorde-por-ekspertet-jane-te-shqetesuar-per-privatesine-e-te-dhenave"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >a2news.com</a>
-                    </p>
-                  </li>
-                  <li class="featured__step">
-                    <span class="featured__marker" aria-hidden="true">
-                      <span class="featured__dot"></span>
-                    </span>
-                    <p class="featured__line mono">
-                      <span id="featured-quickbird-text"
-                        >Article for QuickBird Studios while I worked there: Android MVI with Kotlin Coroutines &amp; Flow.</span>
-                      <a
-                        class="featured__link"
-                        href="https://quickbirdstudios.com/blog/android-mvi-kotlin-coroutines-flow/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >quickbirdstudios.com</a>
-                    </p>
-                  </li>
-                  <li class="featured__step">
-                    <span class="featured__marker" aria-hidden="true">
-                      <span class="featured__dot"></span>
-                    </span>
-                    <p class="featured__line mono">
-                      <span id="featured-youtube-text"
-                        >Guest in a morning show (Albanian only).</span>
-                      <a
-                        class="featured__link"
-                        href="https://youtu.be/D8rP_ZZS8GU?si=Lfr_W7B8cV_BVy8B"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >YouTube</a>
-                    </p>
-                  </li>
-                </ul>
-              </div>
+                <span class="field__error" data-field-error="name" hidden></span>
+              </label>
+              <label class="field">
+                <span class="field__label" data-i18n="contact_email_label">Email</span>
+                <input
+                  class="field__input"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="you@company.com"
+                  data-i18n-placeholder="contact_email_placeholder"
+                  required
+                />
+                <span class="field__error" data-field-error="email" hidden></span>
+              </label>
             </div>
+            <label class="field">
+              <span class="field__label" data-i18n="contact_message_label">Message</span>
+              <textarea
+                class="field__input"
+                name="message"
+                rows="6"
+                placeholder="What would you like to build or fix?"
+                data-i18n-placeholder="contact_message_placeholder"
+                required
+              ></textarea>
+              <span class="field__error" data-field-error="message" hidden></span>
+            </label>
 
-            <div class="about__offer-wrap" id="offer">
-              <h2 id="offer-title" class="about__offer-heading">What I offer</h2>
-              <div class="about__offer panel">
-                <div class="modules modules--offer">
-                <div class="module">
-                  <span class="module__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="6.5" y="2.5" width="11" height="19" rx="2.25" />
-                      <line x1="9.5" y1="18.5" x2="14.5" y2="18.5" />
-                    </svg>
-                  </span>
-                  <div class="module__body">
-                    <span id="offer-mobile-label" class="module__label">Mobile Apps</span>
-                    <span id="offer-mobile-value" class="module__value">Native Android or Multiplatform mobile solutions (Android + iOS)</span>
-                  </div>
-                </div>
-                <div class="module">
-                  <span class="module__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 3.2L19 6.2v5.2c0 3.9-3.1 7.6-7 8.8-3.9-1.2-7-4.9-7-8.8V6.2l7-3z" />
-                      <path d="M9.2 11.8l1.8 1.8 4.2-4.2" />
-                    </svg>
-                  </span>
-                  <div class="module__body">
-                    <span id="offer-security-label" class="module__label">Security Audit</span>
-                    <span id="offer-security-value" class="module__value">Android app security review, risk notes, and practical fixes</span>
-                  </div>
-                </div>
-                <div class="module">
-                  <span class="module__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3.5" y="5" width="17" height="11" rx="1.75" />
-                      <path d="M12 16v3.5M8.5 21.5h7" />
-                      <path d="M8 8.5h3M8 11.5h8M8 14.5h5" />
-                    </svg>
-                  </span>
-                  <div class="module__body">
-                    <span id="offer-coaching-label" class="module__label">Coaching</span>
-                    <span id="offer-coaching-value" class="module__value">Upskill developers and teams transitioning to Android</span>
-                  </div>
-                </div>
-                <div class="module">
-                  <span class="module__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 4v7.5M12 4l3 3M12 4l-3 3" />
-                      <rect x="4" y="13" width="16" height="7.5" rx="1.75" />
-                      <path d="M8 17h8" />
-                    </svg>
-                  </span>
-                  <div class="module__body">
-                    <span id="offer-play-label" class="module__label">Play Store shipping</span>
-                    <span id="offer-play-value" class="module__value">Shipping your app to production can be a challenge; I can help you get it live</span>
-                  </div>
-                </div>
-                <div class="module">
-                  <span class="module__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3" y="4.5" width="18" height="13" rx="1.75" />
-                      <path d="M3 9h18" />
-                      <circle cx="6" cy="6.75" r="0.65" fill="currentColor" stroke="none" />
-                      <circle cx="8.25" cy="6.75" r="0.65" fill="currentColor" stroke="none" />
-                      <path d="M7 14h10M7 16.5h6" />
-                    </svg>
-                  </span>
-                  <div class="module__body">
-                    <span id="offer-web-label" class="module__label">Business websites</span>
-                    <span id="offer-web-value" class="module__value">Clear, fast sites that explain what you sell and make it easy to get in touch</span>
-                  </div>
-                </div>
-                <div class="module">
-                  <span class="module__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="2" y="9" width="11" height="8" rx="2" />
-                      <rect x="11" y="5.5" width="11" height="8" rx="2" />
-                      <circle cx="6" cy="13" r="0.9" fill="currentColor" stroke="none" />
-                      <circle cx="15.5" cy="9.5" r="0.9" fill="currentColor" stroke="none" />
-                    </svg>
-                  </span>
-                  <div class="module__body">
-                    <span id="offer-telegram-label" class="module__label">Telegram bots</span>
-                    <span id="offer-telegram-value" class="module__value">Lightweight customer channel when a full site isn’t in the budget: bookings, FAQs, menus, and alerts—right inside Telegram</span>
-                  </div>
-                </div>
-                <div class="module">
-                  <span class="module__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="11.5" y="7" width="9.5" height="10" rx="1.5" />
-                      <path d="M10 8.5H5.5M10 12H4M10 15.5H5.5" />
-                    </svg>
-                  </span>
-                  <div class="module__body">
-                    <span id="offer-nfc-label" class="module__label">NFC for marketing</span>
-                    <span id="offer-nfc-value" class="module__value">Tap-to-open campaigns: tags that launch your site, app, or offer—great for events, menus, and retail</span>
-                  </div>
-                </div>
-                <div class="module module--ai">
-                  <span class="module__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 2.5l1.1 3.7 3.7 1.1-3.7 1.1L12 12l-1.1-3.6-3.7-1.1 3.7-1.1z" />
-                      <circle cx="12" cy="17" r="2.25" />
-                      <path d="M9 20.5h6" />
-                    </svg>
-                  </span>
-                  <div class="module__body">
-                    <span id="offer-ai-label" class="module__label">AI Integration</span>
-                    <span id="offer-ai-value" class="module__value">Ship AI features safely: integration, UX, and developer workflow automation</span>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            <div class="turnstile" hidden></div>
 
-      <section id="blog" class="section section--alt reveal">
-        <div class="container">
-          <header class="section__header">
-            <h2 class="section__title">
-              <span class="section__tag">02</span> <span id="blog-title">Blog</span>
-            </h2>
-            <p id="blog-subtitle" class="section__subtitle">
-              Dispatchers, deep dives, and Android notes—from beginner-friendly to very nerdy.
+            <button class="btn btn--solid" type="submit" id="form-submit-btn" data-i18n="contact_send_button">Send message</button>
+
+            <p class="form-message form-message--success" id="form-msg-success" role="status" aria-live="polite" hidden>
+              <span class="accent">✓</span> <span data-i18n="contact_form_success">Thanks! Your message has been sent.</span>
             </p>
-          </header>
-
-          <div class="blog">
-            <div class="panel panel--accent">
-              <p class="blog__lead" id="blog-cta-lead">
-                Articles are published on Dispatcher’s Playground (Hashnode). Open the site to read the latest posts.
-              </p>
-              <div class="blog__actions">
-                <a
-                  id="blog-open-btn"
-                  class="neon-btn"
-                  href="https://dispatchersdotplayground.hashnode.dev/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span id="blog-open-label" class="neon-btn__label">Open blog on Hashnode</span>
-                  <span class="neon-btn__glow" aria-hidden="true"></span>
-                </a>
-                <a
-                  class="ghost-btn"
-                  href="https://dispatchersdotplayground.hashnode.dev/rss.xml"
-                  target="_blank"
-                  rel="noreferrer"
-                  id="blog-rss-btn"
-                >
-                  RSS
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" class="section reveal">
-        <div class="container">
-          <header class="section__header">
-            <h2 class="section__title">
-              <span class="section__tag">03</span> <span id="work-title">Selected Work</span>
-            </h2>
-            <p id="work-subtitle" class="section__subtitle">
-            Much of my recent work is under NDA. Here are a few public-facing highlights.
+            <p class="form-message form-message--error" id="form-msg-error" role="alert" aria-live="assertive" hidden>
+              ✗ <span id="form-msg-error-text" data-i18n="contact_form_error_generic">Something went wrong. Please try again.</span>
             </p>
-          </header>
-      
-          <div class="work-grid" role="list">
-            <!-- Health: MySugr -->
-            <article class="card" role="listitem">
-              <div class="card__top">
-                <div class="card__badge">HEALTH</div>
-                <div class="card__lines" aria-hidden="true"></div>
-              </div>
-              <h3 class="card__title">MySugr Diabetes Logbook</h3>
-              <p id="work-mysugr-desc" class="card__desc">
-                Integrated Bluetooth-enabled insulin pumps into the app, enabling seamless synchronization of bolus doses with the digital logbook.
-              </p>
-              <div class="card__meta">
-                <a class="pill" href="https://www.mysugr.com/en" target="_blank" rel="noreferrer">Product</a>
-                <span class="pill">Android</span>
-                <span class="pill">Bluetooth</span>
-              </div>
-            </article>
-      
-            <!-- SDK: Mallya Insulin Pen -->
-            <article class="card" role="listitem">
-              <div class="card__top">
-                <div class="card__badge">SDK</div>
-                <div class="card__lines" aria-hidden="true"></div>
-              </div>
-              <h3 class="card__title">Mallya Insulin Pen SDK</h3>
-              <p id="work-mallya-desc" class="card__desc">
-                Developed a BLE SDK for insulin pen integration, implementing cryptographic protocols to securely transmit dose data to Android apps.
-              </p>
-              <div class="card__meta">
-                <a class="pill" href="https://my-mallya.com/en/" target="_blank" rel="noreferrer">Product</a>
-                <span class="pill">BLE</span>
-                <span class="pill">Kotlin</span>
-                <span class="pill">Cryptography</span>
-              </div>
-            </article>
-      
-            <!-- Open Source: Belt -->
-            <article class="card" role="listitem">
-              <div class="card__top">
-                <div class="card__badge">OPEN SOURCE</div>
-                <div class="card__lines" aria-hidden="true"></div>
-              </div>
-              <h3 class="card__title">Belt</h3>
-              <p id="work-belt-desc" class="card__desc">
-                A Kotlin Multiplatform (KMP) app built as a modern alternative to Mozilla's Pocket, enabling cross-platform bookmarking and article saving.
-              </p>
-              <div class="card__meta">
-                <a class="pill" href="https://github.com/apksherlock/belt" target="_blank" rel="noreferrer">GitHub</a>
-                <span class="pill">KMP</span>
-                <span class="pill">Kotlin</span>
-                <span class="pill">Multiplatform</span>
-              </div>
-            </article>
-      
-            <!-- Automotive -->
-            <article class="card" role="listitem">
-              <div class="card__top">
-                <div class="card__badge">AUTO</div>
-                <div class="card__lines" aria-hidden="true"></div>
-              </div>
-              <h3 class="card__title">Automotive UX Engineering</h3>
-              <p id="work-auto-desc" class="card__desc">
-                Tech lead for next-generation infotainment systems, focusing on UX design collaboration, theming tokenization, and UI tooling for premium vehicle brands.
-              </p>
-              <div class="card__meta">
-                <span class="pill">Compose</span>
-                <span class="pill">Theming</span>
-                <span class="pill">Architecture</span>
-              </div>
-            </article>
-      
-            <!-- Security -->
-            <article class="card" role="listitem">
-              <div class="card__top">
-                <div class="card__badge">SECURITY</div>
-                <div class="card__lines" aria-hidden="true"></div>
-              </div>
-              <h3 class="card__title">Android Security Audits</h3>
-              <p id="work-security-desc" class="card__desc">
-                Identified and helped patch vulnerabilities in production APKs, including insecure IPC, cryptographic flaws, and improper permission handling.
-              </p>
-              <div class="card__meta">
-                <span class="pill">APK Analysis</span>
-                <span class="pill">Penetration Testing</span>
-                <span class="pill">Kotlin</span>
-              </div>
-            </article>
-      
-            <!-- Blog -->
-            <article class="card" role="listitem">
-              <div class="card__top">
-                <div class="card__badge">BLOG</div>
-                <div class="card__lines" aria-hidden="true"></div>
-              </div>
-              <h3 class="card__title">Dispatcher’s Playground</h3>
-              <p id="work-blog-desc" class="card__desc">
-                Technical deep dives: Android patterns, tricky bugs, security curiosities, and lessons from the field.
-              </p>
-              <div class="card__meta">
-                <a class="pill" href="https://dispatchersdotplayground.hashnode.dev" target="_blank" rel="noreferrer">Read</a>
-                <span class="pill">Writing</span>
-                <span class="pill">Research</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+          </form>
 
-      <section id="contact" class="section section--alt reveal">
-        <div class="container">
-          <header class="section__header">
-            <h2 class="section__title">
-              <span class="section__tag">04</span> <span id="contact-title">Do you have a project in mind?</span>
-            </h2>
-            <p id="contact-subtitle" class="section__subtitle">
-              Android apps, security reviews, coaching, business websites, Telegram bots, and NFC campaigns. I’ll answer honestly about fit and scope—no overselling.
-            </p>
-          </header>
-
-          <div class="contact">
-            <form
-              id="my-form"
-              class="form panel"
-              method="POST"
-              action="https://formspree.io/f/mrejrlkr"
-              data-formspree="https://formspree.io/f/mrejrlkr"
-            >
-              <div class="form-message form-message--success" id="form-msg-success" role="status" aria-live="polite" hidden>
-                <p id="form-msg-success-text">Thanks! Your message has been sent.</p>
-              </div>
-              <div class="form-message form-message--error" id="form-msg-error" role="alert" aria-live="assertive" hidden>
-                <p id="form-msg-error-text">Oops! Something went wrong. Please try again.</p>
-              </div>
-
-              <div class="form__grid">
-                <label class="field">
-                  <span id="contact-name-label" class="field__label">Name</span>
-                  <input
-                    id="contact-name-input"
-                    class="field__input"
-                    name="name"
-                    autocomplete="name"
-                    placeholder="Your name"
-                    required
-                  />
-                  <span class="field__error" data-field-error="name" hidden></span>
-                </label>
-                <label class="field">
-                  <span id="contact-email-label" class="field__label">Email</span>
-                  <input
-                    id="contact-email-input"
-                    class="field__input"
-                    type="email"
-                    name="email"
-                    autocomplete="email"
-                    placeholder="you@domain.com"
-                    required
-                  />
-                  <span class="field__error" data-field-error="email" hidden></span>
-                </label>
-                <label class="field field--full">
-                  <span id="contact-message-label" class="field__label">Message</span>
-                  <textarea
-                    id="contact-message-input"
-                    class="field__input field__input--area"
-                    name="message"
-                    rows="5"
-                    placeholder="Write your message..."
-                    required
-                  ></textarea>
-                  <span class="field__error" data-field-error="message" hidden></span>
-                </label>
-              </div>
-              <button class="neon-btn neon-btn--submit" type="submit" id="form-submit-btn">
-                <span id="contact-send-btn-label" class="neon-btn__label">Send</span>
-                <span class="neon-btn__glow" aria-hidden="true"></span>
-              </button>
-            </form>
-          
-            <!-- Your existing links (unchanged) -->
-            <aside class="panel panel--accent">
-              <h3 class="panel__title">Links</h3>
-              <div class="social">
-                <a
-                  id="links-publications"
-                  class="social__link"
-                  href="https://dispatchersdotplayground.hashnode.dev/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Publications — Dispatcher’s Playground on Hashnode"
-                >
-                  <span class="social__icon" aria-hidden="true">◇</span>
-                  <span class="social__text mono">dispatchersdotplayground.hashnode.dev</span>
-                </a>
-                <a class="social__link" href="https://github.com/apksherlock" target="_blank" rel="noreferrer" aria-label="GitHub">
-                  <span class="social__icon" aria-hidden="true">⌂</span>
-                  <span class="social__text mono">github.com/apksherlock</span>
-                </a>
-                <a class="social__link" href="https://www.linkedin.com/in/stavro-xhardha-64b98a153/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                  <span class="social__icon" aria-hidden="true">⟐</span>
-                  <span class="social__text mono">linkedin.com/in/stavro-xhardha</span>
-                </a>
-                <a class="social__link" href="https://stackoverflow.com/users/8914336/apksherlock" target="_blank" rel="noreferrer" aria-label="Stack Overflow">
-                  <span class="social__icon" aria-hidden="true">▣</span>
-                  <span class="social__text mono">stackoverflow.com — apksherlock</span>
-                </a>
-                <a class="social__link" href="https://www.xing.com/profile/Stavro_Xhardha" target="_blank" rel="noreferrer" aria-label="XING">
-                  <span class="social__icon" aria-hidden="true">✕</span>
-                  <span class="social__text mono">xing.com/profile/Stavro_Xhardha</span>
-                </a>
-              </div>
-              <div class="divider" aria-hidden="true"></div>
-            </aside>
+          <div class="links">
+            <h3 class="links__title" data-i18n="links_title">Also on</h3>
+            <ul>
+              <li><a class="link" href="https://www.linkedin.com/in/stavro-xhardha-64b98a153/" target="_blank" rel="noreferrer">LinkedIn ↗</a></li>
+              <li><a class="link" href="https://github.com/apksherlock" target="_blank" rel="noreferrer">GitHub ↗</a></li>
+              <li><a class="link" href="https://dispatchersdotplayground.hashnode.dev/" target="_blank" rel="noreferrer">Blog ↗</a></li>
+            </ul>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer__inner">
-        <span class="mono">© <span id="year"></span> apksherlock · Stavro Xhardha</span>
-        <a id="footer-back-to-top" class="mono footer__top" href="#top" data-scroll>Back to top</a>
+      <div class="container">
+        <div class="footer__inner">
+          <span>© <span id="year"></span> Stavro Xhardha</span>
+          <a href="#top" data-scroll data-i18n="footer_back_to_top">Back to top</a>
+        </div>
+        <p class="footer__note" data-i18n="footer_note">
+          Work for BMW, MINI, Rolls-Royce and Mercedes-Benz was delivered as an employee of Appsfactory GmbH. Brand names belong to their owners and don’t imply endorsement.
+        </p>
       </div>
     </footer>
 

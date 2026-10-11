@@ -1,360 +1,322 @@
-/* Minimal vanilla JS: i18n, smooth anchor scroll, reveal on scroll, parallax, glitch bursts */
+/* Vanilla JS: i18n (EN/DE/SQ), smooth anchor scroll, contact form */
 
 (() => {
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  // --- Simple i18n: EN / DE (landing page only, blog stays EN) ---
+  // --- i18n ---
+  // English lives in the HTML. Elements opt in with data-i18n (text),
+  // data-i18n-placeholder or data-i18n-aria-label; other languages are listed here.
+  // `en` only holds strings that never appear in the HTML (form errors set from JS).
   const translations = {
     en: {
-      skip_to_content: "Skip to content",
-      nav_about: "About",
-      nav_blog: "Blog",
-      nav_publications: "Read publications",
-      nav_work: "Work",
-      nav_hire: "Hire",
-      links_publications_aria: "Publications — Dispatcher’s Playground on Hashnode",
-      hero_subheading: "Android Engineer",
-      hero_enter: "Enter",
-      hero_read_blog: "Read Blog",
-      hero_chip_mode_label: "Mode",
-      hero_chip_mode_value: "Android",
-      hero_chip_stack_label: "Stack",
-      hero_chip_stack_value: "Mobile / Web",
-      hero_chip_status_label: "Status",
-      hero_chip_status_value: "Open to Hire",
-      hero_scroll_hint: "SCROLL",
-
-      about_title: "About Me",
-      about_subtitle:
-        "Android engineering, integrations, and security—with a straight list of what I can take on below.",
-      about_p1:
-        "I’m an Android engineer. Most of my work has been shipping production apps and integrations: phones, smart accessories, in-vehicle systems, and third-party services: where complex UI has to hold up in real daily use.",
-      about_p2:
-        "Today a large share of my time is Android Automotive: infotainment UX, theming, and tooling for a major global OEM. I also run Android app security reviews and document what I learn on my blog.",
-      about_p3: "Check below what I concretely offer for you.",
-      featured_title: "Featured in",
-      featured_a2_text:
-        "Invited by A2 CNN News (Albanian) for GDPR commentary on data privacy and Meta Threads.",
-      featured_quickbird_text:
-        "Article for QuickBird Studios while I worked there: Android MVI with Kotlin Coroutines & Flow.",
-      featured_youtube_text:
-        "Guest in a morning show (Albanian only).",
-      offer_title: "What I offer",
-
-      offer_mobile_label: "Mobile Apps",
-      offer_mobile_value: "Native Android or Multiplatform mobile solutions (Android + iOS)",
-      offer_security_label: "Security Audit",
-      offer_security_value: "Android app security review, risk notes, and practical fixes",
-      offer_coaching_label: "Coaching",
-      offer_coaching_value: "Upskill developers and teams transitioning to Android",
-      offer_play_label: "Play Store shipping",
-      offer_play_value: "Shipping your app to production can be a challenge; I can help you get it live",
-      offer_web_label: "Business websites",
-      offer_web_value: "Clear, fast sites that explain what you sell and make it easy to get in touch",
-      offer_telegram_label: "Telegram bots",
-      offer_telegram_value:
-        "Lightweight customer channel when a full site isn’t in the budget: bookings, FAQs, menus, and alerts—right inside Telegram",
-      offer_nfc_label: "NFC for marketing",
-      offer_nfc_value:
-        "Tap-to-open campaigns: tags that launch your site, app, or offer—great for events, menus, and retail",
-      offer_ai_label: "AI Integration",
-      offer_ai_value: "Ship AI features safely: integration, UX, and developer workflow automation",
-
-      blog_title: "Blog",
-      blog_subtitle: "Dispatchers, deep dives, and Android notes—from beginner-friendly to very nerdy.",
-      blog_cta_lead:
-        "Articles are published on Dispatcher’s Playground (Hashnode). Open the site to read the latest posts.",
-      blog_open_btn: "Open blog on Hashnode",
-
-      work_title: "Selected Work",
-      work_subtitle: "Much of my recent work is under NDA. Here are a few public-facing highlights.",
-      work_card_mysugr_desc:
-        "Integrated Bluetooth-enabled insulin pumps into the app, enabling seamless synchronization of bolus doses with the digital logbook.",
-      work_card_mallya_desc:
-        "Developed a BLE SDK for insulin pen integration, implementing cryptographic protocols to securely transmit dose data to Android apps.",
-      work_card_belt_desc:
-        "A Kotlin Multiplatform (KMP) app built as a modern alternative to Mozilla's Pocket, enabling cross-platform bookmarking and article saving.",
-      work_card_auto_desc:
-        "Tech lead for next-generation infotainment systems, focusing on UX design collaboration, theming tokenization, and UI tooling for premium vehicle brands.",
-      work_card_security_desc:
-        "Identified and helped patch vulnerabilities in production APKs, including insecure IPC, cryptographic flaws, and improper permission handling.",
-      work_card_blog_desc:
-        "Technical deep dives: Android patterns, tricky bugs, security curiosities, and lessons from the field.",
-
-      contact_title: "Do you have a project in mind?",
-      contact_subtitle:
-        "Android apps, security reviews, coaching, business websites, Telegram bots, and NFC campaigns. I’ll answer honestly about fit and scope—no overselling.",
-      contact_name_label: "Name",
-      contact_name_placeholder: "Your name",
-      contact_email_label: "Email",
-      contact_email_placeholder: "you@domain.com",
-      contact_message_label: "Message",
-      contact_message_placeholder: "Write your message...",
-      contact_send_button: "Send",
-      contact_form_success: "Thanks! Your message has been sent.",
-      contact_form_error_generic: "Oops! Something went wrong. Please try again.",
       contact_form_error_network: "Network error. Check your connection and try again.",
-      contact_form_error_fallback:
-        "Could not send your message. Check the fields and try again.",
-      footer_back_to_top: "Back to top"
+      contact_form_error_fallback: "Could not send your message. Check the fields and try again.",
+      contact_form_error_captcha: "Please complete the security check and try again.",
+      contact_field_invalid: "Please check this field."
     },
     de: {
       skip_to_content: "Zum Inhalt springen",
+      nav_services: "Leistungen",
+      nav_work: "Projekte",
       nav_about: "Über mich",
-      nav_blog: "Blog",
-      nav_publications: "Publikationen lesen",
-      nav_work: "Arbeit",
-      nav_hire: "Anfragen",
-      links_publications_aria: "Publikationen — Dispatcher’s Playground auf Hashnode",
-      hero_subheading: "Android-Entwickler",
-      hero_enter: "Eintreten",
-      hero_read_blog: "Blog lesen",
-      hero_chip_mode_label: "Modus",
-      hero_chip_mode_value: "Android",
-      hero_chip_stack_label: "Stack",
-      hero_chip_stack_value: "Mobile / Web",
-      hero_chip_status_label: "Status",
-      hero_chip_status_value: "Verfügbar für Projekte",
-      hero_scroll_hint: "SCROLLEN",
+      nav_contact: "Kontakt",
+
+      hero_headline: "Mobile Apps, App-Sicherheit und Automatisierung für Unternehmen.",
+      hero_sub:
+        "9 Jahre Android-Entwicklung – unter anderem Software für die Bildschirme in BMW-Fahrzeugen und eine Gesundheits-App, die Millionen Menschen nutzen.",
+      hero_cta: "Projekt anfragen",
+      hero_cta2: "Meine Arbeit ansehen",
+      hero_status: "Offen für neue Projekte",
+      trust_label: "Ich habe an Software gearbeitet für",
+
+      services_title: "Was ich für Sie tun kann",
+      services_intro:
+        "Nicht sicher, was Sie brauchen? Beschreiben Sie Ihr Problem, und ich sage Ihnen ehrlich, was sinnvoll ist – und was nicht.",
+      svc_apps_t: "Komplette mobile Apps",
+      svc_apps_d:
+        "Neue Apps für Android und iPhone – inklusive des Servers dahinter: Benutzerkonten, Daten, Zahlungen, Benachrichtigungen und Admin-Bereiche. Ein Ansprechpartner für alles, von der einfachen Kunden-App bis zur großen Unternehmenssoftware.",
+      svc_maintain_t: "Apps reparieren, pflegen und veröffentlichen",
+      svc_maintain_d:
+        "Ihre App stürzt ab, ist langsam oder der ursprüngliche Entwickler ist weg? Ich übernehme, behebe die Probleme und halte sie aktuell. Außerdem bringe ich Apps in Google Play und den App Store – und kümmere mich um Ablehnungen, Richtlinien-Warnungen und gesperrte Einträge.",
+      svc_security_t: "Sicherheitscheck für Apps",
+      svc_security_d:
+        "Ich schaue mir Ihre Android-App so an, wie es ein Angreifer tun würde, und finde die Schwachstellen, bevor es jemand anderes tut. Ihre Entwickler bekommen einen detaillierten Bericht: was gefährdet ist, wie ernst es ist und wie genau es sich beheben lässt.",
+      svc_malware_t: "Ist dieses Handy oder diese App infiziert?",
+      svc_malware_d:
+        "Sie vermuten, dass ein Android-Handy oder eine App Sie ausspioniert oder sich seltsam verhält – ob Firmen- oder Privatgerät? Ich prüfe es auf Schadsoftware und sage Ihnen, was ich gefunden habe und was zu tun ist. Nur Android.",
+      svc_automation_t: "Automatisierung und KI",
+      svc_automation_d:
+        "Lassen Sie Software die Routinearbeit erledigen: Chatbots für Telegram oder WhatsApp, KI-Assistenten, die Kundenfragen beantworten, automatische Berichte und Erinnerungen sowie Verbindungen zwischen den Tools, die Sie schon nutzen.",
+      svc_web_t: "Websites",
+      svc_web_d:
+        "Klare, schnelle Websites, die erklären, was Sie anbieten, und es Kunden leicht machen, Kontakt aufzunehmen.",
+      svc_partner_t: "Technischer Partner für Gründer",
+      svc_partner_d:
+        "Ich helfe Ihnen, das Produkt zu planen, die richtige Technologie zu wählen und teure Fehler zu vermeiden – bevor die erste Zeile Code geschrieben wird.",
+      svc_training_t: "Schulungen für Entwicklerteams",
+      svc_training_d: "Praxisnahes Coaching für Teams, die in Android oder moderne App-Entwicklung einsteigen.",
+
+      work_title: "Ausgewählte Projekte",
+      work_intro: "Vieles aus meiner Kundenarbeit unterliegt einer NDA – hier ist, was ich zeigen kann.",
+      tag_cars: "Auto · seit 2022",
+      tag_health: "Gesundheit",
+      tag_security: "Sicherheit",
+      tag_oss: "Open Source",
+      tag_albania: "Albanien · 2017–2019",
+      work_bmw_t: "Software im Auto für BMW, MINI, Rolls-Royce und Mercedes-Benz",
+      work_bmw_d:
+        "Über die Agentur Appsfactory arbeite ich seit vier Jahren als Senior Engineer und Teamleiter an der Software für die Bildschirme in neuen Autos – darunter das Beifahrer-Entertainment und der Theatre Screen im Fond der BMW-Modelle 2026 sowie das Erscheinungsbild der Oberflächen von BMW M, MINI und Rolls-Royce. Davor: eine Gesundheits- und Auto-App gemeinsam mit Mercedes-Benz.",
+      work_bmw_l1: "BMW-Video zum Theatre Screen ↗",
+      work_bmw_l2: "Öffentlicher Dank vom BMW-Produktteam ↗",
+      work_mysugr_t: "mySugr Diabetes-App",
+      work_mysugr_d:
+        "Eine App, die Millionen Menschen mit Diabetes in über 80 Ländern nutzen. Ich habe Insulinpumpen per Bluetooth angebunden, sodass jede Dosis automatisch erfasst wird, statt von Hand eingetippt zu werden.",
+      work_mallya_t: "Mallya, der smarte Insulinpen",
+      work_mallya_d:
+        "Ich habe die sichere Verbindung gebaut, die Dosisdaten vom Pen aufs Handy überträgt – verschlüsselt, denn medizinische Daten müssen privat bleiben.",
+      work_security_t: "Sicherheitsprüfungen für Android-Apps",
+      work_security_d:
+        "Echte, veröffentlichte Android-Apps auf Schwachstellen geprüft – Datenlecks, unsichere Verbindungen zwischen Apps, fehlerhafte Verschlüsselung – und den Teams geholfen, sie zu beheben.",
+      work_belt_d: "Meine eigene Read-it-later-App, einmal geschrieben und lauffähig auf Android und iPhone.",
+      work_albania_t: "Wo alles begann",
+      work_albania_d:
+        "Apps für albanische Unternehmen: Shëndeti (lokale Krankenhäuser finden), WebFlex (verbindet Läden und Restaurants mit den Marken, die sie verkaufen) und Baboon (Essenslieferung).",
+
+      reviews_title: "Was Kollegen über mich sagen",
+      reviews_note: "Empfehlungen von meinem LinkedIn-Profil (im englischen Original).",
+
+      media_title: "Im Fernsehen und auf der Bühne",
+      kind_talk: "Vortrag",
+      kind_article: "Artikel",
+      media_a2: "Interview bei A2 CNN (Albanien) zu Datenschutz, DSGVO und Metas App Threads.",
+      media_premium: "Gast in der Morgensendung von Premium Channel (auf Albanisch).",
+      media_meetup: "Speaker beim Android Meetup in München (Juni 2024) zu Kotlin Multiplatform.",
+      media_gdg: "Speaker bei der Google Developer Group Tirana seit 2019.",
+      media_qb: "Fachartikel für QuickBird Studios über Android-Apps mit Kotlin.",
+      media_blog: "Auf meinem Blog Dispatcher’s Playground schreibe ich über Android und mobile Sicherheit.",
 
       about_title: "Über mich",
-      about_subtitle:
-        "Android-Entwicklung, Integrationen und Sicherheit – mit einer klaren Liste, was ich konkret für Sie übernehmen kann.",
       about_p1:
-        "Ich bin Android-Entwickler. Ein Großteil meiner Arbeit liegt in produktiven Apps und Integrationen: Smartphones, smarte Accessoires, In‑Vehicle‑Systeme und Drittanbieter‑Dienste – überall dort, wo komplexe Oberflächen im Alltag zuverlässig funktionieren müssen.",
+        "Ich bin Stavro, Softwareentwickler, und baue seit 9 Jahren Android-Apps – von kleinen albanischen Start-ups bis zu den Bildschirmen in BMW-Fahrzeugen. Dabei habe ich Teams geleitet, eng mit Designern und Product Ownern zusammengearbeitet und gesehen, woran Softwareprojekte gelingen oder scheitern.",
       about_p2:
-        "Aktuell arbeite ich viel an Android Automotive: Infotainment‑UX, Themes und Tooling für einen großen internationalen Automobilhersteller. Zusätzlich führe ich Sicherheitsreviews für Android‑Apps durch und dokumentiere meine Erkenntnisse im Blog.",
-      about_p3: "Unten sehen Sie, was ich Ihnen ganz konkret anbiete.",
-      featured_title: "Erwähnungen & Medien",
-      featured_a2_text:
-        "Einladung von A2 CNN News (Beitrag auf Albanisch) mit Kommentar zu DSGVO, Datenschutz und Meta Threads.",
-      featured_quickbird_text:
-        "Artikel für QuickBird Studios aus meiner Zeit dort: Android MVI mit Kotlin Coroutines & Flow.",
-      featured_youtube_text:
-        "Gast in einer Morgensendung (nur auf Albanisch).",
-      offer_title: "Was ich anbiete",
+        "Mein Zuhause ist natives Android, aber ich baue das ganze Produkt – die App und den Server dahinter – und bin nicht auf ein Werkzeug festgelegt: Ich wähle, was zu Ihrem Projekt, Ihrem Budget und Ihren Plänen passt. In meiner Freizeit beschäftige ich mich mit mobiler Sicherheit – deshalb sind die Apps, die ich baue, von Anfang an sicherer.",
+      about_p3: "Ich arbeite remote mit Kunden weltweit – auf Englisch, Deutsch oder Albanisch.",
 
-      offer_mobile_label: "Mobile Apps",
-      offer_mobile_value:
-        "Native Android‑Apps oder Multiplattform‑Lösungen (Android + iOS)",
-      offer_security_label: "Security Audit",
-      offer_security_value:
-        "Sicherheitsprüfung Ihrer Android‑App, Risikobewertung und praxisnahe Empfehlungen",
-      offer_coaching_label: "Coaching",
-      offer_coaching_value:
-        "Weiterbildung für Entwickler:innen und Teams, die in Android einsteigen oder umsteigen",
-      offer_play_label: "Play-Store-Launch",
-      offer_play_value:
-        "Der Weg in den Play Store ist oft holprig – ich begleite Ihre App zuverlässig bis zur Veröffentlichung",
-      offer_web_label: "Business-Websites",
-      offer_web_value:
-        "Schnelle, klare Websites, die Ihr Angebot verständlich machen und Kontaktaufnahmen einfach machen",
-      offer_telegram_label: "Telegram-Bots",
-      offer_telegram_value:
-        "Leichter Kundenkanal, wenn ein kompletter Webauftritt noch zu groß ist: Buchungen, FAQs, Speisekarten und Benachrichtigungen direkt in Telegram",
-      offer_nfc_label: "NFC für Marketing",
-      offer_nfc_value:
-        "Tap‑to‑Open‑Kampagnen: Tags, die Ihre Website, App oder ein Angebot starten – ideal für Events, Speisekarten und den Handel",
-      offer_ai_label: "KI-Integration",
-      offer_ai_value:
-        "Sichere Einführung von KI‑Features: Integration, UX‑Konzept und Automatisierung für Entwickler‑Workflows",
+      process_title: "So läuft die Zusammenarbeit",
+      step1_t: "Sie erzählen mir, was Sie brauchen",
+      step1_d: "Ein paar Sätze im Formular unten genügen. Technisches Wissen ist nicht nötig.",
+      step2_t: "Wir sprechen darüber",
+      step2_d:
+        "Ein kurzes Gespräch, in dem ich Fragen stelle, Optionen vorschlage und ehrlich sage, ob ich der Richtige dafür bin.",
+      step3_t: "Sie bekommen einen klaren Plan",
+      step3_d: "Was ich baue, wie lange es dauert und was es kostet – schriftlich, bevor die Arbeit beginnt.",
+      step4_t: "Ich baue, Sie sind dabei",
+      step4_d: "Regelmäßige Updates und frühe Versionen zum Ausprobieren – damit es am Ende keine Überraschungen gibt.",
 
-      blog_title: "Blog",
-      blog_subtitle:
-        "Dispatchers, Deep Dives und Android‑Notizen – von einsteigerfreundlich bis sehr nerdig (auf Englisch).",
-      blog_cta_lead:
-        "Die Artikel erscheinen auf Dispatcher’s Playground (Hashnode). Dort finden Sie die aktuellen Beiträge.",
-      blog_open_btn: "Blog auf Hashnode öffnen",
-
-      work_title: "Ausgewählte Arbeiten",
-      work_subtitle:
-        "Viele aktuelle Projekte unterliegen einer NDA. Hier einige öffentlich sichtbare Highlights.",
-      work_card_mysugr_desc:
-        "Bluetooth‑fähige Insulinpumpen in die App integriert, damit Bolus‑Daten nahtlos im digitalen Tagebuch landen.",
-      work_card_mallya_desc:
-        "Ein BLE‑SDK für Insulinpens entwickelt, inklusive kryptografischer Protokolle zur sicheren Übertragung der Dosen an Android‑Apps.",
-      work_card_belt_desc:
-        "Eine Kotlin‑Multiplattform‑App als moderne Alternative zu Mozillas Pocket – für plattformübergreifendes Speichern von Artikeln und Links.",
-      work_card_auto_desc:
-        "Tech Lead für die nächste Generation von Infotainment‑Systemen – mit Fokus auf UX‑Zusammenarbeit, Theme‑Token und UI‑Tooling für Premiummarken.",
-      work_card_security_desc:
-        "Schwachstellen in produktiven APKs identifiziert und deren Behebung begleitet, u. a. bei unsicherem IPC, Kryptofehlern und fehlerhaften Berechtigungen.",
-      work_card_blog_desc:
-        "Technische Deep Dives: Android‑Patterns, knifflige Bugs, Security‑Kuriositäten und Erfahrungsberichte aus Projekten.",
-
-      contact_title: "Haben Sie ein Projekt im Kopf?",
-      contact_subtitle:
-        "Android‑Apps, Sicherheitsreviews, Coaching, Business‑Websites, Telegram‑Bots und NFC‑Kampagnen. Ich gebe Ihnen eine ehrliche Einschätzung zu Passung und Umfang – ohne Verkaufsdruck.",
+      contact_title: "Erzählen Sie mir von Ihrem Projekt",
+      contact_sub:
+        "Beschreiben Sie in ein paar Sätzen, was Sie brauchen – technisches Wissen ist nicht nötig. Ich antworte mit einer ehrlichen Einschätzung, ob und wie ich helfen kann.",
       contact_name_label: "Name",
       contact_name_placeholder: "Ihr Name",
-      contact_email_label: "E‑Mail",
+      contact_email_label: "E-Mail",
       contact_email_placeholder: "sie@unternehmen.de",
       contact_message_label: "Nachricht",
-      contact_message_placeholder: "Ihre Nachricht …",
-      contact_send_button: "Senden",
+      contact_message_placeholder: "Was möchten Sie bauen oder reparieren lassen?",
+      contact_send_button: "Nachricht senden",
       contact_form_success: "Danke! Ihre Nachricht wurde verschickt.",
-      contact_form_error_generic: "Ups! Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
-      contact_form_error_network:
-        "Netzwerkfehler. Bitte Verbindung prüfen und erneut versuchen.",
+      contact_form_error_generic: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+      contact_form_error_network: "Netzwerkfehler. Bitte Verbindung prüfen und erneut versuchen.",
       contact_form_error_fallback:
         "Ihre Nachricht konnte nicht gesendet werden. Prüfen Sie die Felder und versuchen Sie es erneut.",
-      footer_back_to_top: "Zurück nach oben"
+      contact_form_error_captcha: "Bitte schließen Sie die Sicherheitsprüfung ab und versuchen Sie es erneut.",
+      contact_field_invalid: "Bitte prüfen Sie dieses Feld.",
+      links_title: "Auch zu finden auf",
+
+      footer_back_to_top: "Nach oben",
+      footer_note:
+        "Die Arbeit für BMW, MINI, Rolls-Royce und Mercedes-Benz habe ich als Angestellter der Appsfactory GmbH geleistet. Markennamen gehören ihren Inhabern und bedeuten keine Empfehlung."
+    },
+    sq: {
+      skip_to_content: "Kalo te përmbajtja",
+      nav_services: "Shërbimet",
+      nav_work: "Punët",
+      nav_about: "Rreth meje",
+      nav_contact: "Kontakt",
+
+      hero_headline: "Aplikacione celulare, siguri aplikacionesh dhe automatizim për biznese.",
+      hero_sub:
+        "9 vjet duke ndërtuar aplikacione Android – përfshirë softuerin në ekranet e makinave BMW dhe një aplikacion shëndetësor që përdoret nga miliona njerëz.",
+      hero_cta: "Më tregoni për projektin tuaj",
+      hero_cta2: "Shikoni punën time",
+      hero_status: "I disponueshëm për projekte të reja",
+      trust_label: "Kam punuar në softuer për",
+
+      services_title: "Çfarë mund të bëj për ju",
+      services_intro:
+        "Nuk jeni të sigurt se çfarë ju duhet? Më përshkruani problemin dhe do t’ju them sinqerisht çfarë ka kuptim – dhe çfarë jo.",
+      svc_apps_t: "Aplikacione celulare të plota",
+      svc_apps_d:
+        "Aplikacione të reja për Android dhe iPhone, bashkë me serverin pas tyre – llogari përdoruesish, të dhëna, pagesa, njoftime dhe panele administrimi. Një person i vetëm përgjegjës për gjithçka, nga një aplikacion i thjeshtë për klientët deri te softuer i madh për kompani.",
+      svc_maintain_t: "Rregullim, mirëmbajtje dhe publikim aplikacionesh",
+      svc_maintain_d:
+        "Aplikacioni juaj bllokohet, është i ngadaltë, ose zhvilluesi i parë është larguar? E marr përsipër, i rregulloj problemet dhe e mbaj të përditësuar. Gjithashtu i publikoj aplikacionet në Google Play dhe App Store – dhe zgjidh refuzimet, paralajmërimet për rregullat dhe aplikacionet e pezulluara.",
+      svc_security_t: "Kontroll sigurie për aplikacione",
+      svc_security_d:
+        "E shqyrtoj aplikacionin tuaj Android ashtu siç do ta bënte një sulmues dhe gjej pikat e dobëta para se t’i gjejë dikush tjetër. Zhvilluesit tuaj marrin një raport të detajuar: çfarë është në rrezik, sa serioze është dhe si saktësisht rregullohet.",
+      svc_malware_t: "A është i infektuar ky telefon apo aplikacion?",
+      svc_malware_d:
+        "Dyshoni se një telefon apo aplikacion Android ju spiunon ose sillet çuditshëm – qoftë i kompanisë apo personal? E kontrolloj për malware dhe ju them çfarë gjeta dhe çfarë duhet bërë. Vetëm për Android.",
+      svc_automation_t: "Automatizim dhe AI",
+      svc_automation_d:
+        "Lërini punët e përsëritura në dorë të softuerit: chatbot-e për Telegram ose WhatsApp, asistentë AI që u përgjigjen pyetjeve të klientëve, raporte dhe kujtesa automatike, si dhe lidhje mes mjeteve që përdorni tashmë.",
+      svc_web_t: "Faqe interneti",
+      svc_web_d:
+        "Faqe të qarta dhe të shpejta që shpjegojnë çfarë ofroni dhe i bëjnë klientët t’ju kontaktojnë lehtë.",
+      svc_partner_t: "Partner teknik për themeluesit",
+      svc_partner_d:
+        "Ju ndihmoj të planifikoni produktin, të zgjidhni teknologjinë e duhur dhe të shmangni gabime të kushtueshme – para se të shkruhet rreshti i parë i kodit.",
+      svc_training_t: "Trajnime për ekipe zhvilluesish",
+      svc_training_d: "Coaching praktik për ekipet që po kalojnë në Android ose në zhvillimin modern të aplikacioneve.",
+
+      work_title: "Punë të përzgjedhura",
+      work_intro: "Shumë nga puna ime për klientët është nën NDA, ndaj ja çfarë mund të tregoj.",
+      tag_cars: "Makina · që nga 2022",
+      tag_health: "Shëndetësi",
+      tag_security: "Siguri",
+      tag_oss: "Open source",
+      tag_albania: "Shqipëri · 2017–2019",
+      work_bmw_t: "Softuer në makinë për BMW, MINI, Rolls-Royce dhe Mercedes-Benz",
+      work_bmw_d:
+        "Përmes agjencisë Appsfactory, prej katër vitesh punoj si inxhinier senior dhe drejtues ekipi në softuerin e ekraneve brenda makinave të reja – përfshirë ekranin e argëtimit për pasagjerin dhe Theatre Screen për ndenjëset e pasme në modelet BMW 2026, si dhe pamjen e ndërfaqeve të BMW M, MINI dhe Rolls-Royce. Më herët: një aplikacion për shëndetin dhe makinën, i ndërtuar bashkë me Mercedes-Benz.",
+      work_bmw_l1: "Videoja e BMW për Theatre Screen ↗",
+      work_bmw_l2: "Falënderim publik nga ekipi i produktit në BMW ↗",
+      work_mysugr_t: "Aplikacioni mySugr për diabetin",
+      work_mysugr_d:
+        "Një aplikacion që përdoret nga miliona njerëz me diabet në mbi 80 vende. Lidha pompat e insulinës me aplikacionin përmes Bluetooth, që çdo dozë të regjistrohet automatikisht në vend që të shkruhet me dorë.",
+      work_mallya_t: "Mallya, stilolapsi inteligjent i insulinës",
+      work_mallya_d:
+        "Ndërtova lidhjen e sigurt që dërgon të dhënat e dozave nga stilolapsi te telefoni – të enkriptuara, sepse të dhënat mjekësore duhet të mbeten private.",
+      work_security_t: "Kontrolle sigurie për aplikacione Android",
+      work_security_d:
+        "Kontrollova aplikacione reale Android të publikuara për dobësi – rrjedhje të dhënash, lidhje të pasigurta mes aplikacioneve, enkriptim të gabuar – dhe ndihmova ekipet t’i rregullojnë.",
+      work_belt_d:
+        "Aplikacioni im për të ruajtur artikuj për t’i lexuar më vonë, i shkruar një herë dhe që punon si në Android ashtu edhe në iPhone.",
+      work_albania_t: "Ku fillova",
+      work_albania_d:
+        "Aplikacione për biznese shqiptare: Shëndeti (për të gjetur spitalet lokale), WebFlex (lidh dyqanet dhe restorantet me markat që shesin) dhe Baboon (shpërndarje ushqimi).",
+
+      reviews_title: "Çfarë thonë njerëzit me të cilët kam punuar",
+      reviews_note: "Rekomandime nga profili im në LinkedIn (në origjinal në anglisht).",
+
+      media_title: "Në televizion dhe në skenë",
+      kind_talk: "Prezantim",
+      kind_article: "Artikull",
+      media_a2: "Intervistë në A2 CNN për privatësinë e të dhënave, GDPR-në dhe aplikacionin Threads të Meta-s.",
+      media_premium: "I ftuar në emisionin e mëngjesit të Premium Channel.",
+      media_meetup: "Folës në Android Meetup në Mynih (qershor 2024) për Kotlin Multiplatform.",
+      media_gdg: "Folës në Google Developer Group Tirana që nga viti 2019.",
+      media_qb: "Artikull për QuickBird Studios mbi ndërtimin e aplikacioneve Android me Kotlin.",
+      media_blog: "Shkruaj për Android-in dhe sigurinë celulare në blogun tim, Dispatcher’s Playground.",
+
+      about_title: "Rreth meje",
+      about_p1:
+        "Jam Stavro, inxhinier softueri që prej 9 vitesh ndërton aplikacione Android – nga start-up të vogla shqiptare deri te ekranet brenda makinave BMW. Gjatë kësaj kohe kam drejtuar ekipe, kam punuar krah për krah me dizajnerë dhe product owner-a, dhe kam parë se çfarë i bën projektet softuerike të kenë sukses ose të dështojnë.",
+      about_p2:
+        "Fusha ime kryesore është Android-i nativ, por ndërtoj të gjithë produktin – aplikacionin dhe serverin pas tij – dhe nuk jam i lidhur pas një mjeti të vetëm: zgjedh atë që i përshtatet projektit, buxhetit dhe planeve tuaja. Në kohën e lirë merrem me kërkime mbi sigurinë celulare, prandaj aplikacionet që ndërtoj janë më të sigurta që në fillim.",
+      about_p3: "Punoj në distancë me klientë në mbarë botën – në anglisht, gjermanisht ose shqip.",
+
+      process_title: "Si funksionon bashkëpunimi",
+      step1_t: "Më tregoni çfarë ju duhet",
+      step1_d: "Mjaftojnë disa fjali në formularin më poshtë. Nuk nevojiten njohuri teknike.",
+      step2_t: "E diskutojmë bashkë",
+      step2_d:
+        "Një bisedë e shkurtër ku bëj pyetje, propozoj opsione dhe ju them sinqerisht nëse jam personi i duhur.",
+      step3_t: "Merrni një plan të qartë",
+      step3_d: "Çfarë do të ndërtoj, sa kohë do të zgjasë dhe sa kushton – me shkrim, para se të fillojë puna.",
+      step4_t: "Unë ndërtoj, ju ndiqni ecurinë",
+      step4_d: "Përditësime të rregullta dhe versione të hershme për t’i provuar, që të mos ketë surpriza në fund.",
+
+      contact_title: "Më tregoni për projektin tuaj",
+      contact_sub:
+        "Përshkruani me disa fjali çfarë ju duhet – nuk nevojiten njohuri teknike. Do t’ju përgjigjem me një vlerësim të sinqertë nëse dhe si mund t’ju ndihmoj.",
+      contact_name_label: "Emri",
+      contact_name_placeholder: "Emri juaj",
+      contact_email_label: "Email",
+      contact_email_placeholder: "ju@kompania.al",
+      contact_message_label: "Mesazhi",
+      contact_message_placeholder: "Çfarë doni të ndërtoni ose të rregulloni?",
+      contact_send_button: "Dërgo mesazhin",
+      contact_form_success: "Faleminderit! Mesazhi juaj u dërgua.",
+      contact_form_error_generic: "Diçka shkoi keq. Ju lutem provoni përsëri.",
+      contact_form_error_network: "Gabim në rrjet. Kontrolloni lidhjen dhe provoni përsëri.",
+      contact_form_error_fallback: "Mesazhi nuk u dërgua. Kontrolloni fushat dhe provoni përsëri.",
+      contact_form_error_captcha: "Ju lutem plotësoni kontrollin e sigurisë dhe provoni përsëri.",
+      contact_field_invalid: "Ju lutem kontrolloni këtë fushë.",
+      links_title: "Më gjeni edhe në",
+
+      footer_back_to_top: "Kthehu lart",
+      footer_note:
+        "Punën për BMW, MINI, Rolls-Royce dhe Mercedes-Benz e kam kryer si punonjës i Appsfactory GmbH. Emrat e markave u përkasin pronarëve të tyre dhe nuk nënkuptojnë mbështetje."
     }
   };
 
+  const LANGS = ["en", "de", "sq"];
+  const STORAGE_KEY = "apksherlock-lang";
+
+  // English defaults, read once from the HTML
+  const bindings = [
+    ["data-i18n", (el, v) => (el.textContent = v), (el) => el.textContent.trim().replace(/\s+/g, " ")],
+    ["data-i18n-placeholder", (el, v) => el.setAttribute("placeholder", v), (el) => el.getAttribute("placeholder")],
+    ["data-i18n-aria-label", (el, v) => el.setAttribute("aria-label", v), (el) => el.getAttribute("aria-label")]
+  ];
+  const defaults = {};
+  for (const [attr, , read] of bindings) {
+    $$(`[${attr}]`).forEach((el) => {
+      defaults[el.getAttribute(attr)] ??= read(el);
+    });
+  }
+
   const getInitialLang = () => {
-    const stored = window.localStorage?.getItem("apksherlock-lang");
-    if (stored === "de" || stored === "en") return stored;
-    const navLang = navigator.language || navigator.userLanguage || "";
-    return navLang.toLowerCase().startsWith("de") ? "de" : "en";
+    const stored = window.localStorage?.getItem(STORAGE_KEY);
+    if (LANGS.includes(stored)) return stored;
+    const navLang = (navigator.language || "").toLowerCase().slice(0, 2);
+    return LANGS.includes(navLang) ? navLang : "en";
   };
 
   let currentLang = getInitialLang();
 
-  const t = (key) => {
-    const langSet = translations[currentLang] || translations.en;
-    return langSet[key] ?? translations.en[key] ?? key;
-  };
-
-  const setDocumentLang = (lang) => {
-    const code = lang === "de" ? "de" : "en";
-    document.documentElement.lang = code;
-  };
-
-  const updateLangToggles = () => {
-    $$("[data-lang-switch]").forEach((btn) => {
-      const val = btn.getAttribute("data-lang-switch");
-      btn.classList.toggle("is-active", val === currentLang);
-      btn.setAttribute("aria-pressed", val === currentLang ? "true" : "false");
-    });
-  };
+  const t = (key) => translations[currentLang]?.[key] ?? defaults[key] ?? translations.en[key] ?? key;
 
   const applyTranslations = () => {
-    setDocumentLang(currentLang);
-    updateLangToggles();
+    document.documentElement.lang = currentLang;
 
-    const setText = (sel, key, root) => {
-      const el = typeof sel === "string" ? $(sel, root) : sel;
-      if (!el) return;
-      el.textContent = t(key);
-    };
+    $$("[data-lang-switch]").forEach((btn) => {
+      const active = btn.getAttribute("data-lang-switch") === currentLang;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
 
-    const setAttr = (sel, attr, key, root) => {
-      const el = typeof sel === "string" ? $(sel, root) : sel;
-      if (!el) return;
-      el.setAttribute(attr, t(key));
-    };
-
-    // Top-level / hero
-    setText("#skip-link", "skip_to_content");
-    setText("#nav-about", "nav_about");
-    setText("#nav-blog", "nav_blog");
-    setText("#nav-publications", "nav_publications");
-    setText("#nav-work", "nav_work");
-    setText("#nav-hire", "nav_hire");
-    setAttr("#links-publications", "aria-label", "links_publications_aria");
-
-    setText("#hero-subheading", "hero_subheading");
-    setText("#hero-enter", "hero_enter");
-    setText("#hero-read-blog", "hero_read_blog");
-
-    setText("#chip-mode-label", "hero_chip_mode_label");
-    setText("#chip-mode-value", "hero_chip_mode_value");
-    setText("#chip-stack-label", "hero_chip_stack_label");
-    setText("#chip-stack-value", "hero_chip_stack_value");
-    setText("#chip-status-label", "hero_chip_status_label");
-    setText("#chip-status-value", "hero_chip_status_value");
-
-    setText("#hero-scroll-hint", "hero_scroll_hint");
-
-    // About / offer
-    setText("#about-title", "about_title");
-    setText("#about-subtitle", "about_subtitle");
-    setText("#about-p1", "about_p1");
-    setText("#about-p2", "about_p2");
-    setText("#about-p3", "about_p3");
-    setText("#featured-title", "featured_title");
-    setText("#featured-a2-text", "featured_a2_text");
-    setText("#featured-quickbird-text", "featured_quickbird_text");
-    setText("#featured-youtube-text", "featured_youtube_text");
-    setText("#offer-title", "offer_title");
-
-    setText("#offer-mobile-label", "offer_mobile_label");
-    setText("#offer-mobile-value", "offer_mobile_value");
-    setText("#offer-security-label", "offer_security_label");
-    setText("#offer-security-value", "offer_security_value");
-    setText("#offer-coaching-label", "offer_coaching_label");
-    setText("#offer-coaching-value", "offer_coaching_value");
-    setText("#offer-play-label", "offer_play_label");
-    setText("#offer-play-value", "offer_play_value");
-    setText("#offer-web-label", "offer_web_label");
-    setText("#offer-web-value", "offer_web_value");
-    setText("#offer-telegram-label", "offer_telegram_label");
-    setText("#offer-telegram-value", "offer_telegram_value");
-    setText("#offer-nfc-label", "offer_nfc_label");
-    setText("#offer-nfc-value", "offer_nfc_value");
-    setText("#offer-ai-label", "offer_ai_label");
-    setText("#offer-ai-value", "offer_ai_value");
-
-    // Blog (links out to Hashnode; posts are English on the publication)
-    setText("#blog-title", "blog_title");
-    setText("#blog-subtitle", "blog_subtitle");
-    setText("#blog-cta-lead", "blog_cta_lead");
-    setText("#blog-open-label", "blog_open_btn");
-
-    // Work
-    setText("#work-title", "work_title");
-    setText("#work-subtitle", "work_subtitle");
-    setText("#work-mysugr-desc", "work_card_mysugr_desc");
-    setText("#work-mallya-desc", "work_card_mallya_desc");
-    setText("#work-belt-desc", "work_card_belt_desc");
-    setText("#work-auto-desc", "work_card_auto_desc");
-    setText("#work-security-desc", "work_card_security_desc");
-    setText("#work-blog-desc", "work_card_blog_desc");
-
-    // Contact
-    setText("#contact-title", "contact_title");
-    setText("#contact-subtitle", "contact_subtitle");
-
-    setText("#contact-name-label", "contact_name_label");
-    setAttr("#contact-name-input", "placeholder", "contact_name_placeholder");
-    setText("#contact-email-label", "contact_email_label");
-    setAttr("#contact-email-input", "placeholder", "contact_email_placeholder");
-    setText("#contact-message-label", "contact_message_label");
-    setAttr("#contact-message-input", "placeholder", "contact_message_placeholder");
-    setText("#contact-send-btn-label", "contact_send_button");
-
-    setText("#form-msg-success-text", "contact_form_success");
-    setText("#form-msg-error-text", "contact_form_error_generic");
-
-    // Footer
-    setText("#footer-back-to-top", "footer_back_to_top");
+    for (const [attr, write] of bindings) {
+      $$(`[${attr}]`).forEach((el) => write(el, t(el.getAttribute(attr))));
+    }
   };
 
   const setLanguage = (lang) => {
-    const next = lang === "de" ? "de" : "en";
-    if (next === currentLang) return;
-    currentLang = next;
+    if (!LANGS.includes(lang) || lang === currentLang) return;
+    currentLang = lang;
     try {
-      window.localStorage?.setItem("apksherlock-lang", currentLang);
+      window.localStorage?.setItem(STORAGE_KEY, currentLang);
     } catch {
       // ignore
     }
     applyTranslations();
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
-    $$("[data-lang-switch]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const val = btn.getAttribute("data-lang-switch");
-        if (!val) return;
-        setLanguage(val);
-      });
-    });
-
-    applyTranslations();
+  $$("[data-lang-switch]").forEach((btn) => {
+    btn.addEventListener("click", () => setLanguage(btn.getAttribute("data-lang-switch")));
   });
+  applyTranslations();
 
   // Footer year
   const yearEl = $("#year");
@@ -362,84 +324,40 @@
 
   // Smooth scroll for internal links (respects prefers-reduced-motion)
   const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-  const scrollToId = (id) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
-  };
 
   $$("a[data-scroll]").forEach((a) => {
     a.addEventListener("click", (e) => {
       const href = a.getAttribute("href") || "";
-      if (!href.startsWith("#")) return;
-      const id = href.slice(1);
-      if (!id) return;
+      const el = href.startsWith("#") && document.getElementById(href.slice(1));
+      if (!el) return;
       e.preventDefault();
-      scrollToId(id);
+      el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
       history.replaceState(null, "", href);
     });
   });
 
-  // IntersectionObserver: reveal sections
-  const revealEls = $$(".reveal");
-  const onReveal = (el) => el.classList.add("is-visible");
-
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        onReveal(entry.target);
-        io.unobserve(entry.target);
-      }
-    },
-    { threshold: 0.12 }
-  );
-  revealEls.forEach((el) => io.observe(el));
-
-  // Hero parallax (very subtle)
-  const heroBg = $("#hero-bg");
-  const hero = $(".hero");
-  let raf = 0;
-  const onScroll = () => {
-    if (!heroBg || !hero) return;
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = 0;
-      const rect = hero.getBoundingClientRect();
-      // Only while hero is in view
-      const inView = rect.bottom > 0 && rect.top < window.innerHeight;
-      if (!inView) return;
-      const progress = Math.min(1, Math.max(0, -rect.top / Math.max(1, rect.height)));
-      const y = progress * 18; // px
-      heroBg.style.transform = `translate3d(0, ${y}px, 0) scale(1.02)`;
-    });
-  };
-  if (!reduceMotion) {
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
-
-  // Random glitch bursts (subtle) on the hero headline
-  const glitch = $(".glitch");
-  if (glitch && !reduceMotion) {
-    const burst = () => {
-      glitch.classList.add("is-burst");
-      window.setTimeout(() => glitch.classList.remove("is-burst"), 260);
-      // Next burst: 2.2s–5.2s
-      const next = 2200 + Math.random() * 3000;
-      window.setTimeout(burst, next);
-    };
-    window.setTimeout(burst, 1400 + Math.random() * 1200);
-  }
-
-  // Hire form → Formspree (JSON POST, reliable success/error UI)
+  // Contact form → relay (Cloudflare Worker → Telegram); Formspree also works as an endpoint
   const hireForm = $("#my-form");
   if (hireForm) {
-    const endpoint = hireForm.getAttribute("data-formspree") || hireForm.getAttribute("action");
+    const endpoint = hireForm.getAttribute("data-endpoint") || hireForm.getAttribute("action");
+    const sitekey = hireForm.getAttribute("data-turnstile-sitekey");
     const msgSuccess = $("#form-msg-success", hireForm);
     const msgError = $("#form-msg-error", hireForm);
     const msgErrorText = $("#form-msg-error-text", hireForm);
     const submitBtn = $("#form-submit-btn", hireForm);
+    const turnstileBox = $(".turnstile", hireForm);
+
+    // Cloudflare Turnstile bot check, only once a site key is configured
+    if (sitekey && turnstileBox) {
+      window.onTurnstileLoad = () => {
+        turnstileBox.hidden = false;
+        window.turnstile.render(turnstileBox, { sitekey, theme: "dark" });
+      };
+      const script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad";
+      script.async = true;
+      document.head.appendChild(script);
+    }
 
     const clearFieldErrors = () => {
       $$("[data-field-error]", hireForm).forEach((el) => {
@@ -448,69 +366,50 @@
       });
     };
 
-    const hideOverlays = () => {
-      if (msgSuccess) {
-        msgSuccess.hidden = true;
-        msgSuccess.classList.remove("is-visible");
+    const showFieldErrors = (fields) => {
+      for (const key of fields) {
+        const el = $(`[data-field-error="${key}"]`, hireForm);
+        if (!el) continue;
+        el.textContent = t("contact_field_invalid");
+        el.hidden = false;
       }
-      if (msgError) {
-        msgError.hidden = true;
-        msgError.classList.remove("is-visible");
-      }
+    };
+
+    const hideMessages = () => {
+      if (msgSuccess) msgSuccess.hidden = true;
+      if (msgError) msgError.hidden = true;
     };
 
     const showSuccess = () => {
-      hideOverlays();
+      hideMessages();
       clearFieldErrors();
-      if (msgSuccess) {
-        msgSuccess.hidden = false;
-        msgSuccess.classList.add("is-visible");
-      }
+      if (msgSuccess) msgSuccess.hidden = false;
       hireForm.reset();
       window.setTimeout(() => {
-        if (msgSuccess) {
-          msgSuccess.classList.remove("is-visible");
-          msgSuccess.hidden = true;
-        }
-      }, 5200);
+        if (msgSuccess) msgSuccess.hidden = true;
+      }, 6000);
     };
 
     const showError = (text) => {
-      hideOverlays();
-      if (msgErrorText) msgErrorText.textContent = text || "Something went wrong. Please try again.";
-      if (msgError) {
-        msgError.hidden = false;
-        msgError.classList.add("is-visible");
-      }
-    };
-
-    const applyFormspreeErrors = (payload) => {
-      clearFieldErrors();
-      const errors = payload?.errors;
-      if (!errors || typeof errors !== "object") return;
-      const fieldNodes = $$("[data-field-error]", hireForm);
-      for (const [key, val] of Object.entries(errors)) {
-        if (!/^[a-z0-9_-]{1,64}$/i.test(key)) continue;
-        const el = fieldNodes.find((n) => n.getAttribute("data-field-error") === key);
-        if (!el) continue;
-        const msg = Array.isArray(val) ? val.join(" ") : String(val);
-        el.textContent = msg;
-        el.hidden = !msg;
-      }
+      hideMessages();
+      if (msgErrorText) msgErrorText.textContent = text;
+      if (msgError) msgError.hidden = false;
     };
 
     hireForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!endpoint) return;
 
-      hideOverlays();
+      hideMessages();
       clearFieldErrors();
 
       const fd = new FormData(hireForm);
       const body = {
         name: String(fd.get("name") || "").trim(),
         email: String(fd.get("email") || "").trim(),
-        message: String(fd.get("message") || "").trim()
+        message: String(fd.get("message") || "").trim(),
+        _gotcha: String(fd.get("_gotcha") || ""),
+        "cf-turnstile-response": String(fd.get("cf-turnstile-response") || "")
       };
 
       if (submitBtn) submitBtn.disabled = true;
@@ -521,29 +420,24 @@
           headers: { Accept: "application/json", "Content-Type": "application/json" },
           body: JSON.stringify(body)
         });
-
         const payload = await res.json().catch(() => ({}));
 
-        if (!res.ok) {
-          applyFormspreeErrors(payload);
-          const fallback =
-            typeof payload?.error === "string"
-              ? payload.error
-              : "Could not send your message. Check the fields and try again.";
-          showError(fallback);
-        } else if (payload?.error) {
-          applyFormspreeErrors(payload);
-          showError(typeof payload.error === "string" ? payload.error : "Could not send your message.");
-        } else {
+        if (res.ok && payload?.ok !== false && !payload?.error) {
           showSuccess();
+        } else if (Array.isArray(payload?.invalid)) {
+          showFieldErrors(payload.invalid);
+          showError(t("contact_form_error_fallback"));
+        } else if (payload?.captcha) {
+          showError(t("contact_form_error_captcha"));
+        } else {
+          showError(t("contact_form_error_generic"));
         }
       } catch {
-        // Use i18n-aware message if available
         showError(t("contact_form_error_network"));
       } finally {
         if (submitBtn) submitBtn.disabled = false;
+        window.turnstile?.reset();
       }
     });
   }
 })();
-

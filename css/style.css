@@ -1,18 +1,43 @@
-/* Terminal-flavoured theme — near-black, phosphor green accent.
-   Mono for headings and decoration, sans for reading text. */
+/* Terminal-flavoured theme — dark (default) and light, phosphor green accent.
+   Mono for headings and decoration, sans for reading text.
+   The theme is set on <html data-theme> by an inline script in index.html. */
 
 :root{
+  color-scheme:dark;
   --bg:#0b0d0c;
   --bg-raised:#111513;
   --fg:#e1e8e3;
   --body:#bfc9c2;
   --dim:#7d8a82;
+  --faint:#5f6b64;
   --line:#1f2723;
+  --line-strong:#2a332e;
+  --placeholder:#59645d;
   --accent:#4ef08e;
+  --link-line:rgba(78,240,142,.3);
+  --topbar:rgba(11,13,12,.92);
   --error:#ff6b6b;
   --max:1000px;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+
+/* Light: same layout, darker green so text links stay readable on white */
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f6f7f4;
+  --bg-raised:#ffffff;
+  --fg:#111a14;
+  --body:#2f3a33;
+  --dim:#5a675f;
+  --faint:#6b776f;
+  --line:#dde3dd;
+  --line-strong:#c6cfc8;
+  --placeholder:#8a968e;
+  --accent:#0b7a3d;
+  --link-line:rgba(11,122,61,.35);
+  --topbar:rgba(246,247,244,.92);
+  --error:#c62828;
 }
 
 *{box-sizing:border-box}
@@ -40,7 +65,7 @@ ul,ol{padding:0;list-style:none}
 
 .link{
   color:var(--accent);
-  border-bottom:1px solid rgba(78,240,142,.3);
+  border-bottom:1px solid var(--link-line);
   transition:border-color .15s ease;
 }
 .link:hover{border-bottom-color:var(--accent)}
@@ -59,7 +84,7 @@ ul,ol{padding:0;list-style:none}
   position:sticky;
   top:0;
   z-index:10;
-  background:rgba(11,13,12,.92);
+  background:var(--topbar);
   border-bottom:1px solid var(--line);
   backdrop-filter:blur(6px);
 }
@@ -87,6 +112,23 @@ ul,ol{padding:0;list-style:none}
 .lang__btn:hover{color:var(--fg)}
 .lang__btn.is-active{color:var(--bg);background:var(--accent)}
 
+.theme-toggle{
+  display:grid;
+  place-items:center;
+  width:30px;height:30px;
+  padding:0;
+  border:1px solid var(--line-strong);
+  background:none;
+  color:var(--dim);
+  cursor:pointer;
+  transition:color .15s ease,border-color .15s ease;
+}
+.theme-toggle:hover{color:var(--accent);border-color:var(--accent)}
+.theme-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.theme-toggle__sun{display:none}
+[data-theme="light"] .theme-toggle__sun{display:block}
+[data-theme="light"] .theme-toggle__moon{display:none}
+
 /* SHARED */
 .deco{
   margin-bottom:10px;
@@ -112,7 +154,7 @@ ul,ol{padding:0;list-style:none}
 .btn{
   display:inline-block;
   padding:11px 18px;
-  border:1px solid #2c3631;
+  border:1px solid var(--line-strong);
   background:none;
   color:var(--fg);
   font-family:var(--mono);
@@ -246,7 +288,7 @@ ul,ol{padding:0;list-style:none}
   color:var(--dim);
 }
 .window__dots{display:flex;gap:5px}
-.window__dots i{width:8px;height:8px;border-radius:50%;background:#2a332e}
+.window__dots i{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
 .window img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
 
 /* PROCESS */
@@ -277,7 +319,7 @@ ul,ol{padding:0;list-style:none}
 .field__input{
   width:100%;
   padding:11px 12px;
-  border:1px solid #2a332e;
+  border:1px solid var(--line-strong);
   background:var(--bg-raised);
   color:var(--fg);
   font:inherit;
@@ -285,7 +327,7 @@ ul,ol{padding:0;list-style:none}
   outline:none;
   transition:border-color .15s ease;
 }
-.field__input::placeholder{color:#59645d}
+.field__input::placeholder{color:var(--placeholder)}
 .field__input:focus{border-color:var(--accent)}
 textarea.field__input{resize:vertical;min-height:150px}
 .field__error{display:block;margin-top:6px;font-size:14px;color:var(--error)}
@@ -302,7 +344,7 @@ textarea.field__input{resize:vertical;min-height:150px}
 .footer{margin-top:96px;padding:28px 0 36px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px;color:var(--dim)}
 .footer__inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .footer a:hover{color:var(--accent)}
-.footer__note{max-width:80ch;margin-top:16px;font-family:var(--sans);font-size:13px;color:#5f6b64}
+.footer__note{max-width:80ch;margin-top:16px;font-family:var(--sans);font-size:13px;color:var(--faint)}
 
 @keyframes blink{50%{opacity:0}}
 

@@ -13,7 +13,9 @@
       contact_form_error_network: "Network error. Check your connection and try again.",
       contact_form_error_fallback: "Could not send your message. Check the fields and try again.",
       contact_form_error_captcha: "Please complete the security check and try again.",
-      contact_field_invalid: "Please check this field."
+      contact_field_invalid: "Please check this field.",
+      theme_to_light: "Switch to light mode",
+      theme_to_dark: "Switch to dark mode"
     },
     de: {
       skip_to_content: "Zum Inhalt springen",
@@ -131,6 +133,8 @@
         "Ihre Nachricht konnte nicht gesendet werden. Prüfen Sie die Felder und versuchen Sie es erneut.",
       contact_form_error_captcha: "Bitte schließen Sie die Sicherheitsprüfung ab und versuchen Sie es erneut.",
       contact_field_invalid: "Bitte prüfen Sie dieses Feld.",
+      theme_to_light: "Zum hellen Modus wechseln",
+      theme_to_dark: "Zum dunklen Modus wechseln",
       links_title: "Auch zu finden auf",
 
       footer_back_to_top: "Nach oben",
@@ -253,6 +257,8 @@
       contact_form_error_fallback: "Mesazhi nuk u dërgua. Kontrolloni fushat dhe provoni përsëri.",
       contact_form_error_captcha: "Ju lutem plotësoni kontrollin e sigurisë dhe provoni përsëri.",
       contact_field_invalid: "Ju lutem kontrolloni këtë fushë.",
+      theme_to_light: "Kalo në modalitetin e çelët",
+      theme_to_dark: "Kalo në modalitetin e errët",
       links_title: "Më gjeni edhe në",
 
       footer_back_to_top: "Kthehu lart",
@@ -300,7 +306,44 @@
     for (const [attr, write] of bindings) {
       $$(`[${attr}]`).forEach((el) => write(el, t(el.getAttribute(attr))));
     }
+    updateThemeToggle();
   };
+
+  // --- Light / dark theme (initial value is set by the inline script in <head>) ---
+  const themeToggle = $("#theme-toggle");
+  const themeMeta = $('meta[name="theme-color"]');
+  const currentTheme = () => (document.documentElement.dataset.theme === "light" ? "light" : "dark");
+
+  function updateThemeToggle() {
+    const theme = currentTheme();
+    themeToggle?.setAttribute("aria-label", t(theme === "light" ? "theme_to_dark" : "theme_to_light"));
+    themeMeta?.setAttribute("content", theme === "light" ? "#f6f7f4" : "#0b0d0c");
+  }
+
+  const setTheme = (theme, save) => {
+    document.documentElement.dataset.theme = theme;
+    if (save) {
+      try {
+        window.localStorage?.setItem("theme", theme);
+      } catch {
+        // ignore
+      }
+    }
+    updateThemeToggle();
+  };
+
+  themeToggle?.addEventListener("click", () => setTheme(currentTheme() === "light" ? "dark" : "light", true));
+
+  // Follow system changes until the visitor picks a theme themselves
+  window.matchMedia?.("(prefers-color-scheme: light)").addEventListener?.("change", (e) => {
+    let saved = null;
+    try {
+      saved = window.localStorage?.getItem("theme");
+    } catch {
+      // ignore
+    }
+    if (!saved) setTheme(e.matches ? "light" : "dark", false);
+  });
 
   const setLanguage = (lang) => {
     if (!LANGS.includes(lang) || lang === currentLang) return;
@@ -351,7 +394,7 @@
     if (sitekey && turnstileBox) {
       window.onTurnstileLoad = () => {
         turnstileBox.hidden = false;
-        window.turnstile.render(turnstileBox, { sitekey, theme: "dark" });
+        window.turnstile.render(turnstileBox, { sitekey, theme: currentTheme() });
       };
       const script = document.createElement("script");
       script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad";

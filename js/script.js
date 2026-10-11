@@ -148,7 +148,7 @@
       nav_about: "Rreth meje",
       nav_contact: "Kontakt",
 
-      hero_headline: "Aplikacione celulare, siguri aplikacionesh dhe automatizim për biznese.",
+      hero_headline: "Aplikacione mobile, siguri aplikacionesh dhe automatizim për biznese.",
       hero_sub:
         "Prej 9 vitesh ndërtoj aplikacione Android, ndër to softuer për ekranet e makinave BMW dhe një aplikacion shëndetësor që e përdorin miliona njerëz.",
       hero_cta: "Më tregoni për projektin tuaj",
@@ -159,7 +159,7 @@
       services_title: "Çfarë mund të bëj për ju",
       services_intro:
         "Nuk e dini se çfarë ju duhet? Më shpjegoni problemin dhe do t’ju them sinqerisht çfarë ia vlen dhe çfarë jo.",
-      svc_apps_t: "Aplikacione celulare të plota",
+      svc_apps_t: "Aplikacione mobile të plota",
       svc_apps_d:
         "Aplikacione të reja për Android dhe iPhone, bashkë me serverin që i mban në punë: llogari përdoruesish, të dhëna, pagesa, njoftime dhe panele administrimi. Keni një person të vetëm përgjegjës për gjithçka, qoftë për një aplikacion të thjeshtë për klientët apo për softuer të madh kompanie.",
       svc_maintain_t: "Rregullim, mirëmbajtje dhe publikim aplikacionesh",
@@ -221,13 +221,13 @@
       media_meetup: "Folës në Android Meetup në Mynih (qershor 2024) për Kotlin Multiplatform.",
       media_gdg: "Folës në Google Developer Group Tirana që nga viti 2019.",
       media_qb: "Artikull për QuickBird Studios mbi ndërtimin e aplikacioneve Android me Kotlin.",
-      media_blog: "Shkruaj për Android-in dhe sigurinë celulare në blogun tim, Dispatcher’s Playground.",
+      media_blog: "Shkruaj për Android-in dhe sigurinë mobile në blogun tim, Dispatcher’s Playground.",
 
       about_title: "Rreth meje",
       about_p1:
         "Jam Stavro, inxhinier softueri. Prej 9 vitesh ndërtoj aplikacione Android, nga start-up të vogla shqiptare deri te ekranet brenda makinave BMW. Gjatë kësaj kohe kam drejtuar ekipe, kam punuar ngushtë me dizajnerë dhe product owner-a, dhe kam parë nga afër pse disa projekte softuerike kanë sukses e të tjera dështojnë.",
       about_p2:
-        "Specialiteti im është Android-i nativ, por ndërtoj të gjithë produktin: aplikacionin dhe serverin pas tij. Nuk jam i lidhur pas një mjeti të vetëm. Zgjedh atë që i përshtatet projektit, buxhetit dhe planeve tuaja. Në kohën e lirë merrem me sigurinë e aplikacioneve celulare, prandaj aplikacionet që ndërtoj janë më të sigurta që në fillim.",
+        "Specialiteti im është Android-i nativ, por ndërtoj të gjithë produktin: aplikacionin dhe serverin pas tij. Nuk jam i lidhur pas një mjeti të vetëm. Zgjedh atë që i përshtatet projektit, buxhetit dhe planeve tuaja. Në kohën e lirë merrem me sigurinë e aplikacioneve mobile, prandaj aplikacionet që ndërtoj janë më të sigurta që në fillim.",
       about_p3: "Punoj në distancë me klientë nga e gjithë bota, në anglisht, gjermanisht ose shqip.",
 
       process_title: "Si funksionon bashkëpunimi",

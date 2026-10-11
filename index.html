@@ -405,6 +405,7 @@
             id="my-form"
             class="form"
             method="POST"
+            novalidate
             action="https://contact-relay.apksherlock.workers.dev"
             data-endpoint="https://contact-relay.apksherlock.workers.dev"
             data-turnstile-sitekey="0x4AAAAAAFTtH7mfr1z4t726"
@@ -422,6 +423,7 @@
                   class="field__input"
                   name="name"
                   autocomplete="name"
+                  maxlength="100"
                   placeholder="Your name"
                   data-i18n-placeholder="contact_name_placeholder"
                   required
@@ -435,6 +437,7 @@
                   type="email"
                   name="email"
                   autocomplete="email"
+                  maxlength="200"
                   placeholder="you@company.com"
                   data-i18n-placeholder="contact_email_placeholder"
                   required
@@ -448,6 +451,7 @@
                 class="field__input"
                 name="message"
                 rows="6"
+                maxlength="3500"
                 placeholder="What would you like to build or fix?"
                 data-i18n-placeholder="contact_message_placeholder"
                 required

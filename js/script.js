@@ -13,7 +13,9 @@
       contact_form_error_network: "Network error. Check your connection and try again.",
       contact_form_error_fallback: "Could not send your message. Check the fields and try again.",
       contact_form_error_captcha: "Please complete the security check and try again.",
-      contact_field_invalid: "Please check this field.",
+      contact_error_name: "Please enter your name.",
+      contact_error_email: "Please enter a valid email address, e.g. name@company.com.",
+      contact_error_message: "Please write a short message.",
       theme_to_light: "Switch to light mode",
       theme_to_dark: "Switch to dark mode"
     },
@@ -132,7 +134,9 @@
       contact_form_error_fallback:
         "Ihre Nachricht konnte nicht gesendet werden. Prüfen Sie die Felder und versuchen Sie es erneut.",
       contact_form_error_captcha: "Bitte schließen Sie die Sicherheitsprüfung ab und versuchen Sie es erneut.",
-      contact_field_invalid: "Bitte prüfen Sie dieses Feld.",
+      contact_error_name: "Bitte geben Sie Ihren Namen ein.",
+      contact_error_email: "Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. name@firma.de.",
+      contact_error_message: "Bitte schreiben Sie eine kurze Nachricht.",
       theme_to_light: "Zum hellen Modus wechseln",
       theme_to_dark: "Zum dunklen Modus wechseln",
       links_title: "Auch zu finden auf",
@@ -256,7 +260,9 @@
       contact_form_error_network: "Gabim në rrjet. Kontrolloni lidhjen dhe provoni përsëri.",
       contact_form_error_fallback: "Mesazhi nuk u dërgua. Kontrolloni fushat dhe provoni përsëri.",
       contact_form_error_captcha: "Ju lutem plotësoni kontrollin e sigurisë dhe provoni përsëri.",
-      contact_field_invalid: "Ju lutem kontrolloni këtë fushë.",
+      contact_error_name: "Ju lutem shkruani emrin tuaj.",
+      contact_error_email: "Ju lutem shkruani një adresë email të vlefshme, p.sh. emri@kompania.al.",
+      contact_error_message: "Ju lutem shkruani një mesazh të shkurtër.",
       theme_to_light: "Kalo në modalitetin e çelët",
       theme_to_dark: "Kalo në modalitetin e errët",
       links_title: "Më gjeni edhe në",
@@ -403,21 +409,43 @@
       document.head.appendChild(script);
     }
 
-    const clearFieldErrors = () => {
-      $$("[data-field-error]", hireForm).forEach((el) => {
+    const fieldInput = (key) => hireForm.elements.namedItem(key);
+
+    const clearFieldError = (key) => {
+      const el = $(`[data-field-error="${key}"]`, hireForm);
+      if (el) {
         el.textContent = "";
         el.hidden = true;
-      });
+      }
+      fieldInput(key)?.removeAttribute("aria-invalid");
     };
 
+    const clearFieldErrors = () => ["name", "email", "message"].forEach(clearFieldError);
+
+    // Shows a message under each invalid field and moves focus to the first one
     const showFieldErrors = (fields) => {
       for (const key of fields) {
         const el = $(`[data-field-error="${key}"]`, hireForm);
         if (!el) continue;
-        el.textContent = t("contact_field_invalid");
+        el.textContent = t(`contact_error_${key}`);
         el.hidden = false;
+        fieldInput(key)?.setAttribute("aria-invalid", "true");
       }
+      fieldInput(fields[0])?.focus();
     };
+
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const invalidFields = (body) =>
+      [
+        !body.name && "name",
+        !EMAIL_RE.test(body.email) && "email",
+        !body.message && "message"
+      ].filter(Boolean);
+
+    // Errors disappear as soon as the visitor fixes the field
+    ["name", "email", "message"].forEach((key) => {
+      fieldInput(key)?.addEventListener("input", () => clearFieldError(key));
+    });
 
     const hideMessages = () => {
       if (msgSuccess) msgSuccess.hidden = true;
@@ -456,6 +484,12 @@
         "cf-turnstile-response": String(fd.get("cf-turnstile-response") || "")
       };
 
+      const invalid = invalidFields(body);
+      if (invalid.length) {
+        showFieldErrors(invalid);
+        return;
+      }
+
       if (submitBtn) submitBtn.disabled = true;
 
       try {
@@ -470,7 +504,6 @@
           showSuccess();
         } else if (Array.isArray(payload?.invalid)) {
           showFieldErrors(payload.invalid);
-          showError(t("contact_form_error_fallback"));
         } else if (payload?.captcha) {
           showError(t("contact_form_error_captcha"));
         } else {

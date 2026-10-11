@@ -320,29 +320,30 @@
     themeMeta?.setAttribute("content", theme === "light" ? "#f6f7f4" : "#0b0d0c");
   }
 
+  const systemTheme = () =>
+    window.matchMedia?.("(prefers-color-scheme: light)").matches ? "light" : "dark";
+
   const setTheme = (theme, save) => {
     document.documentElement.dataset.theme = theme;
-    if (save) {
-      try {
+    try {
+      if (save) {
         window.localStorage?.setItem("theme", theme);
-      } catch {
-        // ignore
+        window.localStorage?.setItem("theme-system", systemTheme());
+      } else {
+        window.localStorage?.removeItem("theme");
+        window.localStorage?.removeItem("theme-system");
       }
+    } catch {
+      // ignore
     }
     updateThemeToggle();
   };
 
   themeToggle?.addEventListener("click", () => setTheme(currentTheme() === "light" ? "dark" : "light", true));
 
-  // Follow system changes until the visitor picks a theme themselves
+  // Latest action wins: switching the device theme overrides an earlier toggle click
   window.matchMedia?.("(prefers-color-scheme: light)").addEventListener?.("change", (e) => {
-    let saved = null;
-    try {
-      saved = window.localStorage?.getItem("theme");
-    } catch {
-      // ignore
-    }
-    if (!saved) setTheme(e.matches ? "light" : "dark", false);
+    setTheme(e.matches ? "light" : "dark", false);
   });
 
   const setLanguage = (lang) => {

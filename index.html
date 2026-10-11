@@ -16,13 +16,20 @@
     <meta name="author" content="Stavro Xhardha" />
     <meta name="theme-color" content="#0b0d0c" />
     <script>
-      // Pick the theme before first paint: saved choice, else the system setting
+      // Pick the theme before first paint. A toggle click is remembered only while the
+      // device theme stays the same as when it was clicked; otherwise follow the device.
       (() => {
-        let theme = null;
-        try { theme = localStorage.getItem("theme"); } catch {}
-        if (theme !== "light" && theme !== "dark") {
-          theme = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-        }
+        const system = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        let theme = system;
+        try {
+          const saved = localStorage.getItem("theme");
+          if ((saved === "light" || saved === "dark") && localStorage.getItem("theme-system") === system) {
+            theme = saved;
+          } else {
+            localStorage.removeItem("theme");
+            localStorage.removeItem("theme-system");
+          }
+        } catch {}
         document.documentElement.dataset.theme = theme;
       })();
     </script>

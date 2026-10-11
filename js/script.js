@@ -26,7 +26,7 @@
 
       hero_headline: "Mobile Apps, App-Sicherheit und Automatisierung für Unternehmen.",
       hero_sub:
-        "9 Jahre Android-Entwicklung – unter anderem Software für die Bildschirme in BMW-Fahrzeugen und eine Gesundheits-App, die Millionen Menschen nutzen.",
+        "Seit 9 Jahren entwickle ich Android-Apps, unter anderem Software für die Bildschirme in BMW-Fahrzeugen und eine Gesundheits-App, die Millionen Menschen nutzen.",
       hero_cta: "Projekt anfragen",
       hero_cta2: "Meine Arbeit ansehen",
       hero_status: "Offen für neue Projekte",
@@ -34,19 +34,19 @@
 
       services_title: "Was ich für Sie tun kann",
       services_intro:
-        "Nicht sicher, was Sie brauchen? Beschreiben Sie Ihr Problem, und ich sage Ihnen ehrlich, was sinnvoll ist – und was nicht.",
+        "Nicht sicher, was Sie brauchen? Beschreiben Sie Ihr Problem, und ich sage Ihnen ehrlich, was sinnvoll ist und was nicht.",
       svc_apps_t: "Komplette mobile Apps",
       svc_apps_d:
-        "Neue Apps für Android und iPhone – inklusive des Servers dahinter: Benutzerkonten, Daten, Zahlungen, Benachrichtigungen und Admin-Bereiche. Ein Ansprechpartner für alles, von der einfachen Kunden-App bis zur großen Unternehmenssoftware.",
+        "Neue Apps für Android und iPhone, inklusive des Servers dahinter: Benutzerkonten, Daten, Zahlungen, Benachrichtigungen und Admin-Bereiche. Sie haben einen Ansprechpartner für alles, von der einfachen Kunden-App bis zur großen Unternehmenssoftware.",
       svc_maintain_t: "Apps reparieren, pflegen und veröffentlichen",
       svc_maintain_d:
-        "Ihre App stürzt ab, ist langsam oder der ursprüngliche Entwickler ist weg? Ich übernehme, behebe die Probleme und halte sie aktuell. Außerdem bringe ich Apps in Google Play und den App Store – und kümmere mich um Ablehnungen, Richtlinien-Warnungen und gesperrte Einträge.",
+        "Ihre App stürzt ab, ist langsam oder der ursprüngliche Entwickler ist weg? Ich übernehme, behebe die Probleme und halte sie aktuell. Außerdem veröffentliche ich Apps in Google Play und im App Store und kümmere mich um Ablehnungen, Richtlinien-Warnungen und gesperrte Einträge.",
       svc_security_t: "Sicherheitscheck für Apps",
       svc_security_d:
         "Ich schaue mir Ihre Android-App so an, wie es ein Angreifer tun würde, und finde die Schwachstellen, bevor es jemand anderes tut. Ihre Entwickler bekommen einen detaillierten Bericht: was gefährdet ist, wie ernst es ist und wie genau es sich beheben lässt.",
       svc_malware_t: "Ist dieses Handy oder diese App infiziert?",
       svc_malware_d:
-        "Sie vermuten, dass ein Android-Handy oder eine App Sie ausspioniert oder sich seltsam verhält – ob Firmen- oder Privatgerät? Ich prüfe es auf Schadsoftware und sage Ihnen, was ich gefunden habe und was zu tun ist. Nur Android.",
+        "Sie vermuten, dass ein Android-Handy oder eine App Sie ausspioniert oder sich seltsam verhält? Ob Firmen- oder Privatgerät: Ich prüfe es auf Schadsoftware und sage Ihnen, was ich gefunden habe und was zu tun ist. Nur Android.",
       svc_automation_t: "Automatisierung und KI",
       svc_automation_d:
         "Lassen Sie Software die Routinearbeit erledigen: Chatbots für Telegram oder WhatsApp, KI-Assistenten, die Kundenfragen beantworten, automatische Berichte und Erinnerungen sowie Verbindungen zwischen den Tools, die Sie schon nutzen.",
@@ -55,12 +55,12 @@
         "Klare, schnelle Websites, die erklären, was Sie anbieten, und es Kunden leicht machen, Kontakt aufzunehmen.",
       svc_partner_t: "Technischer Partner für Gründer",
       svc_partner_d:
-        "Ich helfe Ihnen, das Produkt zu planen, die richtige Technologie zu wählen und teure Fehler zu vermeiden – bevor die erste Zeile Code geschrieben wird.",
+        "Ich helfe Ihnen, das Produkt zu planen, die richtige Technologie zu wählen und teure Fehler zu vermeiden, bevor die erste Zeile Code geschrieben wird.",
       svc_training_t: "Schulungen für Entwicklerteams",
       svc_training_d: "Praxisnahes Coaching für Teams, die in Android oder moderne App-Entwicklung einsteigen.",
 
       work_title: "Ausgewählte Projekte",
-      work_intro: "Vieles aus meiner Kundenarbeit unterliegt einer NDA – hier ist, was ich zeigen kann.",
+      work_intro: "Vieles aus meiner Kundenarbeit unterliegt einer NDA. Hier ist, was ich zeigen kann.",
       tag_cars: "Auto · seit 2022",
       tag_health: "Gesundheit",
       tag_security: "Sicherheit",
@@ -68,7 +68,7 @@
       tag_albania: "Albanien · 2017–2019",
       work_bmw_t: "Software im Auto für BMW, MINI, Rolls-Royce und Mercedes-Benz",
       work_bmw_d:
-        "Über die Agentur Appsfactory arbeite ich seit vier Jahren als Senior Engineer und Teamleiter an der Software für die Bildschirme in neuen Autos – darunter das Beifahrer-Entertainment und der Theatre Screen im Fond der BMW-Modelle 2026 sowie das Erscheinungsbild der Oberflächen von BMW M, MINI und Rolls-Royce. Davor: eine Gesundheits- und Auto-App gemeinsam mit Mercedes-Benz.",
+        "Über die Agentur Appsfactory arbeite ich seit vier Jahren als Senior Engineer und Teamleiter an der Software für die Bildschirme in neuen Autos. Dazu gehören das Beifahrer-Entertainment und der Theatre Screen im Fond der BMW-Modelle 2026 sowie das Erscheinungsbild der Oberflächen von BMW M, MINI und Rolls-Royce. Davor habe ich mit Mercedes-Benz an einer Gesundheits- und Auto-App gearbeitet.",
       work_bmw_l1: "BMW-Video zum Theatre Screen ↗",
       work_bmw_l2: "Öffentlicher Dank vom BMW-Produktteam ↗",
       work_mysugr_t: "mySugr Diabetes-App",
@@ -76,10 +76,10 @@
         "Eine App, die Millionen Menschen mit Diabetes in über 80 Ländern nutzen. Ich habe Insulinpumpen per Bluetooth angebunden, sodass jede Dosis automatisch erfasst wird, statt von Hand eingetippt zu werden.",
       work_mallya_t: "Mallya, der smarte Insulinpen",
       work_mallya_d:
-        "Ich habe die sichere Verbindung gebaut, die Dosisdaten vom Pen aufs Handy überträgt – verschlüsselt, denn medizinische Daten müssen privat bleiben.",
+        "Ich habe die sichere Verbindung gebaut, die Dosisdaten vom Pen aufs Handy überträgt. Sie ist verschlüsselt, denn medizinische Daten müssen privat bleiben.",
       work_security_t: "Sicherheitsprüfungen für Android-Apps",
       work_security_d:
-        "Echte, veröffentlichte Android-Apps auf Schwachstellen geprüft – Datenlecks, unsichere Verbindungen zwischen Apps, fehlerhafte Verschlüsselung – und den Teams geholfen, sie zu beheben.",
+        "Echte, veröffentlichte Android-Apps auf Schwachstellen wie Datenlecks, unsichere Verbindungen zwischen Apps oder fehlerhafte Verschlüsselung geprüft und den Teams geholfen, sie zu beheben.",
       work_belt_d: "Meine eigene Read-it-later-App, einmal geschrieben und lauffähig auf Android und iPhone.",
       work_albania_t: "Wo alles begann",
       work_albania_d:
@@ -100,10 +100,10 @@
 
       about_title: "Über mich",
       about_p1:
-        "Ich bin Stavro, Softwareentwickler, und baue seit 9 Jahren Android-Apps – von kleinen albanischen Start-ups bis zu den Bildschirmen in BMW-Fahrzeugen. Dabei habe ich Teams geleitet, eng mit Designern und Product Ownern zusammengearbeitet und gesehen, woran Softwareprojekte gelingen oder scheitern.",
+        "Ich bin Stavro, Softwareentwickler. Seit 9 Jahren baue ich Android-Apps, von kleinen albanischen Start-ups bis zu den Bildschirmen in BMW-Fahrzeugen. Dabei habe ich Teams geleitet, eng mit Designern und Product Ownern zusammengearbeitet und gesehen, woran Softwareprojekte gelingen oder scheitern.",
       about_p2:
-        "Mein Zuhause ist natives Android, aber ich baue das ganze Produkt – die App und den Server dahinter – und bin nicht auf ein Werkzeug festgelegt: Ich wähle, was zu Ihrem Projekt, Ihrem Budget und Ihren Plänen passt. In meiner Freizeit beschäftige ich mich mit mobiler Sicherheit – deshalb sind die Apps, die ich baue, von Anfang an sicherer.",
-      about_p3: "Ich arbeite remote mit Kunden weltweit – auf Englisch, Deutsch oder Albanisch.",
+        "Mein Zuhause ist natives Android, aber ich baue das ganze Produkt, also die App und den Server dahinter. Auf ein Werkzeug bin ich dabei nicht festgelegt: Ich wähle, was zu Ihrem Projekt, Ihrem Budget und Ihren Plänen passt. In meiner Freizeit beschäftige ich mich mit mobiler Sicherheit. Deshalb sind die Apps, die ich baue, von Anfang an sicherer.",
+      about_p3: "Ich arbeite remote mit Kunden weltweit, auf Englisch, Deutsch oder Albanisch.",
 
       process_title: "So läuft die Zusammenarbeit",
       step1_t: "Sie erzählen mir, was Sie brauchen",
@@ -112,13 +112,13 @@
       step2_d:
         "Ein kurzes Gespräch, in dem ich Fragen stelle, Optionen vorschlage und ehrlich sage, ob ich der Richtige dafür bin.",
       step3_t: "Sie bekommen einen klaren Plan",
-      step3_d: "Was ich baue, wie lange es dauert und was es kostet – schriftlich, bevor die Arbeit beginnt.",
+      step3_d: "Was ich baue, wie lange es dauert und was es kostet. Sie bekommen das schriftlich, bevor die Arbeit beginnt.",
       step4_t: "Ich baue, Sie sind dabei",
-      step4_d: "Regelmäßige Updates und frühe Versionen zum Ausprobieren – damit es am Ende keine Überraschungen gibt.",
+      step4_d: "Regelmäßige Updates und frühe Versionen zum Ausprobieren, damit es am Ende keine Überraschungen gibt.",
 
       contact_title: "Erzählen Sie mir von Ihrem Projekt",
       contact_sub:
-        "Beschreiben Sie in ein paar Sätzen, was Sie brauchen – technisches Wissen ist nicht nötig. Ich antworte mit einer ehrlichen Einschätzung, ob und wie ich helfen kann.",
+        "Beschreiben Sie in ein paar Sätzen, was Sie brauchen. Technisches Wissen ist nicht nötig. Ich antworte mit einer ehrlichen Einschätzung, ob und wie ich helfen kann.",
       contact_name_label: "Name",
       contact_name_placeholder: "Ihr Name",
       contact_email_label: "E-Mail",
@@ -150,7 +150,7 @@
 
       hero_headline: "Aplikacione celulare, siguri aplikacionesh dhe automatizim për biznese.",
       hero_sub:
-        "9 vjet duke ndërtuar aplikacione Android – përfshirë softuerin në ekranet e makinave BMW dhe një aplikacion shëndetësor që përdoret nga miliona njerëz.",
+        "Prej 9 vitesh ndërtoj aplikacione Android, ndër to softuer për ekranet e makinave BMW dhe një aplikacion shëndetësor që e përdorin miliona njerëz.",
       hero_cta: "Më tregoni për projektin tuaj",
       hero_cta2: "Shikoni punën time",
       hero_status: "I disponueshëm për projekte të reja",
@@ -158,19 +158,19 @@
 
       services_title: "Çfarë mund të bëj për ju",
       services_intro:
-        "Nuk jeni të sigurt se çfarë ju duhet? Më përshkruani problemin dhe do t’ju them sinqerisht çfarë ka kuptim – dhe çfarë jo.",
+        "Nuk e dini se çfarë ju duhet? Më shpjegoni problemin dhe do t’ju them sinqerisht çfarë ia vlen dhe çfarë jo.",
       svc_apps_t: "Aplikacione celulare të plota",
       svc_apps_d:
-        "Aplikacione të reja për Android dhe iPhone, bashkë me serverin pas tyre – llogari përdoruesish, të dhëna, pagesa, njoftime dhe panele administrimi. Një person i vetëm përgjegjës për gjithçka, nga një aplikacion i thjeshtë për klientët deri te softuer i madh për kompani.",
+        "Aplikacione të reja për Android dhe iPhone, bashkë me serverin që i mban në punë: llogari përdoruesish, të dhëna, pagesa, njoftime dhe panele administrimi. Keni një person të vetëm përgjegjës për gjithçka, qoftë për një aplikacion të thjeshtë për klientët apo për softuer të madh kompanie.",
       svc_maintain_t: "Rregullim, mirëmbajtje dhe publikim aplikacionesh",
       svc_maintain_d:
-        "Aplikacioni juaj bllokohet, është i ngadaltë, ose zhvilluesi i parë është larguar? E marr përsipër, i rregulloj problemet dhe e mbaj të përditësuar. Gjithashtu i publikoj aplikacionet në Google Play dhe App Store – dhe zgjidh refuzimet, paralajmërimet për rregullat dhe aplikacionet e pezulluara.",
+        "Aplikacioni juaj ka probleme, punon ngadalë, ose zhvilluesi që e bëri nuk është më? E marr përsipër, rregulloj problemet dhe e mbaj të përditësuar. Gjithashtu publikoj aplikacione në Google Play dhe App Store, dhe zgjidh refuzimet, paralajmërimet për rregullat dhe aplikacionet e pezulluara.",
       svc_security_t: "Kontroll sigurie për aplikacione",
       svc_security_d:
         "E shqyrtoj aplikacionin tuaj Android ashtu siç do ta bënte një sulmues dhe gjej pikat e dobëta para se t’i gjejë dikush tjetër. Zhvilluesit tuaj marrin një raport të detajuar: çfarë është në rrezik, sa serioze është dhe si saktësisht rregullohet.",
       svc_malware_t: "A është i infektuar ky telefon apo aplikacion?",
       svc_malware_d:
-        "Dyshoni se një telefon apo aplikacion Android ju spiunon ose sillet çuditshëm – qoftë i kompanisë apo personal? E kontrolloj për malware dhe ju them çfarë gjeta dhe çfarë duhet bërë. Vetëm për Android.",
+        "Dyshoni se një telefon apo aplikacion Android ju spiunon ose sillet çuditshëm? Qoftë telefon pune apo personal, e kontrolloj për malware dhe ju them çfarë gjeta dhe çfarë duhet bërë. Vetëm për Android.",
       svc_automation_t: "Automatizim dhe AI",
       svc_automation_d:
         "Lërini punët e përsëritura në dorë të softuerit: chatbot-e për Telegram ose WhatsApp, asistentë AI që u përgjigjen pyetjeve të klientëve, raporte dhe kujtesa automatike, si dhe lidhje mes mjeteve që përdorni tashmë.",
@@ -179,7 +179,7 @@
         "Faqe të qarta dhe të shpejta që shpjegojnë çfarë ofroni dhe i bëjnë klientët t’ju kontaktojnë lehtë.",
       svc_partner_t: "Partner teknik për themeluesit",
       svc_partner_d:
-        "Ju ndihmoj të planifikoni produktin, të zgjidhni teknologjinë e duhur dhe të shmangni gabime të kushtueshme – para se të shkruhet rreshti i parë i kodit.",
+        "Ju ndihmoj të planifikoni produktin, të zgjidhni teknologjinë e duhur dhe të shmangni gabime që kushtojnë shtrenjtë, para se të shkruhet qoftë edhe një rresht kodi.",
       svc_training_t: "Trajnime për ekipe zhvilluesish",
       svc_training_d: "Coaching praktik për ekipet që po kalojnë në Android ose në zhvillimin modern të aplikacioneve.",
 
@@ -192,7 +192,7 @@
       tag_albania: "Shqipëri · 2017–2019",
       work_bmw_t: "Softuer në makinë për BMW, MINI, Rolls-Royce dhe Mercedes-Benz",
       work_bmw_d:
-        "Përmes agjencisë Appsfactory, prej katër vitesh punoj si inxhinier senior dhe drejtues ekipi në softuerin e ekraneve brenda makinave të reja – përfshirë ekranin e argëtimit për pasagjerin dhe Theatre Screen për ndenjëset e pasme në modelet BMW 2026, si dhe pamjen e ndërfaqeve të BMW M, MINI dhe Rolls-Royce. Më herët: një aplikacion për shëndetin dhe makinën, i ndërtuar bashkë me Mercedes-Benz.",
+        "Përmes agjencisë Appsfactory, prej katër vitesh punoj si inxhinier senior dhe drejtues ekipi për softuerin e ekraneve brenda makinave të reja. Kjo përfshin ekranin e argëtimit për pasagjerin dhe Theatre Screen për ndenjëset e pasme në modelet BMW 2026, si dhe pamjen e ndërfaqeve të BMW M, MINI dhe Rolls-Royce. Më parë kam punuar me Mercedes-Benz për një aplikacion shëndeti dhe makine.",
       work_bmw_l1: "Videoja e BMW për Theatre Screen ↗",
       work_bmw_l2: "Falënderim publik nga ekipi i produktit në BMW ↗",
       work_mysugr_t: "Aplikacioni mySugr për diabetin",
@@ -200,10 +200,10 @@
         "Një aplikacion që përdoret nga miliona njerëz me diabet në mbi 80 vende. Lidha pompat e insulinës me aplikacionin përmes Bluetooth, që çdo dozë të regjistrohet automatikisht në vend që të shkruhet me dorë.",
       work_mallya_t: "Mallya, stilolapsi inteligjent i insulinës",
       work_mallya_d:
-        "Ndërtova lidhjen e sigurt që dërgon të dhënat e dozave nga stilolapsi te telefoni – të enkriptuara, sepse të dhënat mjekësore duhet të mbeten private.",
+        "Ndërtova lidhjen e sigurt që dërgon të dhënat e dozave nga stilolapsi te telefoni. Të dhënat enkriptohen, sepse informacioni mjekësor duhet të mbetet privat.",
       work_security_t: "Kontrolle sigurie për aplikacione Android",
       work_security_d:
-        "Kontrollova aplikacione reale Android të publikuara për dobësi – rrjedhje të dhënash, lidhje të pasigurta mes aplikacioneve, enkriptim të gabuar – dhe ndihmova ekipet t’i rregullojnë.",
+        "Kam kontrolluar aplikacione Android të publikuara për dobësi si rrjedhje të dhënash, lidhje të pasigurta mes aplikacioneve dhe enkriptim të gabuar, dhe i kam ndihmuar ekipet t’i rregullojnë.",
       work_belt_d:
         "Aplikacioni im për të ruajtur artikuj për t’i lexuar më vonë, i shkruar një herë dhe që punon si në Android ashtu edhe në iPhone.",
       work_albania_t: "Ku fillova",
@@ -225,10 +225,10 @@
 
       about_title: "Rreth meje",
       about_p1:
-        "Jam Stavro, inxhinier softueri që prej 9 vitesh ndërton aplikacione Android – nga start-up të vogla shqiptare deri te ekranet brenda makinave BMW. Gjatë kësaj kohe kam drejtuar ekipe, kam punuar krah për krah me dizajnerë dhe product owner-a, dhe kam parë se çfarë i bën projektet softuerike të kenë sukses ose të dështojnë.",
+        "Jam Stavro, inxhinier softueri. Prej 9 vitesh ndërtoj aplikacione Android, nga start-up të vogla shqiptare deri te ekranet brenda makinave BMW. Gjatë kësaj kohe kam drejtuar ekipe, kam punuar ngushtë me dizajnerë dhe product owner-a, dhe kam parë nga afër pse disa projekte softuerike kanë sukses e të tjera dështojnë.",
       about_p2:
-        "Fusha ime kryesore është Android-i nativ, por ndërtoj të gjithë produktin – aplikacionin dhe serverin pas tij – dhe nuk jam i lidhur pas një mjeti të vetëm: zgjedh atë që i përshtatet projektit, buxhetit dhe planeve tuaja. Në kohën e lirë merrem me kërkime mbi sigurinë celulare, prandaj aplikacionet që ndërtoj janë më të sigurta që në fillim.",
-      about_p3: "Punoj në distancë me klientë në mbarë botën – në anglisht, gjermanisht ose shqip.",
+        "Specialiteti im është Android-i nativ, por ndërtoj të gjithë produktin: aplikacionin dhe serverin pas tij. Nuk jam i lidhur pas një mjeti të vetëm. Zgjedh atë që i përshtatet projektit, buxhetit dhe planeve tuaja. Në kohën e lirë merrem me sigurinë e aplikacioneve celulare, prandaj aplikacionet që ndërtoj janë më të sigurta që në fillim.",
+      about_p3: "Punoj në distancë me klientë nga e gjithë bota, në anglisht, gjermanisht ose shqip.",
 
       process_title: "Si funksionon bashkëpunimi",
       step1_t: "Më tregoni çfarë ju duhet",
@@ -237,13 +237,13 @@
       step2_d:
         "Një bisedë e shkurtër ku bëj pyetje, propozoj opsione dhe ju them sinqerisht nëse jam personi i duhur.",
       step3_t: "Merrni një plan të qartë",
-      step3_d: "Çfarë do të ndërtoj, sa kohë do të zgjasë dhe sa kushton – me shkrim, para se të fillojë puna.",
+      step3_d: "Çfarë do të ndërtoj, sa kohë do të zgjasë dhe sa do të kushtojë. Të gjitha me shkrim, para se të fillojë puna.",
       step4_t: "Unë ndërtoj, ju ndiqni ecurinë",
       step4_d: "Përditësime të rregullta dhe versione të hershme për t’i provuar, që të mos ketë surpriza në fund.",
 
       contact_title: "Më tregoni për projektin tuaj",
       contact_sub:
-        "Përshkruani me disa fjali çfarë ju duhet – nuk nevojiten njohuri teknike. Do t’ju përgjigjem me një vlerësim të sinqertë nëse dhe si mund t’ju ndihmoj.",
+        "Më shkruani me pak fjalë çfarë ju duhet. Nuk nevojiten njohuri teknike. Do t’ju përgjigjem sinqerisht nëse dhe si mund t’ju ndihmoj.",
       contact_name_label: "Emri",
       contact_name_placeholder: "Emri juaj",
       contact_email_label: "Email",

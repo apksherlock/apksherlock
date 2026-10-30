@@ -99,6 +99,7 @@
       media_gdg: "Speaker bei der Google Developer Group Tirana seit 2019.",
       media_qb: "Fachartikel für QuickBird Studios über Android-Apps mit Kotlin.",
       media_blog: "Auf meinem Blog Dispatcher’s Playground schreibe ich über Android und mobile Sicherheit.",
+      media_guide: "Ich habe „Ultimate Guide to Staying Safe Online“ geschrieben, ein praktisches E-Book auf Englisch und Deutsch für alle, die sich im Internet besser schützen wollen.",
 
       about_title: "Über mich",
       about_p1:
@@ -226,6 +227,7 @@
       media_gdg: "Folës në Google Developer Group Tirana që nga viti 2019.",
       media_qb: "Artikull për QuickBird Studios mbi ndërtimin e aplikacioneve Android me Kotlin.",
       media_blog: "Shkruaj për Android-in dhe sigurinë mobile në blogun tim, Dispatcher’s Playground.",
+      media_guide: "Kam shkruar „Ultimate Guide to Staying Safe Online“, një libër elektronik praktik në anglisht dhe gjermanisht për këdo që do të jetë i sigurt në internet.",
 
       about_title: "Rreth meje",
       about_p1:

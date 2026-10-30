@@ -289,7 +289,7 @@ ul,ol{padding:0;list-style:none}
 }
 .window__dots{display:flex;gap:5px}
 .window__dots i{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
-.window img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.window img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 25%}
 
 /* PROCESS */
 .steps{

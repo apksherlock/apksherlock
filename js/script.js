@@ -102,7 +102,7 @@
 
       about_title: "Über mich",
       about_p1:
-        "Ich bin Stavro, Softwareentwickler. Seit 9 Jahren baue ich Android-Apps, von kleinen albanischen Start-ups bis zu den Bildschirmen in BMW-Fahrzeugen. Dabei habe ich Teams geleitet, eng mit Designern und Product Ownern zusammengearbeitet und gesehen, woran Softwareprojekte gelingen oder scheitern.",
+        "Ich bin Stavro, Softwareentwickler. Seit 9 Jahren baue ich Android-Apps, von kleinen albanischen Start-ups bis zu den Bildschirmen in BMW-Fahrzeugen in Deutschland. Dabei habe ich Teams geleitet, eng mit Designern und Product Ownern zusammengearbeitet und gesehen, woran Softwareprojekte gelingen oder scheitern.",
       about_p2:
         "Mein Zuhause ist natives Android, aber ich baue das ganze Produkt, also die App und den Server dahinter. Auf ein Werkzeug bin ich dabei nicht festgelegt: Ich wähle, was zu Ihrem Projekt, Ihrem Budget und Ihren Plänen passt. In meiner Freizeit beschäftige ich mich mit mobiler Sicherheit. Deshalb sind die Apps, die ich baue, von Anfang an sicherer.",
       about_p3: "Ich arbeite remote mit Kunden weltweit, auf Englisch, Deutsch oder Albanisch.",
@@ -229,7 +229,7 @@
 
       about_title: "Rreth meje",
       about_p1:
-        "Jam Stavro, inxhinier softueri. Prej 9 vitesh ndërtoj aplikacione Android, nga start-up të vogla shqiptare deri te ekranet brenda makinave BMW. Gjatë kësaj kohe kam drejtuar ekipe, kam punuar ngushtë me dizajnerë dhe product owner-a, dhe kam parë nga afër pse disa projekte softuerike kanë sukses e të tjera dështojnë.",
+        "Jam Stavro, inxhinier softueri. Prej 9 vitesh ndërtoj aplikacione Android, nga start-up të vogla shqiptare deri te ekranet brenda makinave BMW në Gjermani. Gjatë kësaj kohe kam drejtuar ekipe, kam punuar ngushtë me dizajnerë dhe product owner-a, dhe kam parë nga afër pse disa projekte softuerike kanë sukses e të tjera dështojnë.",
       about_p2:
         "Specialiteti im është Android-i nativ, por ndërtoj të gjithë produktin: aplikacionin dhe serverin pas tij. Nuk jam i lidhur pas një mjeti të vetëm. Zgjedh atë që i përshtatet projektit, buxhetit dhe planeve tuaja. Në kohën e lirë merrem me sigurinë e aplikacioneve mobile, prandaj aplikacionet që ndërtoj janë më të sigurta që në fillim.",
       about_p3: "Punoj në distancë me klientë nga e gjithë bota, në anglisht, gjermanisht ose shqip.",
